@@ -12,33 +12,30 @@
 
 ActiveRecord::Schema.define(version: 2020_09_17_133618) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "jobs", force: :cascade do |t|
     t.string "profession"
     t.string "rate"
     t.text "description"
     t.string "location"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "purchase_histories", force: :cascade do |t|
-    t.integer "job_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "job_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["job_id"], name: "index_purchase_histories_on_job_id"
-    t.index ["user_id"], name: "index_purchase_histories_on_user_id"
   end
 
   create_table "purchases", force: :cascade do |t|
-    t.integer "job_id"
-    t.integer "user_id", null: false
+    t.bigint "job_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["job_id"], name: "index_purchases_on_job_id"
-    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,8 +50,5 @@ ActiveRecord::Schema.define(version: 2020_09_17_133618) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "jobs", "users"
   add_foreign_key "purchase_histories", "jobs"
-  add_foreign_key "purchase_histories", "users"
-  add_foreign_key "purchases", "users"
 end
