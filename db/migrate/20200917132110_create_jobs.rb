@@ -5,6 +5,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string :rate
       t.text :description
       t.string :location
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
