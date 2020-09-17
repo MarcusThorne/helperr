@@ -1,0 +1,17 @@
+<h3>Purchase History</h3>
+<% if @jobs.count == 0 %>
+  <h5>You haven't purchased anything yet!</h5>
+<% else %>
+  <% @jobs.each do |job| %>
+    <h5><%= job.name %></h5>
+  <% end %>
+<% end %>
+
+<h3>Listing Items</h3>
+<% if @jobs_sell.count == 0 %>
+  <h5>You haven't listed anything for sale yet!</h5>
+<% else %>
+  <% @jobs_sell.each do |job| %>
+    <h5><%= job.profession %></h5>
+  <% end %>
+<% end %>

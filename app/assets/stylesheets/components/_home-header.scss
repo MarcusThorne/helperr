@@ -1,0 +1,26 @@
+.home-header {
+  background-image: url("neonbrand-SiYxQRATT2M-unsplash.jpg");
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.header-search {
+  border-radius: 4px 0px 0px 4px;
+  border: solid 1px whitesmoke;
+  padding: 8px;
+  width: 300px;
+}
+
+.header-submit {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.search-bar {
+  margin-top: -200px;
+}
