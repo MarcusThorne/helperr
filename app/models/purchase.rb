@@ -1,3 +1,4 @@
 class Purchase < ApplicationRecord
-  belongs_to :user
+  belongs_to :use
+  belongs_to :job
 end
