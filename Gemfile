@@ -49,3 +49,20 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# --- added gems ----
+
+# simple_form, allows you to code forms easily
+gem 'simple_form'
+# gem ‘devise’ for user authentication
+gem 'devise'
+# font-awesome is for symbols from the website
+gem 'font-awesome-sass', '~> 5.12.0'
+# for css parsing 
+gem 'autoprefixer-rails'
+# for storing users picture ect.
+gem 'cloudinary', '~> 1.12.0'
+# for generating fake data
+gem 'faker'
+# to create search bars 
+gem 'pg_search', '~> 2.3.0'
