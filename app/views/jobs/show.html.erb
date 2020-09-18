@@ -25,13 +25,18 @@
       <% end %>
     </div>
 
-    <div class="placeholder mx-3">
-    </div>
-
     <div>
       <div class="jobs-show d-flex m-3">
+        <div class="d-flex job-show">
           <div class="show-card-image my-2 <%= @job.show_card_image %>">
           </div>
+          <div>
+            <%= @job.profession %>
+            <%= @job.rate %>
+            <%= @job.description %>
+            <%= @job.location %>
+          </div>
+        </div>
       </div>
     </div>
   

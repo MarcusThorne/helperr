@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_18_142952) do
+ActiveRecord::Schema.define(version: 2020_09_18_161900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,9 @@ ActiveRecord::Schema.define(version: 2020_09_18_142952) do
     t.bigint "job_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["job_id"], name: "index_purchases_on_job_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +56,5 @@ ActiveRecord::Schema.define(version: 2020_09_18_142952) do
 
   add_foreign_key "jobs", "users"
   add_foreign_key "purchase_histories", "jobs"
+  add_foreign_key "purchases", "users"
 end

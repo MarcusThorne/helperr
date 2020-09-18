@@ -4,8 +4,10 @@
   width: 600px;
   border-radius: 4px;
   justify-content: center;
-  position: fixed;
   left: 48%;
+  height: 90vh;
+  position: sticky;
+  top: 5%;
 }
 
 .show-card-image {
@@ -15,6 +17,10 @@
   background-position: center;
   border-radius: 4px 4px 0 0;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.452);
+}
+
+.job-show {
+  flex-direction: column;
 }
 
 .placeholder {
