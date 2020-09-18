@@ -1,0 +1,35 @@
+.jobs-show {
+  background-color:  #282831;
+  height: 82.5vh;
+  width: 600px;
+  border-radius: 4px;
+  justify-content: center;
+  position: fixed;
+  left: 48%;
+}
+
+.show-card-image {
+  height: 50%;
+  width: 580px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.452);
+}
+
+.placeholder {
+  height: 80vh;
+  width: 600px;
+}
+
+.plumbing {
+  background-image: url('plumbing.jpg');
+}
+
+.electrical {
+  background-image: url('electrical.jpg');
+}
+
+.delivery {
+  background-image: url('delivery.jpg');
+}

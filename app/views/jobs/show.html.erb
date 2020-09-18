@@ -1,0 +1,39 @@
+<%= link_to 'Create a Job Lsiting', new_job_path, class: "btn btn-primary"%>
+
+<div class="jobs-page">
+  <div class="jobs-cards d-flex">
+
+    <div class="mx-3">
+      <% @jobs.each do |job| %>
+        <%= link_to job_path(job) do %>
+          <div class="job-card m-3">
+            <div class="job-content d-flex">
+              <div class="content-1 py-2 px-3">
+                <div class="d-flex title-price" >
+                  <h5><%= job.profession %></h5>
+                  <h3>£<%= job.rate %></h3>
+                </div>
+                <p><%= job.user.email %></p>
+              </div>
+              
+              <div class="content-2 d-flex p-4 pr-">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="placeholder mx-3">
+    </div>
+
+    <div>
+      <div class="jobs-show d-flex m-3">
+          <div class="show-card-image my-2 <%= @job.show_card_image %>">
+          </div>
+      </div>
+    </div>
+  
+  </div>
+</div>

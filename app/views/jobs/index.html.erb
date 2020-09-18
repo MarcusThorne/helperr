@@ -1,13 +1,24 @@
-<h1 class="text-center m-3">Jobs Page</h1>
 <%= link_to 'Create a Job Lsiting', new_job_path, class: "btn btn-primary"%>
 
-<div class="jobs-cards">
-  <% @jobs.each do |job| %>
-    <%= link_to job_path(job) do %>
-      <div class="content">
-        <h5><%= job.profession %></h5>
-        <p><%= job.user.email %></p>
-      </div>
+<div class="jobs-page">
+  <div class="jobs-cards">
+    
+    <% @jobs.each do |job| %>
+      <%= link_to job_path(job) do %>
+        <div class="job-card m-2">
+          <div class="job-content d-flex">
+            <div class="content-1 py-2 px-3">
+              <h5><%= job.profession %></h5>
+              <p><%= job.user.email %></p>
+            </div>
+            
+            <div class="content-2 d-flex p-4 pr-">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+ 
+  </div>
 </div>

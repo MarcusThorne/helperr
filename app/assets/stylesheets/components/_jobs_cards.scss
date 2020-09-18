@@ -1,0 +1,42 @@
+.job-card {
+  background-color: #282831;
+  height: 70px;
+  width: 500px;
+  border-radius: 4px;
+  color: white;
+  align-items: center;
+  overflow: hidden;
+  &:hover {
+    box-shadow: 0 0 7px rgba(255, 255, 255, 0.315);
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.job-card > a, a:hover, a:focus, a:active {
+  text-decoration: none;
+}
+
+.jobs-page {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.job-content {
+  justify-content: space-between;
+  height: 50px;
+}
+
+.content-2 {
+  flex-direction: column;
+  justify-content: space-around;
+  border-left: solid 1px #9191b15b;
+  height: 70px;
+}
+
+.title-price {
+  justify-content: space-between;
+  width: 400px;
+  margin-bottom: -10px;
+}

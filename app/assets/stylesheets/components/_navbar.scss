@@ -14,4 +14,7 @@
 
 .nav-link {
   color: white !important;
+  &:hover &:focus {
+    font-size: 25px;
+  }
 }
