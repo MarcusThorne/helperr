@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :users, dependent: :destroy
 
   def show_card_image
     if profession == 'Plumbing'

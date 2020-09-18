@@ -1,4 +1,4 @@
 class PurchaseHistory < ApplicationRecord
-  belongs_to :job
-  belongs_to :user
+  belongs_to :jobs
+  belongs_to :users
 end
