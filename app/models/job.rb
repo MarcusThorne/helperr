@@ -2,9 +2,9 @@ class Job < ApplicationRecord
   belongs_to :user, dependent: :destroy
 
   def show_card_image
-    if profession == 'Plumbing'
+    if profession == 'Plumber'
       'plumbing'
-    elsif profession == 'Electrical'
+    elsif profession == 'Electrician'
       'electrical'
     elsif profession == 'Delivery'
       'delivery'

@@ -6,6 +6,7 @@
   color: white;
   align-items: center;
   overflow: hidden;
+  flex-grow: 1;
   &:hover {
     box-shadow: 0 0 7px rgba(255, 255, 255, 0.315);
   }
@@ -39,8 +40,4 @@
   justify-content: space-between;
   width: 400px;
   margin-bottom: -10px;
-}
-
-.jobs-cards {
-  box-shadow: 10px 10px 10px white ;
 }

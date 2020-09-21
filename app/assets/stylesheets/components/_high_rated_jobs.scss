@@ -1,0 +1,13 @@
+.high-rated-jobs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-around;
+  grid-gap: 24px;
+  margin-top: 40px;
+}
+
+.high-rated-job {
+  border: 1px solid black;
+  height: 250px;
+  border-radius: 4px;
+}
