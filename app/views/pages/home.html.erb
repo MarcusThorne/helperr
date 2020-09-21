@@ -7,4 +7,21 @@
 </div>
 
 <h4>Get started with these popular services</h4>
-<%= link_to "Jobs", jobs_path, class: "btn btn-primary"%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-12">
+      <% @high_rated_users.sample(6).each do |user| %>
+        <% unless user.jobs.last.nil? %>
+          <div class="jobs-cards">
+            <%= link_to job_path(user.jobs.last) do %>
+              <%= user.jobs.last.profession %>
+              <%= user.jobs.last.rate %>
+              <%= user.jobs.last.location %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

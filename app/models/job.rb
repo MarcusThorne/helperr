@@ -8,6 +8,8 @@ class Job < ApplicationRecord
       'electrical'
     elsif profession == 'Delivery'
       'delivery'
+    else 
+      'nothing'
     end
   end
 end
