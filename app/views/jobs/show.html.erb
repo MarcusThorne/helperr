@@ -28,7 +28,7 @@
     <div>
       <div class="jobs-show d-flex m-3">
         <div class="d-flex job-show">
-          <div class="show-card-image my-2 <%= @job.show_card_image %>">
+          <div class="show-card-image my-2 <%= @job.profession.downcase.delete(' ') %>">
           </div>
           <div>
             <%= @job.profession %>

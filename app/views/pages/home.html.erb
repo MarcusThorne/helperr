@@ -1,7 +1,7 @@
 <div class="home-header">
   <div class="header-content d-flex py-5 px-2">
     <h1 class="header-title">Find the right <strong>Helperr</strong> for the job</h1>
-    <p>Find the best person for the job from hundreds of reliable helperrs</p>
+    <h6>Find the best person for the job from hundreds of reliable helperrs</h6>
     <div class="d-flex search-bar">
       <input class="header-search" type="text" placeholder="Find a Helperr...">
       <button class="btn btn-primary header-submit">Search</button>
@@ -9,9 +9,9 @@
   </div>
 </div>
 
-<h4>Get started with one of our trusted Helperrs</h4>
 
 <div class="container">
+  <h4 class="home-title">Get started with one of our trusted Helperrs</h4>
 
   <div class="high-rated-jobs">
     <% @high_rated_users.sample(8).each do |user| %>
@@ -19,16 +19,20 @@
         <%= link_to job_path(user.jobs.last), class:"high-rated-job" do %>
           <div class="<%= user.jobs.last.profession.downcase.delete(' ') %> high-rated-job-photo"></div>
           <div class="high-rated-content">
-            <h5><%= user.jobs.last.profession %></h5>
-            <p>Hourly rate of £<%= user.jobs.last.rate %></p>
+            <p class="profession"><%= user.jobs.last.profession %></p>
+            <p class="hourly-rate">Hourly rate of <strong>£<%= user.jobs.last.rate %></strong></p>
             <div class="d-flex high-rated-location">
               <p><i class="fas fa-map-marker-alt"></i> <%= user.jobs.last.location %></p>
-              <p class="stars"><% user.rating.round(1) %><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+              <div class="d-flex">
+                <p class="pr-1"><%= user.rating.round(1) %></p>
+                <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+              </div>
             </div>
           </div>
         <% end %>
       <% end %>
     <% end %>
   </div>
-
 </div>
+
+<div class="about-us"></div>
