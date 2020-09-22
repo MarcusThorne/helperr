@@ -18,6 +18,7 @@
       <% unless user.jobs.last.nil? %>
         <%= link_to job_path(user.jobs.last), class:"high-rated-job" do %>
           <div class="<%= user.jobs.last.profession.downcase.delete(' ') %> high-rated-job-photo"></div>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar high-rated-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="high-rated-content">
             <p class="profession"><%= user.jobs.last.profession %></p>
             <p class="hourly-rate">Hourly rate of <strong>£<%= user.jobs.last.rate %></strong></p>

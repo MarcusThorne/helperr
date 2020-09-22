@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @user = User.all
     @high_rated_users = @user.select do |user| 
       unless user.rating.nil? 
-        user.rating > 4.5
+        user.rating > 4.7
       end
     end
   end
