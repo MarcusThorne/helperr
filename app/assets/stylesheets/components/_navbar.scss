@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #282831;
+  background: white;
   height: 80px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,7 +15,8 @@
 }
 
 .nav-link {
-  color: white !important;
+  color: #242424 !important;
+  margin-left: 16px;
   &:hover &:focus {
     font-size: 25px;
   }

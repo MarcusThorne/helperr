@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-50.times do
+professions = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
+
+300.times do
   user = User.create!(email: Faker::Internet.email, password: "123546", name: Faker::Name.name, rating: Faker::Number.within(range: 0.0..5.0), username: Faker::Internet.username, location: Faker::Address.city)
   puts "User created #{user.email}"
-  job = Job.create!(profession: Faker::Construction.trade, rate: Faker::Number.within(range: 8..75), description: Faker::Lorem.paragraphs.first, location: Faker::Address.city, user: user)
+  job = Job.create!(profession: professions.sample, rate: Faker::Number.within(range: 8..49), description: Faker::Lorem.paragraphs.first, location: Faker::Address.city, user: user)
 end

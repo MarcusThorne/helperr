@@ -7,7 +7,21 @@
 }
 
 .high-rated-job {
-  border: 1px solid black;
-  height: 250px;
+  height: 270px;
   border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.high-rated-content {
+  height: 125px;
+  text-align: center;
+}
+
+.high-rated-location {
+  justify-content: space-evenly;
+}
+
+.stars {
+  font-size: 10px;
+  margin-top: 5px;
 }

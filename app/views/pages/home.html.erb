@@ -1,12 +1,15 @@
 <div class="home-header">
-  <h1 class="header-title">Find the right helperr for the job</h1>
-  <div class="d-flex search-bar">
-    <input class="header-search" type="text" placeholder="Find a Helperr...">
-    <button class="btn btn-primary header-submit">Search</button>
+  <div class="header-content d-flex py-5 px-2">
+    <h1 class="header-title">Find the right <strong>Helperr</strong> for the job</h1>
+    <p>Find the best person for the job from hundreds of reliable helperrs</p>
+    <div class="d-flex search-bar">
+      <input class="header-search" type="text" placeholder="Find a Helperr...">
+      <button class="btn btn-primary header-submit">Search</button>
+    </div>
   </div>
 </div>
 
-<h4>Get started with these popular services</h4>
+<h4>Get started with one of our trusted Helperrs</h4>
 
 <div class="container">
 
@@ -14,10 +17,15 @@
     <% @high_rated_users.sample(8).each do |user| %>
       <% unless user.jobs.last.nil? %>
         <%= link_to job_path(user.jobs.last), class:"high-rated-job" do %>
-          <h5><%= user.jobs.last.profession %></h5>
-          <h3>£<%= user.jobs.last.rate %></h3>
-          <p><%= user.jobs.last.location %></p>
-          <p><%= user.rating.round(1) %></p>
+          <div class="<%= user.jobs.last.profession.downcase.delete(' ') %> high-rated-job-photo"></div>
+          <div class="high-rated-content">
+            <h5><%= user.jobs.last.profession %></h5>
+            <p>Hourly rate of £<%= user.jobs.last.rate %></p>
+            <div class="d-flex high-rated-location">
+              <p><i class="fas fa-map-marker-alt"></i> <%= user.jobs.last.location %></p>
+              <p class="stars"><% user.rating.round(1) %><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+            </div>
+          </div>
         <% end %>
       <% end %>
     <% end %>
