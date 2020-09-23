@@ -22,9 +22,12 @@
         <%= link_to job_path(user.jobs.last), class:"high-rated-job" do %>
           
           <div class="<%= user.jobs.last.profession.downcase.delete(' ') %> high-rated-job-photo"></div>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", 
-            class: "avatar high-rated-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 
-            'aria-haspopup': true, 'aria-expanded': false %>
+
+          <% if user.photo.attached? %>
+            <img src="<%= cl_image_path user.photo.key %>" alt="profile pic" class="avatar high-rated-avatar">
+          <% else %>
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" class="avatar high-rated-avatar">
+          <% end %>
           
           <div class="high-rated-content">
             <p class="profession"><strong><%= user.jobs.last.profession %></strong></p>
