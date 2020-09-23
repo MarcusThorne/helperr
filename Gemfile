@@ -63,7 +63,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 # for css parsing 
 gem 'autoprefixer-rails'
 # for storing users picture ect.
-gem 'cloudinary', '~> 1.12.0'
+gem 'cloudinary', '~> 1.16.0'
 # for generating fake data
 gem 'faker'
 # to create search bars 
