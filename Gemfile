@@ -68,3 +68,5 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'faker'
 # to create search bars 
 gem 'pg_search', '~> 2.3.0'
+# for securing api keys, not sharing them on github
+gem 'dotenv-rails', groups: [:development, :test]
