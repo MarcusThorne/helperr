@@ -18,16 +18,12 @@
 
 
 <div class="container">
-  
   <h4 class="home-title">Get started with these featured Helperrs...</h4>
-  
   <div class="professions">
     <% @professions.sample(8).each do |job| %>
       <% unless job.nil? %>
         <%= link_to jobs_path(job), class:"profession" do %>
-          
           <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
-
           <div class="profession-content">
             <p class="profession-title"><strong><%= job %></strong></p>
             <% if @low_rates.include?(job) %>
@@ -38,7 +34,6 @@
               <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
             <% end %>
           </div>
-        
         <% end %>
       <% end %>
     <% end %>

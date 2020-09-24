@@ -1,23 +1,27 @@
-<div class="container">
-  <div class="job-cards">
-    <% @jobs.each do |job| %>
-      <div class="job-card">
-        <% if job.user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>  
-          <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
-        
-        <p><%= job.user.username %></p>
-        <div class="d-flex">
-          <p><%= job.profession %></p>
-          <p>£<%= job.rate %></p>
-        </div>
-        <p><%= job.user.name %></p>
-        <p><%= job.user.location %></p>
-        <p><%= job.user.rating.round(1) %></p>
-        <button class="btn btn-primary">Message Helperr</button>
+<div class="container job-cards">
+
+  <% @jobs.each do |job| %>
+    <div class="job-card">
+      <% if job.user.photo.attached? %>
+        <%= cl_image_tag job.user.photo.key, class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
+      <% else %>  
+        <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
+      
+      <p><%= job.user.username %></p>
+      <div class="d-flex">
+        <p><%= job.profession %></p>
+        <p>£<%= job.rate %></p>
       </div>
-    <% end %>
-  </div>
+      <p><%= job.user.name %></p>
+      <p><%= job.location %></p>
+      <% unless job.user.rating.nil? %>
+      <p><%= job.user.rating.round(1) %></p>
+      <% else %>
+      <p>0.0</p>
+      <% end %>
+      <button class="btn btn-primary">Message Helperr</button>
+    </div>
+  <% end %>
+
 </div>

@@ -8,8 +8,8 @@
 }
 
 .job-card {
-  height: 280px;
-  box-shadow: 0 0 10px rgba(128, 128, 128, 0.3);
+  height: 360px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.15);
   border-radius: 4px;
   color: rgb(31, 31, 31);
   position: relative;
@@ -17,8 +17,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding: 24px 16px;
   &:hover {
-    box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.3);
     transition-delay: 0.1s;
   }
 }
