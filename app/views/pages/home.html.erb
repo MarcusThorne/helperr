@@ -28,12 +28,12 @@
 
           <div class="high-rated-content">
             <p class="profession"><strong><%= user.jobs.last.profession %></strong></p>
-            <p class="hourly-rate">Starting rate of <strong>£<%= user.jobs.last.rate %></strong>\hr</p>
-
-            <div class="d-flex high-rated-location">
-              <p><i class="fas fa-map-marker-alt location-marker"></i> <%= user.jobs.last.location %></p>
-            </div>
-
+            <% @rates = [] %>
+            <% @jobs.each do |job| %>
+              <% @rates << job.rate.to_i %>
+            <% end %>
+            <%= @rates.sort.first %>
+            <%= @rates.sort.last %>
           </div>
         <% end %>
       <% end %>
