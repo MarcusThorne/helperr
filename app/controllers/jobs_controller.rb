@@ -2,7 +2,12 @@ class JobsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @jobs = Job.all
+    if params[:format].present?
+      @jobs = Job.search_by_profession(params[:format])
+      @query = params[:format]
+    else
+      @jobs = Job.all
+    end
   end
 
   def show
@@ -25,7 +30,7 @@ class JobsController < ApplicationController
       redirect_to jobs_path
     else
       render :new
-    end 
+    end
   end
 
   def edit

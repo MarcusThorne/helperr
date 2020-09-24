@@ -8,7 +8,7 @@
         <%= link_to job_path(job) do %>
           <div class="job-card m-3">
             <div class="job-content d-flex">
-              
+
               <div class="content-1 py-2 px-3">
                 <div class="d-flex title-price" >
                   <h5><%= job.profession %></h5>
@@ -16,11 +16,10 @@
                 </div>
                 <p><%= job.user.email %></p>
               </div>
-              
+
               <div class="content-2 d-flex p-4 pr-">
                 <i class="fas fa-arrow-right"></i>
               </div>
-            
             </div>
           </div>
         <% end %>
@@ -32,7 +31,7 @@
         <div class="d-flex job-show">
           <div class="show-card-image my-2 <%= @job.show_card_image unless @job.nil? %>">
           </div>
-          
+
           <div>
             <% if @job.nil? %>
               <h4>Profession</h1>
@@ -48,10 +47,10 @@
               <p></p>
             <% end %>
           </div>
-        
+
         </div>
       </div>
     </div>
-  
+
   </div>
 </div>

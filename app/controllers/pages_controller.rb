@@ -2,10 +2,18 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @jobs = Job.all
     @user = User.all
-    @high_rated_users = @user.select do |user| 
-      unless user.rating.nil? 
+
+    if params[:query].present?
+      @jobs = Job.search_by_profession(params[:query])
+      @query = params[:query]
+      redirect_to jobs_path(@query)
+    else
+      @jobs = Job.all
+    end
+
+    @high_rated_users = @user.select do |user|
+      unless user.rating.nil?
         user.rating > 4.7
       end
     end

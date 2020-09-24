@@ -1,42 +1,39 @@
 <div class="home-header">
   <div class="header-content d-flex py-5 px-2">
-    
+
     <h1 class="header-title">Find the right <strong>Helperr</strong> for the job</h1>
     <h6>Find the best person for the job from hundreds of reliable helperrs</h6>
-    
-    <div class="d-flex search-bar">
-      <input class="header-search" type="text" placeholder="Find a Helperr...">
-      <button class="btn btn-primary header-submit">Search</button>
-    </div>
-  
+
+    <form id="search-bar" class="form-inline">
+      <% if @query.present? %>
+        <input name="query" class="header-search" type="search" placeholder="Find a Helperr..." aria-label="Search">
+      <% else %>
+        <input name="query" class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="Find a Helperr...">
+      <% end %>
+        <button class="btn btn-primary header-submit" type="submit">Search</button>
+    </form>
+
   </div>
 </div>
 
 
 <div class="container">
   <h4 class="home-title">Get started with these featured Helperrs...</h4>
-
   <div class="high-rated-jobs">
     <% @high_rated_users.sample(8).each do |user| %>
       <% unless user.jobs.last.nil? %>
         <%= link_to job_path(user.jobs.last), class:"high-rated-job" do %>
-          
+
           <div class="<%= user.jobs.last.profession.downcase.delete(' ') %> high-rated-job-photo"></div>
 
-          <% if user.photo.attached? %>
-            <img src="<%= cl_image_path user.photo.key %>" alt="profile pic" class="avatar high-rated-avatar">
-          <% else %>
-            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" class="avatar high-rated-avatar">
-          <% end %>
-          
           <div class="high-rated-content">
             <p class="profession"><strong><%= user.jobs.last.profession %></strong></p>
             <p class="hourly-rate">Starting rate of <strong>£<%= user.jobs.last.rate %></strong>\hr</p>
-            
+
             <div class="d-flex high-rated-location">
               <p><i class="fas fa-map-marker-alt location-marker"></i> <%= user.jobs.last.location %></p>
             </div>
-          
+
           </div>
         <% end %>
       <% end %>
