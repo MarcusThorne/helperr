@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
+    @users = User.all
     if params[:format].present?
       @jobs = Job.search_by_profession(params[:format])
       @query = params[:format]

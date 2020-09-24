@@ -1,17 +1,25 @@
+.job-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  grid-gap: 64px 40px;
+  margin-top: 32px;
+  margin-bottom: 160px;
+}
+
 .job-card {
-  background-color: #282831;
-  height: 70px;
-  width: 500px;
+  height: 280px;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.3);
   border-radius: 4px;
-  color: white;
+  color: rgb(31, 31, 31);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  overflow: hidden;
-  flex-grow: 1;
   &:hover {
-    box-shadow: 0 0 7px rgba(255, 255, 255, 0.315);
-  }
-  p {
-    margin-bottom: 0;
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
+    transition-delay: 0.1s;
   }
 }
 
@@ -40,4 +48,10 @@
   justify-content: space-between;
   width: 400px;
   margin-bottom: -10px;
+}
+
+.avatar-card {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
 }

@@ -4,11 +4,11 @@
     <h1 class="header-title">Find the right <strong>Helperr</strong> for the job</h1>
     <h6>Find the best person for the job from hundreds of reliable helperrs</h6>
 
-    <form id="search-bar" class="form-inline">
+    <form id="search-bar" class="search-bar form-inline">
       <% if @query.present? %>
         <input name="query" class="header-search" type="search" placeholder="Find a Helperr..." aria-label="Search">
       <% else %>
-        <input name="query" class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="Find a Helperr...">
+        <input name="query" class="header-search" type="search" aria-label="Search" placeholder="Find a Helperr...">
       <% end %>
         <button class="btn btn-primary header-submit" type="submit">Search</button>
     </form>
@@ -18,23 +18,27 @@
 
 
 <div class="container">
+  
   <h4 class="home-title">Get started with these featured Helperrs...</h4>
-  <div class="high-rated-jobs">
-    <% @high_rated_users.sample(8).each do |user| %>
-      <% unless user.jobs.last.nil? %>
-        <%= link_to job_path(user.jobs.last), class:"high-rated-job" do %>
+  
+  <div class="professions">
+    <% @professions.sample(8).each do |job| %>
+      <% unless job.nil? %>
+        <%= link_to jobs_path(job), class:"profession" do %>
+          
+          <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
 
-          <div class="<%= user.jobs.last.profession.downcase.delete(' ') %> high-rated-job-photo"></div>
-
-          <div class="high-rated-content">
-            <p class="profession"><strong><%= user.jobs.last.profession %></strong></p>
-            <% @rates = [] %>
-            <% @jobs.each do |job| %>
-              <% @rates << job.rate.to_i %>
+          <div class="profession-content">
+            <p class="profession-title"><strong><%= job %></strong></p>
+            <% if @low_rates.include?(job) %>
+              <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
+            <% elsif @mid_rates.include?(job) %>
+              <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
+            <% elsif @high_rates.include?(job) %>
+              <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
             <% end %>
-            <%= @rates.sort.first %>
-            <%= @rates.sort.last %>
           </div>
+        
         <% end %>
       <% end %>
     <% end %>

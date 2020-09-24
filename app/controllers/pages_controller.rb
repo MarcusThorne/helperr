@@ -2,7 +2,13 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    @professions = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
+    @low_rates = [ "Moving", "Shopping", "Cleaning", "General Helper", "Gardening and Removal"  ]
+    @mid_rates = [ "Plumbing", "Carpentry", "Painting", "Electrical", "Landscaping", "Car Mechanic", "Groundworks" ]
+    @high_rates = [ "Cooking", "Computer Technician", "Sewing", "Furniture Making" ]
+    
     @user = User.all
+    @jobs = Job.all
 
     if params[:query].present?
       @jobs = Job.search_by_profession(params[:query])
@@ -10,12 +16,6 @@ class PagesController < ApplicationController
       redirect_to jobs_path(@query)
     else
       @jobs = Job.all
-    end
-
-    @high_rated_users = @user.select do |user|
-      unless user.rating.nil?
-        user.rating > 4.7
-      end
     end
   end
 
