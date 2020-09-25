@@ -38,3 +38,69 @@
     <% end %>
   </div>
 </div>
+
+<div class="about-us d-flex">
+  <div class="about-us-img"></div>
+  
+  <div class="about-us-content">
+    <h4 class="au-title">Providing work when it's hard to find!</h4>
+    <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!
+    <button class="au-btn btn btn-primary">Learn More!</button>  
+  </div>
+</div>
+
+<div class="container featured-container">
+  <h4>Take a look at our highest rated Helperrs</h4>
+  
+  <div class="featured">
+    <% @rated_users.sample(3).each do |user| %>
+      <div class="feature">
+        <%= link_to jobs_path do %>
+          <p class="doj">
+            DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %>
+          </p>
+
+          <p class="ft">Featured</p>
+          
+          <div class="feature-content">
+            <div>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag u.photo.key, class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
+
+              <p class="ft-rating">
+                <% unless user.rating.nil? %>
+                  <% if user.rating.round(1) < 5.0 %>
+                    <%= user.rating.round(1) %>
+                    <% 4.times do %>
+                      <i class="fas fa-star"></i> 
+                    <% end %>
+                    <i class="fas fa-star-half-alt"></i>
+                  <% else %>
+                    <%= user.rating.round(1) %>
+                    <% 5.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </p>
+            </div>
+
+            <p class="ft-username"><%= user.username %></p>
+            <p class="ft-email"><%= user.email %></p>
+            <p class="ft-location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
+            <% unless user.jobs.nil? %>
+              <% user.jobs.sample(3).each do |job| %>
+                <ul>
+                  <li class="ft-professions"><%= job.profession %>  <strong>£<%= job.rate %></strong>/ hr</li>
+                </ul>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
