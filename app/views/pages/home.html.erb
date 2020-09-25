@@ -72,16 +72,18 @@
               <% end %>
 
               <p class="ft-rating">
-                <% if user.rating.round(1) < 5.0 %>
-                  <%= user.rating.round(1) %>
-                  <% 4.times do %>
-                    <i class="fas fa-star"></i> 
-                  <% end %>
-                  <i class="fas fa-star-half-alt"></i>
-                <% else %>
-                  <%= user.rating.round(1) %>
-                  <% 5.times do %>
-                    <i class="fas fa-star"></i>
+                <% unless user.rating.nil? %>
+                  <% if user.rating.round(1) < 5.0 %>
+                    <%= user.rating.round(1) %>
+                    <% 4.times do %>
+                      <i class="fas fa-star"></i> 
+                    <% end %>
+                    <i class="fas fa-star-half-alt"></i>
+                  <% else %>
+                    <%= user.rating.round(1) %>
+                    <% 5.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
                   <% end %>
                 <% end %>
               </p>
@@ -90,10 +92,12 @@
             <p class="ft-username"><%= user.username %></p>
             <p class="ft-email"><%= user.email %></p>
             <p class="ft-location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
-            <% user.jobs.sample(3).each do |job| %>
-              <ul>
-                <li class="ft-professions"><%= job.profession %>  <strong>£<%= job.rate %></strong>/ hr</li>
-              </ul>
+            <% unless user.jobs.nil? %>
+              <% user.jobs.sample(3).each do |job| %>
+                <ul>
+                  <li class="ft-professions"><%= job.profession %>  <strong>£<%= job.rate %></strong>/ hr</li>
+                </ul>
+              <% end %>
             <% end %>
           </div>
         <% end %>

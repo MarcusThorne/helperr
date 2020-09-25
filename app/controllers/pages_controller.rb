@@ -9,7 +9,9 @@ class PagesController < ApplicationController
     
     @user = User.all
     @jobs = Job.all
-    @rated_users = @user.each.select { |user| user.rating > 4.6 }
+    @rated_users = unless @user.nil? 
+      @user.each.select { |user| user.rating > 4.6 }
+    end
 
     if params[:query].present?
       @jobs = Job.search_by_profession(params[:query])
