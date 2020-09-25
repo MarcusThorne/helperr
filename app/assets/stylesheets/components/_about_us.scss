@@ -1,5 +1,39 @@
 .about-us {
   background-color: whitesmoke;
-  height: 600px;
-  margin-top: 120px;
+  height: 500px;
+  margin-top: 200px;
+  justify-content: center;
+}
+
+.about-us-img {
+  height: 300px;
+  width: 400px;
+  background-image: asset-url("helping.jpg");
+  background-position: center;
+  background-size: cover;
+  color: transparent;
+  margin-top: 100px;
+  margin-right: 80px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px white;
+}
+
+.about-us-content {
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.au-title {
+  margin-top: 32px;
+}
+
+.au-description {
+  margin-top: 40px;
+  max-width: 480px;
+  min-width: 200px;
+}
+
+.au-btn {
+  margin-top: 24px;
+  margin-left: 160px;
 }

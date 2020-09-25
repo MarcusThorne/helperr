@@ -10,8 +10,10 @@
       
       <p><%= job.user.username %></p>
       <div class="d-flex">
-        <p><%= job.profession %></p>
-        <p>£<%= job.rate %></p>
+        <% job.user.jobs.each do |job| %>
+          <%= job.profession %>
+          <%= job.rate %>
+        <% end %>
       </div>
       <p><%= job.user.name %></p>
       <p><%= job.location %></p>

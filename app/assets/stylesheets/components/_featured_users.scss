@@ -1,0 +1,85 @@
+.featured {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 32px;
+}
+
+.feature {
+  display: flex;
+  height: 400px;
+  flex-direction: column;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 0 20px;
+  position: relative;
+  align-items: center;
+}
+
+.feature > a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.featured-container {
+  margin-top: 160px;
+}
+
+.doj {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.featured-img {
+  margin-top: 32px;
+  justify-content: space-around;
+}
+
+.ft-username {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.ft-email {
+  font-size: 14px;
+  margin-top: -16px;
+}
+
+.ft-location {
+  background-color: rgba(128, 128, 128, 0.1);
+  padding: 4px 16px;
+  width: 200px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.ft-rating {
+  color: #f9c339;
+  justify-content: right;
+}
+
+.ft-professions {
+  padding-top: 16px;
+  height: 120px;
+  border-radius: 4px;
+}
+
+.ft {
+  background-color: #167ffb;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 1px 16px;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
