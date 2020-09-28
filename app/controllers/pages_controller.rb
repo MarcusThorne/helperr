@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @low_rates = [ "Moving", "Shopping", "Cleaning", "General Helper", "Gardening and Removal"  ]
     @mid_rates = [ "Plumbing", "Carpentry", "Painting", "Electrical", "Landscaping", "Car Mechanic", "Groundworks" ]
     @high_rates = [ "Cooking", "Computer Technician", "Sewing", "Furniture Making" ]
-    
+
     @user = User.all
     @jobs = Job.all
     @rated_users = @user.each.select { |user| user.rating > 4.6 }

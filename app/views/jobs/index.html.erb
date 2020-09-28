@@ -4,10 +4,10 @@
     <div class="job-card">
       <% if job.user.photo.attached? %>
         <%= cl_image_tag job.user.photo.key, class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
-      <% else %>  
+      <% else %>
         <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
-      
+
       <p><%= job.user.username %></p>
       <div class="d-flex">
         <% job.user.jobs.each do |job| %>
