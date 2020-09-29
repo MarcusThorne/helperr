@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 
 .featured-container {
@@ -46,7 +47,7 @@
 .ft-username {
   font-size: 20px;
   font-weight: bold;
-  margin-top: 2px;
+  margin-top: -2px;
 }
 
 .ft-email {
@@ -68,9 +69,18 @@
 }
 
 .ft-professions {
-  padding-top: 16px;
-  height: 120px;
   border-radius: 4px;
+  text-align: left;
+  justify-content: space-around;
+}
+
+.all-ft {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 260px;
+  padding-top: 8px;
+  height: 123px;
+  color: rgb(88, 88, 88);
 }
 
 .ft {
@@ -82,4 +92,8 @@
   color: white;
   border-radius: 0 4px 4px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.ft-rate {
+  color: black;
 }

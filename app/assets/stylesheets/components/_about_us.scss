@@ -1,11 +1,11 @@
 .about-us {
   background-color: whitesmoke;
   height: 500px;
-  margin-top: 200px;
+  margin-top: 180px;
   justify-content: center;
 }
 
-.about-us-img {
+.about-us-img-1 {
   height: 300px;
   width: 400px;
   background-image: asset-url("helping.jpg");
@@ -14,6 +14,19 @@
   color: transparent;
   margin-top: 100px;
   margin-right: 80px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px white;
+}
+
+.about-us-img-2 {
+  height: 300px;
+  width: 400px;
+  background-image: asset-url("delivery.jpg");
+  background-position: center;
+  background-size: cover;
+  color: transparent;
+  margin-top: 100px;
+  margin-left: 80px;
   border-radius: 4px;
   box-shadow: 0 0 10px white;
 }
