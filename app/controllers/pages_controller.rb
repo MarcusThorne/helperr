@@ -2,9 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @professions = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
+    @professions = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks", "Barber" ]
     @low_rates = [ "Moving", "Shopping", "Cleaning", "General Helper", "Gardening and Removal"  ]
-    @mid_rates = [ "Plumbing", "Carpentry", "Painting", "Electrical", "Landscaping", "Car Mechanic", "Groundworks" ]
+    @mid_rates = [ "Plumbing", "Carpentry", "Painting", "Electrical", "Landscaping", "Car Mechanic", "Groundworks", "Barber" ]
     @high_rates = [ "Cooking", "Computer Technician", "Sewing", "Furniture Making" ]
 
     @user = User.all
