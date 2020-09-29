@@ -15,7 +15,7 @@
 </div>
 
 <div class="container">
-  <h4 class="home-title">Get started with these featured Helperrs...</h4>
+  <h4 class="home-title">Get started with these featured Helperrs</h4>
 
   <div class="professions">
     <% @professions.sample(8).each do |job| %>
@@ -40,7 +40,7 @@
 </div>
 
 <div class="about-us d-flex">
-  <div class="about-us-img"></div>
+  <div class="about-us-img-1"></div>
 
   <div class="about-us-content">
     <h4 class="au-title">Providing work when it's hard to find!</h4>
@@ -50,7 +50,7 @@
 </div>
 
 <div class="container featured-container">
-  <h4>Take a look at our highest rated Helperrs</h4>
+  <h4 class="home-title">Take a look at our highest rated Helperrs</h4>
 
   <div class="featured">
     <% @rated_users.sample(3).each do |user| %>
@@ -91,16 +91,30 @@
             <p class="ft-username"><%= user.username %></p>
             <p class="ft-email"><%= user.email %></p>
             <p class="ft-location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
-            <% unless user.jobs.nil? %>
-              <% user.jobs.sample(3).each do |job| %>
-                <ul>
-                  <li class="ft-professions"><%= job.profession %>  <strong>£<%= job.rate %></strong>/ hr</li>
-                </ul>
+            <div class="all-ft">
+              <% unless user.jobs.nil? %>
+                <% user.jobs.sample(3).each do |job| %>
+                  <ul>
+                    <li class="ft-professions"><%= job.profession %>  <strong class="ft-rate">£<%= job.rate %></strong>/ hr</li>
+                  </ul>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
+<div class="about-us d-flex">
+  <div class="about-us-content">
+    <h4 class="au-title">Providing work when it's hard to find!</h4>
+    <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!
+    <button class="au-btn btn btn-primary">Learn More!</button>
+  </div>
+
+  <div class="about-us-img-2"></div>
+</div>
+
+<%= render 'shared/footer' %>
