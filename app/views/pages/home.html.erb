@@ -14,6 +14,7 @@
   </div>
 </div>
 
+
 <div class="container">
   <h4 class="home-title">Get started with these featured Helperrs</h4>
 
@@ -39,6 +40,7 @@
   </div>
 </div>
 
+
 <div class="about-us d-flex">
   <div class="about-us-img-1"></div>
 
@@ -49,63 +51,106 @@
   </div>
 </div>
 
+
 <div class="container featured-container">
   <h4 class="home-title">Take a look at our highest rated Helperrs</h4>
 
-  <div class="featured">
-    <% @rated_users.sample(3).each do |user| %>
-      <div class="feature">
-        <%= link_to jobs_path do %>
-          <p class="doj">
-            DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %>
-          </p>
+  <% if @rated_users = [] %>
+    <div class="featured">
+      <% 3.times do %>
+        <div class="feature">
+          <%= link_to jobs_path do %>
+            <p class="doj">
+              DOJ : 00 - 00 - 00
+            </p>
 
-          <p class="ft">Featured</p>
+            <p class="ft">Featured</p>
 
-          <div class="feature-content">
-            <div>
-              <% if user.photo.attached? %>
-                <%= cl_image_tag u.photo.key, class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
-              <% else %>
+            <div class="feature-content">
+              <div>
                 <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
-              <% end %>
 
-              <p class="ft-rating">
-                <% unless user.rating.nil? %>
-                  <% if user.rating.round(1) < 5.0 %>
-                    <%= user.rating.round(1) %>
-                    <% 4.times do %>
-                      <i class="fas fa-star"></i>
-                    <% end %>
-                    <i class="fas fa-star-half-alt"></i>
-                  <% else %>
-                    <%= user.rating.round(1) %>
-                    <% 5.times do %>
-                      <i class="fas fa-star"></i>
+                <p class="ft-rating">5.0
+                  <% 5.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                </p>
+              </div>
+
+              <p class="ft-username">Username</p>
+              <p class="ft-email">Email@example.com</p>
+              <p class="ft-location"><i class="fas fa-thumbtack"></i>  Location</p>
+              <div class="all-ft">
+                <ul>
+                  <% 3.times do %>
+                    <li class="ft-professions">Profession  <strong class="ft-rate">£0.00</strong>/ hr</li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+  <% else %>
+
+    <div class="featured">
+      <% @rated_users.sample(3).each do |user| %>
+        <div class="feature">
+          <%= link_to jobs_path do %>
+            <p class="doj">
+              DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %>
+            </p>
+
+            <p class="ft">Featured</p>
+
+            <div class="feature-content">
+              <div>
+                <% if user.photo.attached? %>
+                  <%= cl_image_tag u.photo.key, class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+
+                <p class="ft-rating">
+                  <% unless user.rating.nil? %>
+                    <% if user.rating.round(1) < 5.0 %>
+                      <%= user.rating.round(1) %>
+                      <% 4.times do %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                      <i class="fas fa-star-half-alt"></i>
+                    <% else %>
+                      <%= user.rating.round(1) %>
+                      <% 5.times do %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
                     <% end %>
                   <% end %>
-                <% end %>
-              </p>
-            </div>
+                </p>
+              </div>
 
-            <p class="ft-username"><%= user.username %></p>
-            <p class="ft-email"><%= user.email %></p>
-            <p class="ft-location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
-            <div class="all-ft">
-              <% unless user.jobs.nil? %>
-                <% user.jobs.sample(3).each do |job| %>
-                  <ul>
-                    <li class="ft-professions"><%= job.profession %>  <strong class="ft-rate">£<%= job.rate %></strong>/ hr</li>
-                  </ul>
+              <p class="ft-username"><%= user.username %></p>
+              <p class="ft-email"><%= user.email %></p>
+              <p class="ft-location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
+              <div class="all-ft">
+                <% unless user.jobs.nil? %>
+                  <% user.jobs.sample(3).each do |job| %>
+                    <ul>
+                      <li class="ft-professions"><%= job.profession %>  <strong class="ft-rate">£<%= job.rate %></strong>/ hr</li>
+                    </ul>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
 
 <div class="about-us d-flex">
   <div class="about-us-content">
@@ -116,5 +161,24 @@
 
   <div class="about-us-img-2"></div>
 </div>
+
+
+<div class="info-home d-flex justify-content-around">
+  <div class="info">
+    <h4><i class="far fa-clock"></i>  Your <strong>Terms</strong></h4>
+    <p>Do the job for the price you want, <br>when you want.</p>
+  </div>
+
+  <div class="info">
+    <h4><i class="fas fa-globe-europe"></i>  Your <strong>Profession</strong></h4>
+    <p>Don't stick to a job you hate, <br>get paid for what you love.</p>
+  </div>
+
+  <div class="info">
+    <h4><i class="fas fa-shield-alt"></i>  Your <strong>Protection</strong></h4>
+    <p>We provide a safe and secure way <br>for you to pay.</p>
+  </div>
+</div>
+
 
 <%= render 'shared/footer' %>

@@ -1,38 +1,48 @@
+<% account = ["Log in or Register", "Messages", "Tasks", "Orders", "My Details"] %>
+<% about = ["Terms & Privacy", "Help", "Contact Us", "Services"] %>
+<% explore = ["Location", "High Rating", "Profession", "Lower Priced", "Higher Priced"] %>
+
 <div class="footer">
   <div class="container all-footer-content">
+
+    <div class="footer-icons">
+      <%= image_tag("helperr-black.png", class:"footer-logo") %>
+
+      <p class="follow-us">Helperr aims to resolve unemployement, <br> reward the hard working and <br> help you find the workers you require</p>
+      <div class="sm-icons">
+        <p>
+          <i class="fab fa-facebook-f sm-icon"></i>
+          <i class="fab fa-twitter sm-icon"></i>
+          <i class="fab fa-instagram sm-icon"></i>
+        </p>
+      </div>
+    </div>
+
     <div class="footer-content">
       <h5>My Account</h5>
-      <p class="footer-link">Log in or Register</p>
-      <p class="footer-link">Messages</p>
-      <p class="footer-link">Tasks</p>
-      <p class="footer-link">Orders</p>
-      <p class="footer-link">My Details</p>
+      <% account.each do |link| %>
+        <p class="footer-link"><%= link %></p>
+      <% end %>
     </div>
 
     <div class="footer-content">
       <h5>About Us</h5>
-      <p class="footer-link">Terms & Privacy</p>
-      <p class="footer-link">Help</p>
-      <p class="footer-link">Contact Us</p>
-      <p class="footer-link">Services</p>
+      <% about.each do |link| %>
+        <p class="footer-link"><%= link %></p>
+      <% end %>
     </div>
 
     <div class="footer-content">
       <h5>Explore</h5>
-      <p class="footer-link">Location</p>
-      <p class="footer-link">High Rating</p>
-      <p class="footer-link">Profession</p>
-      <p class="footer-link">Low price</p>
-      <p class="footer-link">High price</p>
+      <% explore.each do |link| %>
+        <p class="footer-link"><%= link %></p>
+      <% end %>
     </div>
+  </div>
 
-    <div class="footer-icons">
-      <h5 class="follow-us">Follow Us</h5>
-      <div class="sm-icons">
-        <i class="fab fa-facebook-f sm-icon"></i> |
-        <i class="fab fa-twitter sm-icon"></i> |
-        <i class="fab fa-instagram sm-icon"></i>
-      </div>
-    </div>
+  <div class="d-flex justify-content-around footer-bottom">
+    <p><i class="far fa-copyright"></i>  Helperr Company</p>
+    <p id="changing"></p>
+    <p>Mate</p>
   </div>
 </div>
