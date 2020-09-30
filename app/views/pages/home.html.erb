@@ -20,22 +20,26 @@
 
   <div class="professions">
     <% @professions.sample(8).each do |job| %>
-      <% unless job.nil? %>
-        <%= link_to jobs_path(job), class:"profession" do %>
-          <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
+      <div class="col-12 col-6">
+        <% unless job.nil? %>
+          <%= link_to jobs_path(job) do %>
+            <div class="profession">
+              <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
 
-          <div class="profession-content">
-            <p class="profession-title"><strong><%= job %></strong></p>
-            <% if @low_rates.include?(job) %>
-              <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
-            <% elsif @mid_rates.include?(job) %>
-              <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
-            <% elsif @high_rates.include?(job) %>
-              <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
-            <% end %>
-          </div>
+              <div class="profession-content">
+                <p class="profession-title"><strong><%= job %></strong></p>
+                <% if @low_rates.include?(job) %>
+                  <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
+                <% elsif @mid_rates.include?(job) %>
+                  <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
+                <% elsif @high_rates.include?(job) %>
+                  <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     <% end %>
   </div>
 </div>

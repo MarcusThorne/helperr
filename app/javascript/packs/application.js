@@ -17,4 +17,11 @@ require("channels")
 
 // External imports
 import 'bootstrap';
-import { changeWord } from '../components/random-word';
+import { changeLocation } from '../components/changeWord';
+
+
+// Internal imports
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  changeLocation();
+});
