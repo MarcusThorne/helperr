@@ -1,19 +1,28 @@
 .featured {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 200px;
+  align-items: center;
   justify-content: space-around;
-  margin-top: 32px;
 }
 
 .feature {
   display: flex;
   height: 400px;
   flex-direction: column;
-  width: 400px;
+  width: 280px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  margin: 0 20px;
+  margin: 32px 20px;
   position: relative;
-  align-items: center;
+}
+
+.featured-title {
+  margin: 160px 24px 0 24px;
+  font-weight: bold;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 28px;
+  text-align: center;
 }
 
 .feature > a, a:hover, a:focus, a:active {
@@ -96,4 +105,14 @@
 
 .ft-rate {
   color: black;
+}
+
+@media (min-width: 960px) {
+  .featured {
+    flex-direction: row;
+  }
+
+  .featured-title {
+    text-align: left;
+  }
 }

@@ -96,35 +96,3 @@
     padding-bottom: 8px;
   }
 }
-
-@media (min-width: 2500px) {
-  .professions {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 80px 40px;
-    margin: 0 40px;
-    overflow: visible;
-    height: auto;
-  }
-
-  .profession {
-    margin: 0;
-    height: 424px;
-    width: 400px;
-  }
-
-  .home-title {
-    text-align: left;
-    margin-bottom: 24px;
-    font-size: 40px;
-  }
-
-  .rates {
-    font-size: 12px;
-    padding-bottom: 8px;
-  }
-
-  .job-photo {
-    height: 320px !important;
-  }
-}
