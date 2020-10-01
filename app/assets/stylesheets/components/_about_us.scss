@@ -1,39 +1,29 @@
 .about-us {
   background-color: whitesmoke;
-  height: 500px;
-  margin-top: 180px;
-  justify-content: center;
+  height: auto;
+  margin: 180px 0;
 }
 
 .about-us-img-1 {
   height: 300px;
-  width: 400px;
+  width: 100%;
   background-image: asset-url("helping.jpg");
   background-position: center;
   background-size: cover;
-  color: transparent;
-  margin-top: 100px;
-  margin-right: 80px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px white;
 }
 
 .about-us-img-2 {
   height: 300px;
-  width: 400px;
+  width: 100%;
   background-image: asset-url("delivery.jpg");
   background-position: center;
   background-size: cover;
-  color: transparent;
-  margin-top: 100px;
-  margin-left: 80px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px white;
 }
 
 .about-us-content {
   justify-content: space-around;
-  margin-top: 100px;
+  text-align: center;
+  margin: 24px 16px;
 }
 
 .au-title {
@@ -42,20 +32,67 @@
 
 .au-description {
   margin-top: 40px;
-  max-width: 480px;
-  min-width: 200px;
 }
 
 .au-btn {
-  margin-top: 24px;
-  margin-left: 160px;
+  margin: 24px 0;
 }
 
-.info {
-  text-align: center;
-  margin-top: 160px;
+@media (min-width: 960px) {
+  .about-us {
+    display: flex;
+    text-align: left;
+    position: relative;
+  }
+
+  .about-us-content {
+    text-align: left;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: 220%;
+  }
+
+  .about-us-img-1 {
+    height: auto;
+    margin-left: 80px;
+    width: 2300px;
+  }
+
+  .about-us-img-2 {
+    height: 419px;
+    width: 400px;
+    position: absolute;
+    right: 80px;
+    top: 0;
+  }
+
+  .au-description {
+    width: 385px;
+  }
 }
 
-.info p {
-  font-size: 18px;
+@media (min-width: 1400px) {
+  .about-us-content {
+    height: 419px;
+  }
+
+  .about-us-img-1 {
+    width: 2700px;
+  }
+
+  .about-us-img-2 {
+    width: 600px;
+  }
+
+  .au-description {
+    width: 520px;
+  }
+
+  .about-us {
+    height: 419px;
+  }
+
+  .au-title {
+    margin-top: 48px;
+  }
 }

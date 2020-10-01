@@ -18,27 +18,29 @@
       </div>
     </div>
 
-    <div class="footer-content">
-      <h5>My Account</h5>
-      <% account.each do |link| %>
-        <p class="footer-link"><%= link %></p>
-      <% end %>
-    </div>
+    <div class="wraper">
+      <div class="footer-content">
+        <h5 class="footer-title">My Account</h5>
+        <% account.each do |link| %>
+          <p class="footer-link"><%= link %></p>
+        <% end %>
+      </div>
 
-    <div class="footer-content">
-      <h5>About Us</h5>
-      <% about.each do |link| %>
-        <p class="footer-link"><%= link %></p>
-      <% end %>
-    </div>
+      <div class="footer-content">
+        <h5 class="footer-title">About Us</h5>
+        <% about.each do |link| %>
+          <p class="footer-link"><%= link %></p>
+        <% end %>
+      </div>
 
-    <div class="footer-content">
-      <h5>Explore</h5>
-      <% explore.each do |link| %>
-        <p class="footer-link"><%= link %></p>
-      <% end %>
+      <div class="footer-content">
+        <h5 class="footer-title">Explore</h5>
+        <% explore.each do |link| %>
+          <p class="footer-link"><%= link %></p>
+        <% end %>
+      </div>
     </div>
-  </div>
+    </div>
 
   <div class="d-flex justify-content-around footer-bottom">
     <p><i class="far fa-copyright"></i>  Helperr Company</p>
