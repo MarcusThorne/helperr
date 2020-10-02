@@ -20,6 +20,7 @@ import 'bootstrap';
 import { changeLocation } from '../components/changeWord';
 import { swipeLeft } from '../components/swipeLeft';
 import { seeAll } from '../components/seeAll';
+import { disappearAnimation } from '../components/disappearAnimation';
 
 // Internal imports
 document.addEventListener('turbolinks:load', () => {
@@ -27,6 +28,7 @@ document.addEventListener('turbolinks:load', () => {
   changeLocation();
   swipeLeft();
   seeAll();
+  disappearAnimation();
 });
 
 
