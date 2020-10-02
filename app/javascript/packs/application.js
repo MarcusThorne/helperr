@@ -19,7 +19,6 @@ require("channels")
 import 'bootstrap';
 import { changeLocation } from '../components/changeWord';
 
-
 // Internal imports
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
