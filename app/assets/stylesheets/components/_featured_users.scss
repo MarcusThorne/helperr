@@ -106,11 +106,22 @@
 @media (min-width: 960px) {
   .featured {
     flex-direction: row;
+    margin: 0 24px;
   }
 
   .featured-title {
     text-align: left;
-    margin-left: 80px;
+    margin-left: 120px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .featured {
+    margin: 0 144px;
+  }
+
+  .featured-title {
+    margin-left: 170px;
   }
 }
 

@@ -5,12 +5,12 @@ const seeAll = () => {
   btn.addEventListener("click", function() {
     showCard.classList.toggle("active");
     btn.classList.toggle("reverse");
-    window.scroll(0,findPos(showCard));
+    window.scroll(0,findPos(btn));
     console.log("click");
   });
 
   function findPos(obj) {
-    var curtop = 0;
+    var curtop = -600;
     if (obj.offsetParent) {
         do {
             curtop += obj.offsetTop;
