@@ -30,7 +30,7 @@ document.addEventListener('turbolinks:load', () => {
   // swipeLeft();
   seeAll();
   disappearAnimation();
-  removeClass();
+  // removeClass();
 });
 
 
