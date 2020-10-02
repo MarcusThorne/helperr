@@ -1,5 +1,5 @@
 const swipeLeft = () => {
-  const _C  =  document.querySelector('.professions'),
+  const _C  =  document.querySelector('.swipe-left'),
       N  =  _C.children.length;
 
   _C.style.setProperty('--n', N)
@@ -22,11 +22,11 @@ const swipeLeft = () => {
 
   function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
 
-  _C.addEventListener('mousedown', lock, false);
+  // _C.addEventListener('mousedown', lock, false);
   _C.addEventListener('touchstart', lock, false);
-  _C.addEventListener('mouseup', move, false);
+  // _C.addEventListener('mouseup', move, false);
   _C.addEventListener('touchend', move, false);
-  _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
+  // _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
 };
 
 export { swipeLeft };

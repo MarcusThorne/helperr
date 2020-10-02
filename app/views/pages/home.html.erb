@@ -1,12 +1,12 @@
-<% unless user_signed_in? %>
-  <div>
+<%# <% unless user_signed_in? %>
+  <%# <div>
     <div class="line"></div>
     <div class="sign-up">
       <p class="log-in-btn">Sign Up</p>
       <button class="btn btn-primary helperr-btn">Become a helperr</button>
     </div>
-  </div>
-<% end %>
+  </div> %>
+<%# end %>
 
 
 <div class="home-header">
@@ -30,7 +30,7 @@
 <h4 class="home-title">Get started with these featured Helperrs</h4>
 
 <div class="p-container">
-  <div class="professions">
+  <div class="professions swipe-left">
     <% @professions.each do |job| %>
       <% unless job.nil? %>
         <%= link_to jobs_path(job) do %>
