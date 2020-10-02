@@ -1,9 +1,22 @@
 .job-photo {
   background-position: center;
   background-size: cover;
-  height: 184px;
+  height: 224px;
   margin-bottom: 8px;
   border-radius: 4px 4px 0 0 ;
+}
+
+@media (min-width: 760px) {
+  .job-photo {
+    width: 25%;
+    background-position: bottom;
+  }
+}
+
+@media (min-width: 960px) {
+  .job-photo {
+    width: 100%;
+  }
 }
 
 .plumbing {
