@@ -1,3 +1,14 @@
+<% unless user_signed_in? %>
+  <div>
+    <div class="line"></div>
+    <div class="sign-up">
+      <p class="log-in-btn">Sign Up</p>
+      <button class="btn btn-primary helperr-btn">Become a helperr</button>
+    </div>
+  </div>
+<% end %>
+
+
 <div class="home-header">
   <%= image_tag "man.jpg", class:"photo-man" %>
   <div class="wrapper">
@@ -16,43 +27,35 @@
 </div>
 
 
-<% unless user_signed_in? %>
-  <div>
-    <div class="sign-up">
-      <p class="join-us-text">Join Us</p>
-      <p class="log-in-btn">Log In</p>
-      <p class="log-in-btn">Sign Up</p>
-      <button class="btn btn-primary helperr-btn">Become a helperr</button>
-    </div>
-  </div>
-<% end %>
-
-
 <h4 class="home-title">Get started with these featured Helperrs</h4>
 
-<div class="professions">
-  <% @professions.each do |job| %>
-    <% unless job.nil? %>
-      <%= link_to jobs_path(job) do %>
-        <div class="profession" id="prf">
-          <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
+<div class="p-container">
+  <div class="professions">
+    <% @professions.each do |job| %>
+      <% unless job.nil? %>
+        <%= link_to jobs_path(job) do %>
+          <div class="profession" id="prf">
+            <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
 
-          <div class="profession-content">
-            <p class="profession-title"><strong><%= job %></strong></p>
-            <% if @low_rates.include?(job) %>
-              <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
-            <% elsif @mid_rates.include?(job) %>
-              <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
-            <% elsif @high_rates.include?(job) %>
-              <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
-            <% end %>
+            <div class="profession-content">
+              <p class="profession-title"><strong><%= job %></strong></p>
+              <% if @low_rates.include?(job) %>
+                <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
+              <% elsif @mid_rates.include?(job) %>
+                <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
+              <% elsif @high_rates.include?(job) %>
+                <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
+
 <div id="seeAllBtn" class="d-flex justify-content-around"><i class="fas fa-chevron-down"></i></div>
+<div class="d-flex justify-content-center" id="animation"><%= image_tag "swipe-right.png", class:"swipe-right-photo rotate" %></div>
 
 
 <div class="about-us">

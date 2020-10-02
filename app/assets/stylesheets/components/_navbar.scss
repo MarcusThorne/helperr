@@ -24,3 +24,13 @@
     font-size: 25px;
   }
 }
+
+.log-in-symbol {
+  font-size: 24px;
+}
+
+@media (min-width: 576px) {
+  .log-in-symbol {
+    visibility: hidden;
+  }
+}
