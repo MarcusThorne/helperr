@@ -30,30 +30,29 @@
 
 <h4 class="home-title">Get started with these featured Helperrs</h4>
 
-<div class="profession-container">
-  <div class="professions">
-    <% @professions.each do |job| %>
-      <% unless job.nil? %>
-        <%= link_to jobs_path(job) do %>
-          <div class="profession">
-            <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
+<div class="professions">
+  <% @professions.each do |job| %>
+    <% unless job.nil? %>
+      <%= link_to jobs_path(job) do %>
+        <div class="profession" id="prf">
+          <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
 
-            <div class="profession-content">
-              <p class="profession-title"><strong><%= job %></strong></p>
-              <% if @low_rates.include?(job) %>
-                <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
-              <% elsif @mid_rates.include?(job) %>
-                <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
-              <% elsif @high_rates.include?(job) %>
-                <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
-              <% end %>
-            </div>
+          <div class="profession-content">
+            <p class="profession-title"><strong><%= job %></strong></p>
+            <% if @low_rates.include?(job) %>
+              <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
+            <% elsif @mid_rates.include?(job) %>
+              <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
+            <% elsif @high_rates.include?(job) %>
+              <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       <% end %>
     <% end %>
-  </div>
+  <% end %>
 </div>
+<div id="seeAllBtn" class="d-flex justify-content-around"><i class="fas fa-chevron-down"></i></div>
 
 
 <div class="about-us">
@@ -70,45 +69,7 @@
 <h4 class="featured-title">Take a look at our highest rated Helperrs</h4>
 <div class="featured-container">
 
-  <% if @rated_users = [] %>
-    <div class="featured">
-      <% 3.times do %>
-        <div class="feature">
-          <%= link_to jobs_path do %>
-            <p class="doj">
-              DOJ : 00 - 00 - 00
-            </p>
-
-            <p class="ft">Featured</p>
-
-            <div class="feature-content">
-              <div>
-                <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
-
-                <p class="ft-rating">5.0
-                  <% 5.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                </p>
-              </div>
-
-              <p class="ft-username">Username</p>
-              <p class="ft-email">Email@example.com</p>
-              <p class="ft-location"><i class="fas fa-thumbtack"></i>  Location</p>
-              <div class="all-ft">
-                <ul>
-                  <% 3.times do %>
-                    <li class="ft-professions">Profession  <strong class="ft-rate">£0.00</strong>/ hr</li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
-  <% else %>
+  <% if @rated_users != [] %>
 
     <div class="featured">
       <% @rated_users.sample(3).each do |user| %>
@@ -163,6 +124,46 @@
         </div>
       <% end %>
     </div>
+
+  <% else %>
+
+    <div class="featured">
+      <% 3.times do %>
+        <div class="feature">
+          <%= link_to jobs_path do %>
+            <p class="doj">
+              DOJ : 00 - 00 - 00
+            </p>
+
+            <p class="ft">Featured</p>
+
+            <div class="feature-content">
+              <div>
+                <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+
+                <p class="ft-rating">5.0
+                  <% 5.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                </p>
+              </div>
+
+              <p class="ft-username">Username</p>
+              <p class="ft-email">Email@example.com</p>
+              <p class="ft-location"><i class="fas fa-thumbtack"></i>  Location</p>
+              <div class="all-ft">
+                <ul>
+                  <% 3.times do %>
+                    <li class="ft-professions">Profession  <strong class="ft-rate">£0.00</strong>/ hr</li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
   <% end %>
 </div>
 
