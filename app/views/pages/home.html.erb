@@ -16,11 +16,23 @@
 </div>
 
 
-<div class="container">
-  <h4 class="home-title">Get started with these featured Helperrs</h4>
+<% unless user_signed_in? %>
+  <div>
+    <div class="sign-up">
+      <p class="join-us-text">Join Us</p>
+      <p class="log-in-btn">Log In</p>
+      <p class="log-in-btn">Sign Up</p>
+      <button class="btn btn-primary helperr-btn">Become a helperr</button>
+    </div>
+  </div>
+<% end %>
 
+
+<h4 class="home-title">Get started with these featured Helperrs</h4>
+
+<div class="profession-container">
   <div class="professions">
-    <% @professions.sample(8).each do |job| %>
+    <% @professions.each do |job| %>
       <% unless job.nil? %>
         <%= link_to jobs_path(job) do %>
           <div class="profession">
@@ -55,8 +67,8 @@
 </div>
 
 
-<div class="container featured-container">
-  <h4 class="featured-title">Take a look at our highest rated Helperrs</h4>
+<h4 class="featured-title">Take a look at our highest rated Helperrs</h4>
+<div class="featured-container">
 
   <% if @rated_users = [] %>
     <div class="featured">

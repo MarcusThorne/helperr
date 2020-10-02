@@ -37,10 +37,6 @@
   align-items: center;
 }
 
-.featured-container {
-  margin-top: 160px;
-}
-
 .doj {
   position: absolute;
   top: 8px;
@@ -114,5 +110,12 @@
 
   .featured-title {
     text-align: left;
+    margin-left: 80px;
+  }
+}
+
+@media (min-width: 2500px) {
+  .featured-title {
+    margin-left: 216px;
   }
 }
