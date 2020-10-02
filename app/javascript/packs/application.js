@@ -21,14 +21,16 @@ import { changeLocation } from '../components/changeWord';
 import { swipeLeft } from '../components/swipeLeft';
 import { seeAll } from '../components/seeAll';
 import { disappearAnimation } from '../components/disappearAnimation';
+import { removeClass } from '../components/removeClass';
 
 // Internal imports
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   changeLocation();
-  swipeLeft();
+  // swipeLeft();
   seeAll();
   disappearAnimation();
+  removeClass();
 });
 
 
