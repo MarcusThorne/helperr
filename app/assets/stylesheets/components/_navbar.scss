@@ -1,7 +1,6 @@
 .navbar-lewagon {
-  justify-content: space-between;
   background: white;
-  height: 80px;
+  height: 56px;
   display: flex;
   justify-content: space-around;
   background-color: whitesmoke;
@@ -13,14 +12,17 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 100px;
-  margin-left: 16px;
   margin-bottom: 2px;
+}
+
+.navbar-brand {
+  margin: 0;
 }
 
 .nav-link {
   color: #242424 !important;
-  margin-left: 16px;
   font-size: 16px;
+  padding: 0;
   font-family: 'Titillium Web', sans-serif;
   &:hover &:focus {
     font-size: 25px;
@@ -28,11 +30,25 @@
 }
 
 .log-in-symbol {
-  font-size: 24px;
+  font-size: 16px;
+  color: rgb(66, 66, 66);
+}
+
+.ham-burger {
+  font-size: 16px;
+  color: rgb(66, 66, 66);
 }
 
 @media (min-width: 576px) {
   .log-in-symbol {
     visibility: hidden;
+  }
+
+  .ham-burger {
+    visibility: hidden;
+  }
+
+  .navbar-lewagon {
+    height: 80px;
   }
 }

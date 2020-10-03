@@ -1,7 +1,7 @@
 .about-us {
   background-color: whitesmoke;
   height: auto;
-  margin: 160px 0;
+  margin: 104px 0;
 }
 
 .about-us-img-1 {
@@ -10,6 +10,7 @@
   background-image: asset-url("helping.jpg");
   background-position: center;
   background-size: cover;
+  box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
 }
 
 .about-us-img-2 {
@@ -18,6 +19,7 @@
   background-image: asset-url("delivery.jpg");
   background-position: center;
   background-size: cover;
+  box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
 }
 
 .about-us-content {
