@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get "my_profile", to: "pages#profile"
   get "messages", to: "pages#messages"
+  get "about_us", to: "pages#about_us"
 end

@@ -1,10 +1,11 @@
 const seeAll = () => {
   var btn = document.querySelector("#seeAllBtn")
   var showCard = document.querySelector(".professions");
+  var chevron = document.querySelector(".chevron")
 
   btn.addEventListener("click", function() {
     showCard.classList.toggle("active");
-    btn.classList.toggle("reverse");
+    chevron.classList.toggle("reverse");
     window.scroll(0,findPos(btn));
     console.log("click");
   });

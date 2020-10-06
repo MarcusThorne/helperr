@@ -8,6 +8,18 @@
   </div> %>
 <%# end %>
 
+<div class="ham-burger-inactive">
+  <div class="hamburger-content">
+    <button class="btn btn-primary">Join Helperr</button>
+    <p>Browse Professions</p>
+    <p>Helperr Pro</p>
+    <p>General</p>
+    <p>Home</p>
+    <p>Englsih</p>
+    <p>£GBP</p>
+  </div>
+</div>
+
 
 <div class="home-header">
   <%= image_tag "man.jpg", class:"photo-man" %>
@@ -58,17 +70,19 @@
   </div>
 </div>
 
-<div id="seeAllBtn" class="d-flex justify-content-around"><i class="fas fa-chevron-down"></i></div>
+<div id="seeAllBtn" class="d-flex justify-content-around"><i class="chevron fas fa-chevron-down"></i></div>
 <div class="d-flex justify-content-center" id="animation"><%= image_tag "swipe-right.png", class:"swipe-right-photo rotate" %></div>
 
 
 <div class="about-us">
   <div class="about-us-img-1"></div>
 
-  <div class="about-us-content">
+  <div class="about-us-content-1">
     <h4 class="au-title">Providing work when it's hard to find!</h4>
     <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!</p>
-    <button class="au-btn btn btn-primary">Learn More!</button>
+    <%= link_to about_us_path do %>
+      <button class="au-btn btn btn-primary">Learn More!</button>
+    <% end %>
   </div>
 </div>
 
@@ -178,11 +192,15 @@
 <div class="about-us">
   <div class="about-us-img-2"></div>
 
-  <div class="about-us-content">
+  <div class="about-us-content-2">
     <h4 class="au-title">Providing work when it's hard to find!</h4>
     <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!</p>
-    <button class="au-btn btn btn-primary">Learn More!</button>
+    <%= link_to about_us_path do %>
+      <button class="au-btn btn btn-primary">Learn More!</button>
+    <% end %>
   </div>
+
+  <div class="about-us-img-3"></div>
 </div>
 
 
