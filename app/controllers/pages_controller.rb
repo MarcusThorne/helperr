@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [ :home, :about_us ]
 
   def home
     @professions = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks", "Barber" ]
@@ -29,5 +29,8 @@ class PagesController < ApplicationController
   end
 
   def messages
+  end
+
+  def about_us
   end
 end

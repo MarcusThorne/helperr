@@ -4,8 +4,9 @@ body { overflow-x: hidden }
 
 .swipe-left {
   display: flex;
-  width: 100%;
+  width: 90%;
   overflow-y: hidden;
+  margin-left: 5%;
   // --n: 1;
   // display: flex;
   // align-items: center;
@@ -129,6 +130,17 @@ body { overflow-x: hidden }
 
   #seeAllBtn {
     visibility: visible;
+    background-color: whitesmoke;
+    padding: 8px;
+    width: 40px;
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+    border-radius: 4px;
+    margin-top: 24px;
+    &:hover {
+      background-color: rgb(210, 210, 210);
+      transition: 0.1s;
+    }
   }
 
   .profession-content {
@@ -150,7 +162,7 @@ body { overflow-x: hidden }
   }
 
   .profession {
-    margin: 0;
+    margin: 0 !important;
     height: 112px;
     min-width: 0;
     width: 75vw !important;

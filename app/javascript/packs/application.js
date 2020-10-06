@@ -16,21 +16,23 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 // External imports
+// import { removeClass } from '../components/removeClass';
+// import { swipeLeft } from '../components/swipeLeft';
 import 'bootstrap';
 import { changeLocation } from '../components/changeWord';
-import { swipeLeft } from '../components/swipeLeft';
 import { seeAll } from '../components/seeAll';
 import { disappearAnimation } from '../components/disappearAnimation';
-import { removeClass } from '../components/removeClass';
+import { hamBurger } from '../components/hamBurgerMenu';
 
 // Internal imports
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  changeLocation();
+  // removeClass();
   // swipeLeft();
+  changeLocation();
   seeAll();
   disappearAnimation();
-  // removeClass();
+  hamBurger();
 });
 
 
