@@ -9,9 +9,10 @@ const hamBurger = () => {
     inactive.classList.toggle("ham-burger-active");
     on.classList.toggle("ham-burger-off");
     console.log("Ham Burger Active");
+    var active = document.querySelector(".ham-burger-active");
 
     if (inactive.classList.contains("ham-burger-active")){
-      document.querySelector(".ham-burger-active").animate([
+      active.animate([
         // keyframes
         { transform: 'scaleX(0.5) translate(-150%, 0)' }, 
         { transform: 'scaleX(1) translate(0, 0)' }
@@ -20,7 +21,7 @@ const hamBurger = () => {
         duration: 250,
       });
     } else {
-      document.querySelector(".ham-burger-inactive").animate([
+      document.querySelector(".ham-burger-inactive").animate([ 
         // keyframes
         { width: '120%' },
         { width: '60%' }

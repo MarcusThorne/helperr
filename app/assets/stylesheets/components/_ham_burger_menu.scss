@@ -2,14 +2,14 @@
   width: 80px;
 }
 
-.ham-burger {
-  font-size: 16px;
-  color: rgb(66, 66, 66);
-}
-
 .hamburger-content {
   display: flex;
   flex-direction: column;
+}
+
+.ham-burger-on {
+  font-size: 20px;
+  margin-top: 2px;
 }
 
 .ham-burger-off {
@@ -20,6 +20,7 @@
   position: fixed;
   top: 0;
   height: 100vh;
+  padding-top: 20px;
 }
 
 .ham-burger-inactive {
@@ -34,7 +35,7 @@
   top: 0;
   overflow: hidden;
   justify-content: left;
-  padding: 40px;
+  padding: 24px;
 }
 
 .ham-burger-active {
@@ -50,7 +51,12 @@
 }
 
 @media (min-width: 576px) {
-  .ham-burger {
+  .ham-burger-on {
+    visibility: hidden;
+    display: none;
+  }
+
+  .hm-container {
     visibility: hidden;
     display: none;
   }
