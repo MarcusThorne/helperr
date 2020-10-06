@@ -34,53 +34,9 @@
   color: rgb(66, 66, 66);
 }
 
-.ham-burger {
-  font-size: 16px;
-  color: rgb(66, 66, 66);
-}
-
-.ham-burger-off {
-  z-index: 15;
-  color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  height: 100vh;
-}
-
-.ham-burger-inactive {
-  display: flex;
-  position: fixed;
-  visibility: visible;
-  left: -60%;
-  width: 60%;
-  height: 100vh;
-  z-index: 15;
-  background-color: white;
-  top: 0;
-}
-
-.ham-burger-active {
-  display: flex;
-  visibility: visible;
-  position: fixed;
-  height: 100vh;
-  width: 60%;
-  left: 0;
-  background-color: white;
-  z-index: 15;
-  top: 0;
-}
-
 @media (min-width: 576px) {
   .log-in-symbol {
     visibility: hidden;
-  }
-
-  .ham-burger {
-    visibility: hidden;
-    display: none;
   }
 
   .navbar-lewagon {
