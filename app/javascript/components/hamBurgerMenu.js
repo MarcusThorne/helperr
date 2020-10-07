@@ -21,7 +21,7 @@ const hamBurger = () => {
         duration: 250,
       });
     } else {
-      document.querySelector(".ham-burger-inactive").animate([ 
+      inactive.animate([ 
         // keyframes
         { width: '120%' },
         { width: '60%' }
