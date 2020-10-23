@@ -9,6 +9,7 @@
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .footer-content a {
@@ -97,7 +98,7 @@
   }
 
   .footer-title {
-    text-align: left;
+    text-align: center;
   }
 
   .footer-link {
@@ -118,10 +119,15 @@
 
   .footer-content {
     margin: 40px 48px 0 48px;
+    text-align: left;
   }
 
   .footer-icons {
     align-items: unset;
+  }
+
+  .footer-title {
+    text-align: left;
   }
 
   .follow-us {
