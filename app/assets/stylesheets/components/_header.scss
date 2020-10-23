@@ -38,13 +38,14 @@
 }
 
 .index-title {
-  top: 160px;
+  top: 180px;
   left: 50%;
   position: absolute;
   color: white;
-  font-size: 32px;
+  font-size: 24px;
   transform: translate(-50%, 50%);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
+  font-family: 'Oxygen', sans-serif;
 }
 
 @media (min-width: 720px) {
