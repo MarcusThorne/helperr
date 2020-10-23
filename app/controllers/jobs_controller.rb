@@ -2,8 +2,11 @@ class JobsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @users = User.all
-    if params[:format].present?
+    profession = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
+
+    if params[:format] == "high_rated"
+      @jobs = Job.select { |j| j.user.rating >= 4.6 unless j.user.rating.nil? }
+    elsif (params[:format])
       @jobs = Job.search_by_profession(params[:format])
       @query = params[:format]
     else

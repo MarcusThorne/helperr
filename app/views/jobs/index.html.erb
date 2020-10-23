@@ -12,13 +12,13 @@
       <div class="d-flex">
         <% job.user.jobs.each do |job| %>
           <%= job.profession %>
-          <%= job.rate %>
+          £<%= job.rate %>
         <% end %>
       </div>
       <p><%= job.user.name %></p>
       <p><%= job.location %></p>
       <% unless job.user.rating.nil? %>
-      <p><%= job.user.rating.round(1) %></p>
+        <p><%= job.user.rating.round(1) %></p>
       <% else %>
       <p>0.0</p>
       <% end %>

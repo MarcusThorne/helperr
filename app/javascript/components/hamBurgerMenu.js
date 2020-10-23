@@ -14,18 +14,18 @@ const hamBurger = () => {
     if (inactive.classList.contains("ham-burger-active")){
       active.animate([
         // keyframes
-        { transform: 'scaleX(0.5) translate(-150%, 0)' }, 
+        { transform: 'scaleX(0.5) translate(-150%, 0)' },
         { transform: 'scaleX(1) translate(0, 0)' }
-      ], { 
+      ], {
         // timing options
         duration: 250,
       });
     } else {
-      inactive.animate([ 
+      inactive.animate([
         // keyframes
         { width: '120%' },
         { width: '60%' }
-      ], { 
+      ], {
         // timing options
         duration: 250,
       });
@@ -34,4 +34,3 @@ const hamBurger = () => {
 };
 
 export { hamBurger };
-  

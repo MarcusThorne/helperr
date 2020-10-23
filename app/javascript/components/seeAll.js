@@ -8,6 +8,26 @@ const seeAll = () => {
     chevron.classList.toggle("reverse");
     window.scroll(0,findPos(btn));
     console.log("click");
+
+    // if (showCard.classList.contains("active")){
+    //   showCard.animate([
+    //     // keyframes
+    //     { height: '590px' },
+    //     { height: 'auto' }
+    //   ], {
+    //     // timing options
+    //     duration: 500,
+    //   });
+    // } else {
+    //   showCard.animate([
+    //     // keyframes
+    //     { height: 'auto' },
+    //     { height: '590px' }
+    //   ], {
+    //     // timing options
+    //     duration: 500,
+    //   });
+    // };
   });
 
   function findPos(obj) {
@@ -18,7 +38,7 @@ const seeAll = () => {
         } while (obj = obj.offsetParent);
     return [curtop];
     }
-}
+  }
 }
 
 export { seeAll };

@@ -179,6 +179,10 @@ body { overflow-x: hidden }
   .rotate {
     visibility: hidden;
   }
+
+  .swipe-left {
+    margin: 0;
+  }
 }
 
 @media (min-width: 960px) {
@@ -234,12 +238,13 @@ body { overflow-x: hidden }
   }
 }
 
-@media (min-width: 2500px) {
+@media (min-width: 2400px) {
   .professions {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 66%;
   }
 
   .home-title {
-    margin-left: 216px;
+    margin-left: 456px;
   }
 }
