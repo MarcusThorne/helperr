@@ -7,4 +7,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include PgSearch::Model
+  pg_search_scope :search_by_profession,
+    against: [ :jobs ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

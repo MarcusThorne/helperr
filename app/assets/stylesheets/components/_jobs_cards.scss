@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-around;
   grid-gap: 64px 40px;
-  margin-top: 32px;
+  margin-top: 80px;
   margin-bottom: 160px;
 }
 
@@ -62,4 +62,32 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.user-jobs {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.job-card-professions {
+  flex-direction: column;
+}
+
+.jobs-card-user-location {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 16px;
+}
+
+.jobs-card-content {
+  margin: 0;
+}
+
+.job-profession {
+  margin-top: -14px;
+}
+
+.location-icon {
+  font-size: 12px;
 }

@@ -3,12 +3,14 @@ class JobsController < ApplicationController
 
   def index
     profession = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
+    @users = User.all
 
     if params[:query].present?
-      @jobs = Job.search_by_profession(params[:query])
+      @users = Job.search_by_profession(params[:query])
       @query = params[:query]
+      raise
     elsif params[:format] == "high_rated"
-      @jobs = Job.select { |j| j.user.rating >= 4.6 unless j.user.rating.nil? }
+      @users = User.select { |user| user.rating >= 4.6 unless user.rating.nil? }
     elsif (params[:format])
       @jobs = Job.search_by_profession(params[:format])
       @query = params[:format]

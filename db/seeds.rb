@@ -3,7 +3,7 @@
 
 professions = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks", "Barber" ]
 
-300.times do
+12.times do
   user = User.create!(email: Faker::Internet.email, password: "123546", name: Faker::Name.name, rating: Faker::Number.within(range: 0.0..5.0), username: Faker::Internet.username, location: Faker::Address.city)
   puts "User created #{user.email}"
   5.times do
