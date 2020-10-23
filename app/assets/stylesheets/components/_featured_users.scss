@@ -34,6 +34,7 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding: 12px;
 }
 
 .doj {
@@ -116,16 +117,20 @@
 
 @media (min-width: 1300px) {
   .featured {
-    margin: 0 144px;
+    margin: 0 480px;
   }
 
   .featured-title {
-    margin-left: 170px;
+    margin-left: 236px;
+  }
+
+  .home-title {
+    margin-left: 138px;
   }
 }
 
 @media (min-width: 2500px) {
   .featured-title {
-    margin-left: 216px;
+    margin-left: 560px;
   }
 }

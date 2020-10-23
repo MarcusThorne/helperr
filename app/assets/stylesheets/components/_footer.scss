@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 56px;
+  margin-top: 148px;
   background-color: rgb(235, 235, 235);
   margin-bottom: -16px;
   padding-top: 40px;
@@ -7,6 +7,17 @@
 
 .footer-content {
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content a {
+  color: #313131;
+  margin: 4px 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .all-footer-content {
@@ -32,6 +43,11 @@
 
 .sm-icon {
   margin: 0 8px;
+  color: #313131;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .follow-us {

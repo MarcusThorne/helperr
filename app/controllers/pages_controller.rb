@@ -8,16 +8,14 @@ class PagesController < ApplicationController
     @high_rates = [ "Cooking", "Computer Technician", "Sewing", "Furniture Making" ]
 
     @locations = User.all.each { |user| user.location }
-    @user = User.all
+    @users = User.all
     @jobs = Job.all
-    @rated_users = @user.each.select { |user| user.rating > 4.6 unless user.rating.nil? }
+    @rated_users = @users.each.select { |user| user.rating > 4.6 unless user.rating.nil? }
 
     if params[:query].present?
       @jobs = Job.search_by_profession(params[:query])
       @query = params[:query]
       redirect_to jobs_path(@query)
-    else
-      @jobs = Job.all
     end
   end
 
