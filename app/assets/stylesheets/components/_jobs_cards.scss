@@ -56,3 +56,10 @@
   width: 75px;
   border-radius: 50%;
 }
+
+.index-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
