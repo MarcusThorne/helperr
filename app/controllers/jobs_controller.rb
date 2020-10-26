@@ -3,19 +3,33 @@ class JobsController < ApplicationController
 
   def index
     profession = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
-    @users = User.all
-
-    if params[:query].present?
-      @users = Job.search_by_profession(params[:query])
-      @query = params[:query]
-      raise
-    elsif params[:format] == "high_rated"
-      @users = User.select { |user| user.rating >= 4.6 unless user.rating.nil? }
-    elsif (params[:format])
-      @jobs = Job.search_by_profession(params[:format])
-      @query = params[:format]
+    
+    if params[:format].present? && params[:query].present?
+      redirect_to jobs_path(params[:query])
+    end
+    
+    if params[:format] == "high_rated"
+      @users = User.select { |user| user.rating >= 4.5 unless user.rating.nil? }
+      
+    elsif params[:format].present? || params[:query].present?
+      if params[:format] == "low_priced" || params[:query] == "low priced"
+        @jobs = Job.select { |job| job.rate.to_i <= 25 }
+        @user_id = @jobs.map { |job| job.user_id }
+        @users = User.select { |user| @user_id.include?(user.id) && @user_id.count(user.id) >= 4 }
+      
+      elsif params[:format] == "high_priced" || params[:query] == "high priced"
+        @jobs = Job.select { |job| job.rate.to_i > 25 }
+        @user_id = @jobs.map { |job| job.user_id }
+        @users = User.select { |user| @user_id.include?(user.id) && @user_id.count(user.id) >= 4 }
+      
+      else
+        @jobs = Job.search_by_profession(params[query_type])
+        @user_id = @jobs.map { |job| job.user_id }
+        @users = User.select { |user| @user_id.include?(user.id) }
+      end
+    
     else
-      @jobs = Job.all
+      @users = User.all
     end
   end
 
@@ -61,5 +75,13 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:profession, :rate, :description, :location)
+  end
+
+  def query_type
+    if params[:query].present?
+      :query 
+    else 
+      :format
+    end
   end
 end

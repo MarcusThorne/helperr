@@ -20,16 +20,14 @@
   <div class="filter">
     <div class="d-flex filter-content">
       <p class="filter-text"><i class="fas fa-filter"></i>  <strong>Filters</strong></p>
-      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>  Profession</p>
-      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>  Rate</p>
-      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>  Location</p>
-      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>  Rating</p>
+      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>   </p>
+      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>  </p>
     </div>
   </div>
 
 
   <div class="container job-cards">
-    <% unless @users = [] %>
+    <%# <% unless @users = [] %> 
       <% @users.each do |user| %>
         <div class="job-card">
           <div class="d-flex">
@@ -144,7 +142,7 @@
           <button class="btn btn-primary">Message Helperr</button>
         </div>
       <% end %>
-    <% end %>
+    <%# <% end %>
   </div>
 </div>
 
