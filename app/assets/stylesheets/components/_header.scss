@@ -35,10 +35,12 @@
   height: 464px;
   overflow: hidden;
   position: relative;
+  margin-bottom: -240px;
 }
 
 .index-title {
-  top: 180px;
+  top: 26px;
+  width: 80vw;
   left: 50%;
   position: absolute;
   color: white;
@@ -46,13 +48,14 @@
   transform: translate(-50%, 50%);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
   font-family: 'Oxygen', sans-serif;
+  text-align: center;
 }
 
 @media (min-width: 720px) {
   .wrapper {
     position: absolute;
-    width: 35%;
-    top: 44px;
+    width: 250px;
+    top: 18%;
     right: 72px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
@@ -77,14 +80,22 @@
     height: 400px;
     overflow: hidden;
   }
+
+  .index-header {
+    margin-bottom: -18px;
+  }
+  
+  .index-title {
+    top: 16vh;
+  }
 }
 
 @media (min-width: 960px) {
   .wrapper {
     position: absolute;
-    width: 360px;
+    width: 304px;
     top: 92px;
-    right: 96px;
+    right: 112px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
     text-align: center;
@@ -118,7 +129,6 @@
   .wrapper {
     position: absolute;
     width: 400px;
-    top: 14%;
     right: 14%;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
