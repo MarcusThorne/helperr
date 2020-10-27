@@ -29,10 +29,10 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // removeClass();
   // swipeLeft();
+  hamBurger();
   changeLocation();
   seeAll();
   disappearAnimation();
-  hamBurger();
 });
 
 
