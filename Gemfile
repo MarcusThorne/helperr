@@ -60,13 +60,13 @@ gem 'simple_form'
 gem 'devise'
 # font-awesome is for symbols from the website
 gem 'font-awesome-sass', '~> 5.12.0'
-# for css parsing 
+# for css parsing
 gem 'autoprefixer-rails'
 # for storing users picture ect.
 gem 'cloudinary', '~> 1.16.0'
 # for generating fake data
 gem 'faker'
-# to create search bars 
+# to create search bars
 gem 'pg_search', '~> 2.3.0'
 # for securing api keys, not sharing them on github
 gem 'dotenv-rails', groups: [:development, :test]

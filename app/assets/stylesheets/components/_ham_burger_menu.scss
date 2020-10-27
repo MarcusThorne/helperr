@@ -5,6 +5,13 @@
 .hamburger-content {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.hamburger-link {
+  margin-top: 8px;
+  color: rgb(27, 27, 27);
+  font-weight: bold;
 }
 
 .ham-burger-on {
@@ -13,13 +20,13 @@
 }
 
 .ham-burger-off {
-  z-index: 15;
+  z-index: 10;
   color: rgba(0, 0, 0, 0.5);
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 0;
-  height: 100vh;
+  top: -2px;
+  height: 104vh;
   padding-top: 20px;
 }
 
@@ -48,6 +55,20 @@
   background-color: white;
   z-index: 15;
   top: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.bottom-section {
+  border-top: 1px solid rgb(27, 27, 27);
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  padding-top: 8px;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 576px) {
