@@ -3,33 +3,41 @@ class JobsController < ApplicationController
 
   def index
     profession = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
-    
+    @query = params[query_type]
+    start = 0
+    finish = 12
+
     if params[:format].present? && params[:query].present?
       redirect_to jobs_path(params[:query])
-    end
-    
-    if params[:format] == "high_rated"
-      @users = User.select { |user| user.rating >= 4.5 unless user.rating.nil? }
-      
+
+    elsif params[:format].to_i != 0
+      number = 12
+      start = 1 + ( number * ( params[:format].to_i - 1 ))
+      finish = 12 + ( number * ( params[:format].to_i - 1 ))
+      @users = User.all[start..finish]
+
+    elsif params[:format] == "high_rated"
+      @users = User.select { |user| user.rating >= 4.5 unless user.rating.nil? }.first(12)
+
     elsif params[:format].present? || params[:query].present?
       if params[:format] == "low_priced" || params[:query] == "low priced"
         @jobs = Job.select { |job| job.rate.to_i <= 25 }
         @user_id = @jobs.map { |job| job.user_id }
-        @users = User.select { |user| @user_id.include?(user.id) && @user_id.count(user.id) >= 4 }
-      
+        @users = User.select { |user| @user_id.include?(user.id) && @user_id.count(user.id) >= 4 }.first(12)
+
       elsif params[:format] == "high_priced" || params[:query] == "high priced"
         @jobs = Job.select { |job| job.rate.to_i > 25 }
         @user_id = @jobs.map { |job| job.user_id }
-        @users = User.select { |user| @user_id.include?(user.id) && @user_id.count(user.id) >= 4 }
-      
+        @users = User.select { |user| @user_id.include?(user.id) && @user_id.count(user.id) >= 4 }.first(12)
+
       else
         @jobs = Job.search_by_profession(params[query_type])
         @user_id = @jobs.map { |job| job.user_id }
-        @users = User.select { |user| @user_id.include?(user.id) }
+        @users = User.select { |user| @user_id.include?(user.id) }.first(12)
       end
-    
+
     else
-      @users = User.all
+      @users = User.all[0..12]
     end
   end
 
@@ -79,8 +87,8 @@ class JobsController < ApplicationController
 
   def query_type
     if params[:query].present?
-      :query 
-    else 
+      :query
+    else
       :format
     end
   end

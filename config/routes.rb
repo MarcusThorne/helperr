@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "pages#home"
 
+  resources :user, only: [ :show ]
   resources :purchase_history, only: [ :index, :show ]
   resources :jobs do
     resources :purchase, only: [ :show, :new, :create ]
