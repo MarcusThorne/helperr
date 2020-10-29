@@ -30,8 +30,11 @@
 
 .index-page {
   overflow: hidden;
-  width: 71%;
+  width: 255px;
   height: 44px;
+  > a > .btn {
+    width: 40px;
+  }
 }
 
 .last-12 {
@@ -40,4 +43,10 @@
 
 .next-12 {
   margin: 14px 0 0 8px;
+}
+
+@media (min-width: 720px) {
+  .index-page {
+    width: 514px;
+  }
 }

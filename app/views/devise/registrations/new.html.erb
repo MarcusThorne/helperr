@@ -1,43 +1,48 @@
-<h2>Sign up</h2>
+<div class="registration-page">
+  <div class="container form-container">
+    <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :username,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "username" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "name" }%>
-    <%= f.input :location,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "location" }%>
-    <%= f.input :photo, as: :file,
-                required: true,
-                input_html: { class: 'd-none' },
-                label_html: { class: 'btn new-button'},
-                wrapper_html: { class: 'middle-button'},
-                label: "📷 <span class='ml-2'>Upload A Photo</span>".html_safe %>
+      <div class="form-inputs">
+
+        <p><%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%></p>
+        <p><%= f.input :username,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "username" }%></p>
+        <p><%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %></p>
+        <p><%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %></p>
+        <p><%= f.input :name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "name" }%></p>
+        <p><%= f.input :location,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "location" }%></p>
+        <%= f.input :photo, as: :file,
+                    required: true,
+                    input_html: { class: 'd-none' },
+                    label_html: { class: 'btn new-button'},
+                    wrapper_html: { class: 'middle-button'},
+                    label: "📷 <span class='ml-2'>Upload A Photo</span>".html_safe %>
+      </div>
+
+      <div class="form-actions d-flex justify-content-around">
+        <%= f.button :submit, "Sign up" %>
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

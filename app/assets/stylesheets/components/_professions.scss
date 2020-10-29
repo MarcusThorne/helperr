@@ -23,9 +23,9 @@ body { overflow-x: hidden }
   border-radius: 4px;
   color: #1f1f1f;
   position: relative;
-  width: 260px;
+  width: 220px;
   height: 330px;
-  margin: 0 5vw;
+  margin: 0 3vw;
 }
 
 .professions > a, a:hover, a:focus, a:active {
@@ -87,7 +87,7 @@ body { overflow-x: hidden }
   justify-content: space-around;
   display: flex;
   overflow: hidden;
-  margin-top: 104px;
+  margin-top: 188px;
 }
 
 .home-professions { 
@@ -247,6 +247,10 @@ body { overflow-x: hidden }
 
   .active {
     height: auto !important;
+  }
+
+  .home-professions-container {
+    margin-top: 88px;
   }
 }
 

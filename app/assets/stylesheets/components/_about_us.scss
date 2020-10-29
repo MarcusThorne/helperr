@@ -2,6 +2,8 @@
   background-color: whitesmoke;
   height: auto;
   margin: 104px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .tick {
@@ -29,7 +31,7 @@
 .about-us-content-1 {
   justify-content: space-around;
   text-align: center;
-  margin: 24px 46px;
+  margin: 24px auto;
 }
 
 .about-us-content-2 {
@@ -38,21 +40,33 @@
   margin: 24px 46px;
 }
 
+.au-btn {
+  margin-bottom: 24px;
+}
+
 .au-title {
   margin-top: 32px;
 }
 
 .hw-description {
-  margin-top: 40px;
-  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 40px 14px 16px 14px;
 }
 
 .au-description {
   margin-top: 40px;
 }
 
-.au-btn {
-  margin: 24px 0;
+.steps {
+  margin-bottom: 6px;
+}
+
+@media (min-width: 600px) {
+  .au-description {
+    margin: 40px 112px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -62,14 +76,23 @@
     position: relative;
     width: 100vw;
     margin: 224px 0 200px 0;
+    flex-direction: row;
+  }
+
+  .hw-description {
+    text-align: left;
   }
 
   .about-us-content-1 {
     text-align: left;
+    margin: 0;
+    width: auto;
   }
 
   .about-us-content-2 {
     text-align: left;
+    margin: 16px 0 16px 40px;
+    width: auto;
   }
 
   .about-us-img-1 {
@@ -79,6 +102,7 @@
 
   .au-description {
     width: 450px;
+    margin: 24px 0;
   }
 
   .au-description li {
@@ -100,9 +124,9 @@
   }
 
   .about-us-img-3 {
-    margin-left: 3%;
     width: 500px;
     height: auto;
+    margin-left: 3%;
     background-image: asset-url("delivery.jpg");
     background-position: center;
     background-size: cover;

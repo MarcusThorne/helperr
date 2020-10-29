@@ -1,32 +1,19 @@
-<%# <% unless user_signed_in? %>
-  <%# <div>
-    <div class="line"></div>
-    <div class="sign-up">
-      <p class="log-in-btn">Sign Up</p>
-      <button class="btn btn-primary helperr-btn">Become a helperr</button>
-    </div>
-  </div> %>
-<%# end %>
-
 <div class="home-header">
-  <%= image_tag "man.jpg", class:"photo-man" %>
+  <%= image_tag "workers-skyline.jpg", class:"photo-man" %>
 
   <div></div>
 
   <div class="wrapper">
     <h2 class="header-title">Find a <strong>Helperr</strong></h2>
-    <h6 class="header-info">Find the best person for the job from hundreds of reliable helperrs</h6>
+    <h6 class="header-info">Find the best person for the job from hundreds of reliable helperrs!</h6>
 
     <form id="search-bar" class="search-bar form-inline">
-      <% if @query.present? %>
-        <input name="query" class="header-search" type="search" placeholder="Find a Helperr..." aria-label="Search">
-      <% else %>
-        <input name="query" class="header-search" type="search" aria-label="Search" placeholder="Find a Helperr...">
-      <% end %>
-        <button class="btn btn-primary header-submit" type="submit">Search</button>
+      <i class="fas fa-search m-glass"></i><input name="query" class="header-search" type="search" aria-label="Search" placeholder="Find a Helperr...">
+      <button class="btn btn-primary header-submit" type="submit">Search</button>
     </form>
   </div>
 </div>
+
 
 <div class="home-professions-container">
   <div class="home-professions">
@@ -63,19 +50,20 @@
   <p id="seeAllBtn" class="d-flex justify-content-around"><i class="chevron fas fa-chevron-down"></i></p>
 </div>
 
+
 <div class="about-us">
   <div class="about-us-img-1"></div>
 
   <div class="about-us-content-1">
     <h4 class="au-title">How it works!</h4>
-    <ol class="hw-description">
-      <li>Find the profession you desire <i class="fas fa-check tick"></i></li>
-      <li>Send a personal message to one of our helperrs <i class="fas fa-check tick"></i></li>
-      <li>Agree on a hourly rate you're happy with <i class="fas fa-check tick"></i></li>
-      <li>Agree on the perfect time and date <i class="fas fa-check tick"></i></li>
-      <li>Wait for your helperr to complete the task <i class="fas fa-check tick"></i></li>
-      <li>Pay your helperr via our safe and secure payment system <i class="fas fa-check tick"></i></li>
-    </ol>
+    <div class="hw-description">
+      <p class="steps" >1. Find the profession you desire <i class="fas fa-check tick"></i></p>
+      <p class="steps" >2. Send a personal message to one of our helperrs <i class="fas fa-check tick"></i></p>
+      <p class="steps" >3. Agree on a hourly rate you're happy with <i class="fas fa-check tick"></i></p>
+      <p class="steps" >4. Agree on the perfect time and date <i class="fas fa-check tick"></i></p>
+      <p class="steps" >5. Wait for your helperr to complete the task <i class="fas fa-check tick"></i></p>
+      <p class="steps" >6. Pay your helperr via our safe and secure payment system <i class="fas fa-check tick"></i></p>
+    </div>
     <%= link_to about_us_path do %>
       <button class="au-btn btn btn-primary">Learn More!</button>
     <% end %>
@@ -90,7 +78,7 @@
       <% if @rated_users != [] %>
 
         <div class="featured">
-          <% @rated_users.sample(3).each do |user| %>
+          <% @rated_users.sample(4).each do |user| %>
             <div class="feature">
               <%= link_to jobs_path do %>
                 <p class="doj">
@@ -146,13 +134,10 @@
       <% else %>
 
         <div class="featured">
-          <% 3.times do %>
+          <% 4.times do %>
             <div class="feature">
               <%= link_to jobs_path do %>
-                <p class="doj">
-                  DOJ : 00 - 00 - 00
-                </p>
-
+                <p class="doj">DOJ : 00 - 00 - 00</p>
                 <p class="ft">Featured</p>
 
                 <div class="feature-content">
@@ -180,7 +165,7 @@
               <% end %>
             </div>
           <% end %>
-
+        </div>
       <% end %>
     </div>
   </div>
