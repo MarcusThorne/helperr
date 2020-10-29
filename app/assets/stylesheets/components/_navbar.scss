@@ -2,9 +2,8 @@
   background: white;
   height: 72px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: whitesmoke;
-  padding: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,7 +11,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 100px;
+  width: 120px;
   margin-bottom: 2px;
 }
 
@@ -31,12 +30,16 @@
 }
 
 .navbar {
-  padding: 0 12%;
+  padding: 0 15%;
+  border-bottom: 2px solid lightgrey;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
 }
 
 .log-in-symbol {
-  font-size: 20px;
-  margin-top: 2px;
+  font-size: 26px;
+  margin-top: -2px;
 }
 
 @media (min-width: 576px) {
@@ -46,10 +49,19 @@
 
   .navbar-lewagon {
     height: 80px;
+    justify-content: space-around;
   }
 
   .become-btn {
     font-family: "Oxygen", sans-serif;
     font-size: 14px;
+  }
+
+  .navbar-lewagon {
+    position: static;
+  }
+
+  .navbar-nav > .active {
+    padding: 0;
   }
 }
