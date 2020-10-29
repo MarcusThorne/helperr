@@ -42,6 +42,11 @@
   margin-top: 32px;
 }
 
+.hw-description {
+  margin-top: 40px;
+  padding-left: 16px;
+}
+
 .au-description {
   margin-top: 40px;
 }
@@ -102,5 +107,15 @@
     background-position: center;
     background-size: cover;
     box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
+  }
+}
+
+@media (min-width: 1700px) {
+  .au-description {
+    font-size: 18px;
+  }
+
+  .hw-description {
+    font-size: 18px;
   }
 }

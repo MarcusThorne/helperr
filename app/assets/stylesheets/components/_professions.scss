@@ -6,7 +6,6 @@ body { overflow-x: hidden }
   display: flex;
   width: 90%;
   overflow-y: hidden;
-  margin-left: 5%;
   // --n: 1;
   // display: flex;
   // align-items: center;
@@ -16,14 +15,6 @@ body { overflow-x: hidden }
   // transform: translate(calc(var(--i)/var(--n)*-100%));
   // transition: transform .5s ease-out;
   height: 360px;
-
-  .profession {
-    width: 224px;
-    margin: 24px 16px;
-    // width: 100%; // fallback
-    // width: calc(100%/var(--n));
-    // pointer-events: none;
-  }
 }
 
 .profession {
@@ -32,8 +23,9 @@ body { overflow-x: hidden }
   border-radius: 4px;
   color: #1f1f1f;
   position: relative;
-  width: 216px;
+  width: 260px;
   height: 330px;
+  margin: 0 5vw;
 }
 
 .professions > a, a:hover, a:focus, a:active {
@@ -58,11 +50,11 @@ body { overflow-x: hidden }
 }
 
 .home-title {
-  margin: 80px 24px 0 24px;
   font-weight: bold;
   font-family: 'Titillium Web', sans-serif;
   font-size: 28px;
   text-align: center;
+  width: 75%;
 }
 
 .price {
@@ -77,6 +69,7 @@ body { overflow-x: hidden }
 .p-container {
   width: 100vw;
   overflow: hidden;
+  margin-left: 10vw;
 }
 
 .swipe-right-photo {
@@ -89,8 +82,26 @@ body { overflow-x: hidden }
   position: absolute;
 }
 
+.home-professions-container {
+  width: 100vw;
+  justify-content: space-around;
+  display: flex;
+  overflow: hidden;
+  margin-top: 104px;
+}
+
+.home-professions { 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .hidden {
   visibility: hidden;
+}
+
+.extend-all {
+  width: 100vw;
 }
 
 @keyframes rotation {
@@ -113,15 +124,19 @@ body { overflow-x: hidden }
     width: 100%;
     padding-top: 12px;
     transition: 1s;
+    grid-gap: 24px 40px;
   }
 
   .p-container {
-    width: 100vw;
+    width: 100%;
+    padding: 16px;
+    margin: 0;
   }
 
   .active {
     height: auto;
     max-width: auto;
+    padding-bottom: 16px;
   }
 
   .reverse {
@@ -152,7 +167,6 @@ body { overflow-x: hidden }
 
   .professions > a {
     width: 74vw;
-    margin-bottom: 24px;
   }
 
   .sign-up {
@@ -163,47 +177,51 @@ body { overflow-x: hidden }
     margin: 0 !important;
     height: 112px;
     min-width: 0;
-    width: 75vw !important;
     display: flex;
+    width: 100%;
   }
 
   .home-title {
     text-align: left;
-    margin-bottom: 24px;
-    margin-top: 160px;
-    margin-left: 90px;
+  }
+
+  .home-professions {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .rotate {
     visibility: hidden;
-  }
-
-  .swipe-left {
-    margin: 0;
   }
 }
 
 @media (min-width: 960px) {
   .professions {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 24px 0;
-    height: 590px;
-    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 550px;
+    width: 100%;
     overflow: visible;
+    grid-gap: 24px 24px;
   }
 
-  .active {
-    height: auto;
+  .home-professions {
+    width: 75%;
+    margin-top: 128px;
   }
 
   .p-container {
     display: flex;
     justify-content: space-around;
+    overflow: visible;
+    padding: 0;
   }
 
   .profession {
-    width: 200px !important;
     flex-direction: column;
     height: 250px;
   }
@@ -214,35 +232,54 @@ body { overflow-x: hidden }
     justify-content: space-around;
   }
 
-  .home-title {
-    text-align: left;
-    margin-bottom: 24px;
-    margin-left: 120px;
+  .rates {
+    font-size: 11px;
+    padding-bottom: 8px;
   }
 
-  .rates {
-    font-size: 12px;
-    padding-bottom: 8px;
+  .home-title {
+    width: 100%;
+  }
+
+  .profession-content {
+    margin: 16px 0 0 16px;
+  }
+
+  .active {
+    height: auto !important;
   }
 }
 
 @media (min-width: 1300px) {
   .professions {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px 40px;
+    height: 580px;
   }
 
-  .home-title {
-    margin-left: 170px;
+  .rates {
+    font-size: 14px;
+  }
+
+  .home-professions {
+    width: 60%;
   }
 }
 
-@media (min-width: 2400px) {
-  .professions {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    width: 66%;
+@media (min-width: 1700px) {
+  .profession {
+    height: 320px;
   }
 
-  .home-title {
-    margin-left: 456px;
+  .professions {
+    height: 704px;
+    width: 100%;
+  }
+
+  .profession-title {
+    font-size: 18px;
+  }
+
+  .rates {
+    font-size: 16px;
   }
 }

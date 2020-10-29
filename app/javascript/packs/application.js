@@ -32,7 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   hamBurger();
   changeLocation();
   seeAll();
-  disappearAnimation();
 });
 
 
