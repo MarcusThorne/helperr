@@ -1,10 +1,9 @@
 .header-search {
   border: solid 1px rgba(153, 153, 153, 0.527);
   padding: 8px;
-  width: auto;
   height: 38px;
   border-left: 0;
-  width: 120px;
+  width: 140px;
 }
 
 .header-search:focus, .header-search:active {
@@ -15,7 +14,6 @@
 }
 
 .header-submit {
-  width: 30%;
   border-radius: 0 4px 4px 0;
 }
 
@@ -25,17 +23,19 @@
 
 .search-bar {
   margin-top: 24px;
+  flex-flow: row;
 }
 
 .photo-man {
   width: 100%;
+  margin-top: 70px;
 }
 
 .wrapper {
-  padding: 24px;
+  padding: 32px 24px;
   border: 1px solid rgb(233, 233, 233);
   border-radius: 4px;
-  height: auto;
+  height: 260px;
   position: absolute;
   background-color: white;
   display: flex;
@@ -45,7 +45,8 @@
   bottom: -200px;
   transform: translate(-50%, -50%);
   left: 50%;
-  width: 276px;
+  width: 86vw;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .home-header {
@@ -85,15 +86,11 @@
     width: 252px;
     height: 260px;
     bottom: -14%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 4px;
     text-align: center;
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
     left: 65%;
-  }
-
-  .search-bar {
-    margin-top: 40px;
   }
 
   .header-title {
@@ -135,10 +132,8 @@
   }
 
   .search-bar {
-    margin-top: 64px;
     align-items: center;
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
   }
 
   .header-title {
@@ -155,8 +150,8 @@
     overflow: hidden;
   }
 
-  .header-search { 
-    width: 112px;
+  .header-search {
+    width: auto;
     font-size: 14px;
   }
 }
@@ -171,7 +166,6 @@
   }
 
   .search-bar {
-    margin-top: 64px;
     align-items: center;
     width: 90%;
     margin-left: 5%;
@@ -198,7 +192,7 @@
     overflow: hidden;
   }
 
-  .header-search { 
+  .header-search {
     width: 172px;
     font-size: 16px;
   }
