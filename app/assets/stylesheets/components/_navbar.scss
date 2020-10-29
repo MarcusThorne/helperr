@@ -30,6 +30,10 @@
   }
 }
 
+.navbar {
+  padding: 0 12%;
+}
+
 .log-in-symbol {
   font-size: 20px;
   margin-top: 2px;
@@ -42,5 +46,10 @@
 
   .navbar-lewagon {
     height: 80px;
+  }
+
+  .become-btn {
+    font-family: "Oxygen", sans-serif;
+    font-size: 14px;
   }
 }

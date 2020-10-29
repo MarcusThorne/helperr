@@ -4,8 +4,6 @@ class JobsController < ApplicationController
   def index
     profession = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
     @query = params[query_type]
-    start = 0
-    finish = 12
 
     if params[:format].present? && params[:query].present?
       redirect_to jobs_path(params[:query])
@@ -37,7 +35,7 @@ class JobsController < ApplicationController
       end
 
     else
-      @users = User.all[0..12]
+      @users = User.all[1..12]
     end
   end
 

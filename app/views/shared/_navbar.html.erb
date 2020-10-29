@@ -23,14 +23,21 @@
           <%= link_to "Contact Us", contact_us_path, class:"hamburger-link" %>
         </div>
       <% else %>
-        <%= link_to new_user_registration_path do %>
-          <button class="btn btn-primary">Join Helperr</button>
-        <% end %>
-        <%= link_to "Professions", jobs_path, class:"hamburger-link" %>
-        <%= link_to "Profile", my_profile_path, class:"hamburger-link" %>
-        <%= link_to "Messages", messages_path, class:"hamburger-link" %>
-        <%= link_to "About Us", about_us_path, class:"hamburger-link" %>
-        <%= link_to "Contact Us", contact_us_path, class:"hamburger-link" %>
+        <div class="top-section">
+          <div class="d-flex justify-content-between">
+            <%= link_to new_user_registration_path do %>
+              <button class="btn btn-primary">Join Helperr</button>
+            <% end %>
+            <p class="mt-2 hamburger-link"><%= link_to "Sign In", new_user_session_path %></p>
+          </div>
+          <%= link_to "Professions", jobs_path, class:"hamburger-link" %>
+          <%= link_to "Profile", my_profile_path, class:"hamburger-link" %>
+          <%= link_to "Messages", messages_path, class:"hamburger-link" %>
+        </div>
+        <div class="bottom-section">
+          <%= link_to "About Us", about_us_path, class:"hamburger-link" %>
+          <%= link_to "Contact Us", contact_us_path, class:"hamburger-link" %>
+        </div>
       <% end %>
     </div>
   </div>
