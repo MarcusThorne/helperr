@@ -90,7 +90,7 @@ body { overflow-x: hidden }
   margin-top: 188px;
 }
 
-.home-professions { 
+.home-professions {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -149,7 +149,7 @@ body { overflow-x: hidden }
     padding: 8px;
     width: 40px;
     border-radius: 4px;
-    margin-top: 24px;
+    margin: 24px 0 0 0;
     &:hover {
       background-color: rgb(210, 210, 210);
       transition: 0.1s;
@@ -211,7 +211,6 @@ body { overflow-x: hidden }
 
   .home-professions {
     width: 75%;
-    margin-top: 128px;
   }
 
   .p-container {
@@ -250,7 +249,7 @@ body { overflow-x: hidden }
   }
 
   .home-professions-container {
-    margin-top: 88px;
+    margin-top: 200px;
   }
 }
 
