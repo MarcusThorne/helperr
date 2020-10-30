@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: space-around;
   grid-template-rows: 1fr;
+  grid-gap: 24px;
 }
 
 .feature {
@@ -12,12 +13,11 @@
   flex-direction: column;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  margin: 32px 20px;
   position: relative;
 }
 
 .featured-title {
-  margin: 104px 24px 0 24px;
+  margin: 0 24px 24px 24px;
   font-weight: bold;
   font-family: 'Titillium Web', sans-serif;
   font-size: 28px;
@@ -116,6 +116,10 @@
     width: 236px;
     font-size: 15px;
   }
+
+  .featured-title {
+    margin-bottom: 24px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -124,17 +128,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    grid-gap: 40px 60px;
   }
 
   .featured-title {
     text-align: left;
     width: 100%;
-    margin: 0;
   }
 
   .all-featured-container {
-    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
