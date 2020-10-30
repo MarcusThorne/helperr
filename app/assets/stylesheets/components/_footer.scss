@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 48px;
+  margin-top: 72px;
   background-color: rgb(235, 235, 235);
   margin-bottom: -16px;
   padding-top: 40px;
@@ -91,6 +91,12 @@
   text-align: center;
 }
 
+@media (min-width: 576px) {
+  .footer {
+    margin-top: 152px;
+  }
+}
+
 @media (min-width: 720px) {
   .wraper {
     display: flex;
@@ -135,10 +141,6 @@
 
   .footer-bottom {
     flex-direction: row;
-  }
-
-  .footer {
-    margin-top: 120px;
   }
 }
 

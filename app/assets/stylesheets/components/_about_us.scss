@@ -1,9 +1,9 @@
 .about-us {
   background-color: whitesmoke;
   height: auto;
-  margin: 104px 0;
   display: flex;
   flex-direction: column;
+  margin: 0 0 120px 0;
 }
 
 .tick {
@@ -63,9 +63,19 @@
   margin-bottom: 6px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 450px) {
+  .about-us {
+    margin: 120px 0;
+  }
+}
+
+@media (min-width: 576px) {
   .au-description {
     margin: 40px 112px;
+  }
+
+  .about-us {
+    margin: 200px 0;
   }
 }
 
