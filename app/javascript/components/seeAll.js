@@ -6,28 +6,29 @@ const seeAll = () => {
   btn.addEventListener("click", function() {
     showCard.classList.toggle("active");
     chevron.classList.toggle("reverse");
-    window.scroll(0,findPos(btn));
     console.log("click");
-
-    // if (showCard.classList.contains("active")){
-    //   showCard.animate([
-    //     // keyframes
-    //     { height: '590px' },
-    //     { height: 'auto' }
-    //   ], {
-    //     // timing options
-    //     duration: 500,
-    //   });
-    // } else {
-    //   showCard.animate([
-    //     // keyframes
-    //     { height: 'auto' },
-    //     { height: '590px' }
-    //   ], {
-    //     // timing options
-    //     duration: 500,
-    //   });
-    // };
+    
+    if (showCard.classList.contains("active")){
+      window.scroll({ top: 1900, behavior: 'smooth' });
+      showCard.animate([
+        // keyframes
+        { height: '590px' },
+        { height: 'auto' }
+      ], {
+        // timing options
+        duration: 250,
+      });
+    } else {
+      window.scroll({ top: 850, behavior: 'smooth' });
+      showCard.animate([
+        // keyframes
+        { height: 'auto' },
+        { height: '590px' }
+      ], {
+        // timing options
+        duration: 100,
+      });
+    };
   });
 
   function findPos(obj) {

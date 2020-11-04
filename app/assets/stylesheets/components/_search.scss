@@ -22,7 +22,7 @@
   height: 220px;
   width: 85vw;
   top: 240px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   
   .search-infomation {
     text-align: center;
@@ -60,16 +60,20 @@
 
 @media (min-width: 450px) {
   .search-box {
-    top: 30%;
+    top: 26%;
     right: 10%;
     width: 280px;
     height: 280px;
     background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(253, 253, 253, 0.8);
+  }
+
+  .search {
+    overflow: hidden;
+    height: 440px;
   }
 
   .search-image {
-    object-position: top;
-    height: 438px;
     margin: 0;
   }
 }
@@ -78,37 +82,29 @@
   .search-box {
     right: 12%;
   }
-
-  
-  .search-image {
-    height: 538px;
-    margin: -100px 0;
-  }
 }
 
 @media (min-width: 960px) {
   .search-box {
-    top: 40%;
+    top: 29%;
     right: 16%;
-    width: 360;
+    width: 296px;
     height: 304px;
   }
 
-  .search-image {
-    height: 838px;
-    margin: -300px 0;
+  .search {
+    height: 560px;
   }
 }
 
 @media (min-width: 1400px) {
   .search-box {
-    top: 50%;
     width: 400px;
     height: 360px;
   }
 
-  .search-image {
-    height: 960px;
+  .search {
+    height: 704px;
   }
 
   .search-bar {
