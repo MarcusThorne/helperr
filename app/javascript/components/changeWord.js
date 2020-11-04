@@ -1,5 +1,5 @@
 const changeLocation = () => {
-  var text = ["Barnstaple", 'Exeter', 'London', 'Bristol', 'Newquay', 'Liverpool', 'Manchester'];
+  var text = ["Barnstaple", 'Exeter', 'London', 'Bristol', 'Newquay', 'Liverpool', 'Manchester', 'Birmingham', 'Newcastle', 'Brighton', 'Edinburgh', 'Glasgow', 'Plymouth', 'Oxford', 'Cardiff'];
   var counter = 0;
   var elem = document.getElementById("changeText");
   var inst = setInterval(change, 1000);

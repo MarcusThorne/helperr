@@ -26,6 +26,9 @@ body { overflow-x: hidden }
   width: 220px;
   height: 330px;
   margin: 0 3vw;
+  &:hover {
+    box-shadow: 0 0 20px rgba(128,128,128,0.5);
+  }
 }
 
 .professions > a, a:hover, a:focus, a:active {
@@ -87,7 +90,7 @@ body { overflow-x: hidden }
   justify-content: space-around;
   display: flex;
   overflow: hidden;
-  margin-top: 196px;
+  margin-top: 220px;
 }
 
 .home-professions {
@@ -270,10 +273,6 @@ body { overflow-x: hidden }
   .home-professions {
     width: 60%;
   }
-
-  .home-professions-container {
-    margin-top: 440px;
-  }
 }
 
 @media (min-width: 1700px) {
@@ -282,7 +281,7 @@ body { overflow-x: hidden }
   }
 
   .professions {
-    height: 704px;
+    height: 720px;
     width: 100%;
   }
 

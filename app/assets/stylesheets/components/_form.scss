@@ -1,9 +1,9 @@
 .form-container {
-  width: 25%;
+  width: 250px;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   padding-top: 40px;
   border-radius: 8px;
-  margin-top: 56px;
+  margin-top: 104px;
 }
 
 .form-actions {
@@ -12,4 +12,9 @@
 
 .photo-upload {
   width: 100%;
+}
+
+.log-in-button {
+  color: black;
+  font-weight: bold;
 }
