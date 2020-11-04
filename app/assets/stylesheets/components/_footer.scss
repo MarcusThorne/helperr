@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 48px;
+  margin-top: 52px;
   background-color: rgb(235, 235, 235);
   margin-bottom: -16px;
   padding-top: 40px;
@@ -89,6 +89,12 @@
 
 .footer-title {
   text-align: center;
+}
+
+@media (min-width: 450px) {
+  .footer {
+    margin-top: 104px;
+  }
 }
 
 @media (min-width: 720px) {
