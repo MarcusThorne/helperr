@@ -1,15 +1,16 @@
-<div class="home-header">
-  <%= image_tag "workers-skyline.jpg", class:"photo-man" %>
+<div class="search">
+  <%= image_tag "workers-skyline.jpg", class:"search-image" %>
 
-  <div></div>
+  <div class="search-box">
+    <div class="search-infomation">
+      <h2>Find a <strong>Helperr</strong></h2>
+      <h6>Find the best person for the job from hundreds of reliable helperrs!</h6>
+    </div>
 
-  <div class="wrapper">
-    <h2 class="header-title">Find a <strong>Helperr</strong></h2>
-    <h6 class="header-info">Find the best person for the job from hundreds of reliable helperrs!</h6>
-
-    <form id="search-bar" class="search-bar form-inline">
-      <i class="fas fa-search m-glass"></i><input name="query" class="header-search" type="search" aria-label="Search" placeholder="Find a Helperr...">
-      <button class="btn btn-primary header-submit" type="submit">Search</button>
+    <form class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input name="query" type="search" aria-label="Search" placeholder="Find a helperr..." class="search-input">
+      <button class="btn btn-primary search-submit" type="submit">Search</button>
     </form>
   </div>
 </div>

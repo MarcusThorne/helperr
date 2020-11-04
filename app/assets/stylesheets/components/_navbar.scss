@@ -1,68 +1,50 @@
-.navbar-lewagon {
-  background: white;
+.navbar-content { 
   height: 72px;
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 120px;
-  margin-bottom: 2px;
-  margin-left: 12px;
-}
-
-.navbar-brand {
-  margin: 0;
-}
-
-.nav-link {
-  color: #242424 !important;
-  font-size: 16px;
-  padding: 6px 0;
-  font-family: 'Titillium Web', sans-serif;
-  &:hover &:focus {
-    font-size: 25px;
-  }
-}
-
-.navbar {
-  padding: 0 8%;
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 1px solid grey;
+  padding: 0 10%;
   position: fixed;
-  width: 100%;
+  background-color: white;
   z-index: 5;
+  width: 100vw;
 }
 
-.log-in-symbol {
-  font-size: 26px;
-  margin-top: -2px;
+.navbar-logo {
+  height: 32px;
 }
 
-@media (min-width: 576px) {
-  .log-in-symbol {
+.log-on-icon {
+  font-size: 24px;
+  color: rgb(88, 88, 88);
+}
+
+.navbar-links {
+  display: none;
+  visibility: hidden;
+}
+
+@media (min-width: 720px) {
+  .navbar-content {
+    padding: 0 15%;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .navbar-links {
+    display: flex;
+    visibility: visible;
+    .navbar-link {
+      font-weight: bold;
+    }
+  }
+
+  .log-on-icon {
+    display: none;
     visibility: hidden;
   }
+}
 
-  .navbar-lewagon {
-    height: 80px;
-    justify-content: space-around;
-  }
-
-  .become-btn {
-    font-family: "Oxygen", sans-serif;
-    font-size: 14px;
-  }
-
-  .navbar-lewagon {
-    position: static;
-  }
-
-  .navbar-nav > .active {
-    padding: 0;
+@media (min-width: 960px) {
+  .navbar-content {
+    padding: 0 20%;
   }
 }
