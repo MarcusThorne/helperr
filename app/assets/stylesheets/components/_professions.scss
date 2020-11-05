@@ -1,295 +1,106 @@
-* { margin: 0 }
-
-body { overflow-x: hidden }
-
-.swipe-left {
+.professions {
   display: flex;
-  width: 90%;
   overflow-y: hidden;
-  // --n: 1;
-  // display: flex;
-  // align-items: center;
-  // overflow-y: hidden;
-  // width: 100%; // fallback
-  // width: calc(var(--n)*100%);
-  // transform: translate(calc(var(--i)/var(--n)*-100%));
-  // transition: transform .5s ease-out;
-  height: 340px;
+  width: 90vw;
+  margin-left: 5vw;
 }
 
 .profession {
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(128,128,128,0.3);
+  margin: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 208px;
   border-radius: 4px;
-  color: #1f1f1f;
-  position: relative;
-  width: 220px;
-  height: 330px;
-  margin: 0 3vw;
-  &:hover {
-    box-shadow: 0 0 20px rgba(128,128,128,0.5);
-  }
-}
-
-.professions > a, a:hover, a:focus, a:active {
-  text-decoration: none;
-  color: black;
-}
-
-.profession-content {
-  margin-top: 28px;
-  margin-left: 16px;
 }
 
 .profession-title {
-  font-size: 18px;
-  margin-bottom: 0;
-}
-
-.rates {
-  color: rgba(128, 128, 128, 0.514);
-  font-size: 14px;
-  font-family: 'Titillium Web', sans-serif;
-}
-
-.home-title {
   font-weight: bold;
   font-family: 'Titillium Web', sans-serif;
-  font-size: 28px;
+  width: 65vw;
+  margin-left: 17.5vw;
   text-align: center;
-  width: 75%;
 }
 
-.price {
-  color: rgba(0, 0, 0, 0.7);
-  font-weight: bold;
-}
-
-#seeAllBtn {
-  visibility: hidden;
-}
-
-.p-container {
-  width: 100vw;
-  overflow: hidden;
-  margin-left: 10vw;
-}
-
-.swipe-right-photo {
-  width: 40px;
-  margin-right: 8px;
-}
-
-.rotate {
-  animation: rotation 1s infinite linear;
-  position: absolute;
-}
-
-.home-professions-container {
-  width: 100vw;
-  justify-content: space-around;
-  display: flex;
-  overflow: hidden;
-  margin-top: 220px;
-}
-
-.home-professions {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.extend-all {
-  width: 100vw;
-}
-
-@keyframes rotation {
-  from {
-    transform: scaleX(-1) rotate(280deg);
+.profession-info {
+  padding: 30px 12px;
+  margin-top: -8px;
+  height: 104px;
+  
+  .profession-name {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 4px;
   }
-  to {
-    transform: scaleX(-1) rotate(390deg) ;
+  
+  .price-range {
+    font-size: 14px;
+    color: rgba(128,128,128,0.514);
+    font-family: 'Titillium Web', sans-serif;
+  }
+
+  .price {
+    color: rgb(53, 53, 53);
   }
 }
 
 @media (min-width: 450px) {
   .professions {
-    display: flex;
     flex-direction: column;
-    height: 544px;
-    max-height: auto;
-    overflow-y: hidden;
-    align-items: center;
-    width: 100%;
-    padding-top: 12px;
-    transition: 1s;
-    grid-gap: 24px 40px;
-  }
-
-  .p-container {
-    width: 100%;
-    padding: 16px;
-    margin: 0;
-  }
-
-  .active {
-    height: auto;
-    max-width: auto;
-    padding-bottom: 16px;
-  }
-
-  .reverse {
-    transform: rotate(180deg);
-  }
-
-  #seeAllBtn {
-    visibility: visible;
-    background-color: whitesmoke;
-    padding: 8px;
-    width: 40px;
-    border-radius: 4px;
-    margin: 24px 0 0 0;
-    &:hover {
-      background-color: rgb(210, 210, 210);
-      transition: 0.1s;
-    }
-  }
-
-  .profession-content {
-    text-align: left;
-    align-items: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 28px 0 0 24px;
-  }
-
-  .professions > a {
-    width: 74vw;
-  }
-
-  .sign-up {
-    display: none;
+    height: 478px;
   }
 
   .profession {
-    margin: 0 !important;
-    height: 112px;
-    min-width: 0;
     display: flex;
-    width: 100%;
+    width: 85vw;
+    margin-left: 2.5vw;
   }
 
-  .home-title {
-    text-align: left;
+  .profession-info {
+    padding: 40px 24px;
   }
+}
 
-  .home-professions {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .rotate {
-    visibility: hidden;
-  }
-
-  .home-professions-container {
-    margin-top: 160px;
+@media (min-width: 720px) {
+  .profession {
+    width: 60vw;
+    margin-left: 15vw;
   }
 }
 
 @media (min-width: 960px) {
   .professions {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 550px;
-    width: 100%;
-    overflow: visible;
-    grid-gap: 24px 24px;
-  }
-
-  .home-professions {
-    width: 75%;
-  }
-
-  .p-container {
-    display: flex;
-    justify-content: space-around;
-    overflow: visible;
-    padding: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 544px;
+    width: 720px;
+    margin: auto;
+    grid-gap: 16px;
+    padding: 8px;
   }
 
   .profession {
+    margin: 0;
+    width: 100%;
     flex-direction: column;
-    height: 250px;
   }
 
-  .professions > a {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .rates {
-    font-size: 11px;
-    padding-bottom: 8px;
-  }
-
-  .home-title {
-    width: 100%;
-  }
-
-  .profession-content {
-    margin: 16px 0 0 16px;
-  }
-
-  .active {
-    height: auto !important;
-  }
-
-  .home-professions-container {
-    margin-top: 200px;
-  }
-}
-
-@media (min-width: 1300px) {
-  .professions {
-    grid-gap: 40px 40px;
-    height: 580px;
-  }
-
-  .rates {
-    font-size: 14px;
-  }
-
-  .home-professions {
-    width: 60%;
-  }
-}
-
-@media (min-width: 1700px) {
-  .profession {
-    height: 320px;
-  }
-
-  .professions {
-    height: 720px;
-    width: 100%;
+  .profession-info {
+    padding-left: 16px;
   }
 
   .profession-title {
-    font-size: 18px;
+    text-align: left;
+    margin: auto;
+    width: 720px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .professions {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 956px;
   }
 
-  .rates {
-    font-size: 16px;
+  .profession-title {
+    width: 956px;
   }
 }

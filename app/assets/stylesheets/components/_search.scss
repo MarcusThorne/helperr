@@ -1,13 +1,15 @@
 .search {
-  height: 360px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120px;
 }
 
 .search-image {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  margin-top: 64px;
+  margin-top: 60px;
 }
 
 .search-box {
@@ -15,14 +17,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  position: absolute;
-  background-color: white;
+  background-color: whitesmoke;
   padding: 24px;
-  border-radius: 4px;
   height: 220px;
-  width: 85vw;
-  top: 240px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100vw;
   
   .search-infomation {
     text-align: center;
@@ -60,17 +58,26 @@
 
 @media (min-width: 450px) {
   .search-box {
+    position: absolute;
     top: 26%;
     right: 10%;
     width: 280px;
     height: 280px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 10px rgba(253, 253, 253, 0.8);
+    border-radius: 4px;
   }
 
   .search {
     overflow: hidden;
     height: 440px;
+  }
+}
+
+@media (min-width: 720px) {
+  .search-box {
+    top: 18%;
+    right: 12%;
   }
 
   .search-image {
@@ -78,18 +85,12 @@
   }
 }
 
-@media (min-width: 720px) {
-  .search-box {
-    right: 12%;
-  }
-}
-
 @media (min-width: 960px) {
   .search-box {
-    top: 29%;
+    top: 20%;
     right: 16%;
-    width: 296px;
-    height: 304px;
+    width: 320px;
+    height: 344px;
   }
 
   .search {
@@ -99,12 +100,9 @@
 
 @media (min-width: 1400px) {
   .search-box {
+    top: 18%;
     width: 400px;
     height: 360px;
-  }
-
-  .search {
-    height: 704px;
   }
 
   .search-bar {
