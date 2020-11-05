@@ -10,22 +10,23 @@ const hamBurger = () => {
     hamburger.classList.toggle("hamburger-active");
     on.classList.toggle("hamburger-off");
     placeHolder.classList.toggle("hamburger-placeholder-active");
-    console.log("Ham Burger Active");
     var active = document.querySelector(".hamburger-active");
-
+    
     if (hamburger.classList.contains("hamburger-active")){
+      console.log("Ham Burger Active");
       active.animate([
         // keyframes
-        { width: '0' },
-        { width: '72vw' }
+        { transform: 'translateX(-600px)' }, 
+        { transform: 'translateX(0px)' }
       ], {
         // timing options
-        duration: 300,
+        duration: 600,
       });
     } else {
+      console.log("Ham Burger Inactive");
       hamburger.animate([
         // keyframes
-        { width: '144vw' },
+        { width: '600px' },
         { width: '0vw' }
       ], {
         // timing options

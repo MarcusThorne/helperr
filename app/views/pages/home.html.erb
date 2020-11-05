@@ -16,35 +16,29 @@
 </div>
 
 
-<div class="home-professions-container">
-  <div class="home-professions">
-    <h4 class="home-title">Get started with one of our listed Jobs</h4>
+<h4 class="profession-title">Get started with one of our listed Jobs</h4>
 
-    <div class="p-container">
-      <div class="professions swipe-left">
-        <% @professions.each do |job| %>
-          <% unless job.nil? %>
-            <%= link_to jobs_path(job) do %>
-              <div class="profession" id="prf">
-                <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
-
-                <div class="profession-content">
-                  <p class="profession-title"><strong><%= job %></strong></p>
-                  <% if @low_rates.include?(job) %>
-                    <p class="rates">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
-                  <% elsif @mid_rates.include?(job) %>
-                    <p class="rates">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
-                  <% elsif @high_rates.include?(job) %>
-                    <p class="rates">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
-                  <% end %>
-                </div>
-              </div>
+<div class="professions">
+  <% @professions.each do |job| %>
+    <% unless job.nil? %>
+      <%= link_to jobs_path(job) do %>
+        <div class="profession">
+          <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
+          
+          <div class="profession-info">
+            <p class="profession-name"><strong><%= job %></strong></p>
+            <% if @low_rates.include?(job) %>
+              <p class="price-range">From <strong class="price">£8.10</strong> to <strong class="price">£43.00</strong> /HOUR</p>
+            <% elsif @mid_rates.include?(job) %>
+              <p class="price-range">From <strong class="price">£12.00</strong> to <strong class="price">£62.00</strong> /HOUR</p>
+            <% elsif @high_rates.include?(job) %>
+              <p class="price-range">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
             <% end %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+          </div>
+        </div>  
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="d-flex justify-content-center extend-all">

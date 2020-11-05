@@ -4,29 +4,29 @@ const seeAll = () => {
   var chevron = document.querySelector(".chevron")
 
   btn.addEventListener("click", function() {
-    showCard.classList.toggle("active");
+    showCard.classList.toggle("see-all-active");
     chevron.classList.toggle("reverse");
     console.log("click");
     
-    if (showCard.classList.contains("active")){
-      window.scroll({ top: 1900, behavior: 'smooth' });
+    if (showCard.classList.contains("see-all-active")){
+      window.scroll({ top: 1600, behavior: 'smooth' });
       showCard.animate([
         // keyframes
-        { height: '590px' },
+        { height: '100%' },
         { height: 'auto' }
       ], {
         // timing options
-        duration: 250,
+        duration: 500,
       });
     } else {
-      window.scroll({ top: 850, behavior: 'smooth' });
+      window.scroll({ top: 600, behavior: 'smooth' });
       showCard.animate([
         // keyframes
         { height: 'auto' },
-        { height: '590px' }
+        { height: '100%' }
       ], {
         // timing options
-        duration: 100,
+        duration: 500,
       });
     };
   });

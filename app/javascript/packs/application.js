@@ -21,8 +21,8 @@ require("channels")
 import 'bootstrap';
 import { changeLocation } from '../components/changeWord';
 import { seeAll } from '../components/seeAll';
-import { disappearAnimation } from '../components/disappearAnimation';
 import { hamBurger } from '../components/hamBurgerMenu';
+// import { disappearAnimation } from '../components/disappearAnimation';
 
 // Internal imports
 document.addEventListener('turbolinks:load', () => {
