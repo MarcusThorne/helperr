@@ -23,14 +23,17 @@
           <%= link_to new_user_registration_path do %>
             <button class="btn btn-primary">Join Helperr</button>
           <% end %>
-          <p class="mt-2 hamburger-link"><%= link_to "Sign In", new_user_session_path %></p>
         </div>
       </div>
     <% end %>
     
+    <% unless user_signed_in? %>
+      <%= link_to "Sign In", new_user_session_path %>
+    <% end %>
     <%= link_to "Professions", jobs_path, class:"hamburger-link" %>
     <%= link_to "Profile", my_profile_path, class:"hamburger-link" %>
     <%= link_to "Messages", messages_path, class:"hamburger-link" %>
+    <p class="general">General</p>
     <p class="horizontal-line"></p>
     <%= link_to "About Us", about_us_path, class:"hamburger-link" %>
     <%= link_to "Contact Us", contact_us_path, class:"hamburger-link" %>
@@ -59,7 +62,7 @@
 
   <!-- links for to services, messages and home depending on the current page and wheather the user is signed in or not -->
   <div class="navbar-links">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav flex-row mr-auto">
       
       <% if user_signed_in? %>
         <li class="nav-item active d-flex">
@@ -81,7 +84,8 @@
           <% else %>
             <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-right" style="position: absolute;" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-right" style="position: absolute;" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", my_profile_path, class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
