@@ -21,6 +21,7 @@
   padding: 24px;
   height: 220px;
   width: 100vw;
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.15);
   
   .search-infomation {
     text-align: center;
@@ -28,9 +29,27 @@
   }
 }
 
+.filter-bar {
+  display: none;
+  visibility: hidden;
+}
+
+.filter-dropdown {
+  text-align: center;
+  margin-top: 24px;
+
+  .chevron {
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid rgb(201, 201, 201);
+    margin-left: 8px;
+  }
+}
+
 .search-bar {
   display: flex;
-  margin: 16px 0;
+  margin: auto;
   width: 100%;
 
   .search-icon {
@@ -56,6 +75,30 @@
   }
 }
 
+.index-search {
+  padding: 24px;
+  margin-top: -120px;
+  background-color: whitesmoke;
+  position: relative;
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.15);
+
+  .search-bar {
+    width: 80vw;
+    margin-top: 40px;
+  }
+
+  .index-title {
+    padding: 12px 32px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: -72px 14px 24px -12px;
+    border-radius: 4px 4px 0 0;
+    height: 48px;
+    width: 270px;
+  }
+}
+
 @media (min-width: 450px) {
   .search-box {
     position: absolute;
@@ -72,6 +115,35 @@
     overflow: hidden;
     height: 440px;
   }
+
+  .filter-bar {
+    display: flex;
+    visibility: visible;
+    justify-content: space-around;
+    margin: 16px auto;
+    background-color: whitesmoke;
+    border: 1px solid grey;
+    border-radius: 4px;
+    width: 80vw;
+    padding: 8px;
+  
+    p {
+      margin: 0;
+    }
+  }
+
+  .filter-dropdown {
+    visibility: hidden;
+    display: none;
+  }
+
+  .index-search {
+    .index-title {
+      margin-left: 8vw;
+      width: 312px;
+      font-size: 24px;
+    }
+  } 
 }
 
 @media (min-width: 720px) {
@@ -91,11 +163,16 @@
     right: 16%;
     width: 320px;
     height: 344px;
+    padding: 48px;
   }
 
   .search {
     height: 560px;
     margin-bottom: 200px;
+  }
+
+  .index-search {
+    margin-top: -200px;
   }
 }
 
