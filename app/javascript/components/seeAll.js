@@ -16,7 +16,7 @@ const seeAll = () => {
         { height: 'auto' }
       ], {
         // timing options
-        duration: 500,
+        duration: 375,
       });
     } else {
       window.scroll({ top: 600, behavior: 'smooth' });
@@ -26,7 +26,7 @@ const seeAll = () => {
         { height: '100%' }
       ], {
         // timing options
-        duration: 500,
+        duration: 375,
       });
     };
   });
