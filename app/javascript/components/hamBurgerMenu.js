@@ -16,21 +16,21 @@ const hamBurger = () => {
       console.log("Ham Burger Active");
       active.animate([
         // keyframes
-        { transform: 'translateX(-600px)' }, 
+        { transform: 'translateX(-120vw)' }, 
         { transform: 'translateX(0px)' }
       ], {
         // timing options
-        duration: 600,
+        duration: 350,
       });
     } else {
       console.log("Ham Burger Inactive");
       hamburger.animate([
         // keyframes
-        { width: '600px' },
+        { width: '120vw' },
         { width: '0vw' }
       ], {
         // timing options
-        duration: 600,
+        duration: 350,
       });
     };
   });
