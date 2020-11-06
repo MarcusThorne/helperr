@@ -70,10 +70,10 @@
   .professions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 544px;
-    width: 720px;
+    height: 568px;
+    width: 736px;
     margin: auto;
-    grid-gap: 16px;
+    grid-gap: 32px 24px;
     padding: 8px;
   }
 
@@ -97,7 +97,7 @@
 @media (min-width: 1240px) {
   .professions {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 956px;
+    width: 984px;
   }
 
   .profession-title {

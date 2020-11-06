@@ -23,56 +23,57 @@
 
 
   <div class="container job-cards">
-    <% @users.each do |user| %>
-      <% unless user.jobs == [] %>
-        <div class="job-card">
-          <div class="d-flex">
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, class: "avatar avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
-            <% else %>
-              <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
-            <% end %>
+    <% unless @users.nil? %>
+      <% @users.each do |user| %>
+        <% unless user.jobs == [] %>
+          <div class="job-card">
+            <div class="d-flex">
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key, class: "avatar avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
 
-            <div class="jobs-card-user-location">
-              <p class="jobs-card-content"><strong>
-                <% name = user.name.split(" ") %>
-                <%= name.each { |n| n.capitalize! }.join(" ") %>
-              </strong></p>
-              <p class="jobs-card-content"><%= user.username %></p>
-              <p class="jobs-card-content"><i class="fas fa-thumbtack location-icon"></i>  <%= user.location.capitalize %></p>
-              <p class="ft-rating">
-                <% unless user.rating.nil? %>
-                  <div class="d-flex stars" >
-                    <p class="full-star" ><%= ("<i class='fas fa-star'></i>").html_safe * user.rating.round(1) %></p>
-                    <p class="half-star" ><%= ("<i class='fas fa-star-half-alt'></i>").html_safe if user.rating - user.rating.to_i >= 0.5 && user.rating - user.rating.to_i < 0.95 %></p>
-                    <p class="empty-star" ><%= ("<i class='far fa-star'></i>").html_safe * ( 5 - user.rating.round ) %></p>
-                    <p class="rating" ><%= user.rating.round(1) %></p>
-                  </div>
-                <% end %>
-              </p>
+              <div class="jobs-card-user-location">
+                <p class="jobs-card-content"><strong>
+                  <% name = user.name.split(" ") %>
+                  <%= name.each { |n| n.capitalize! }.join(" ") %>
+                </strong></p>
+                <p class="jobs-card-content"><%= user.username %></p>
+                <p class="jobs-card-content"><i class="fas fa-thumbtack location-icon"></i>  <%= user.location.capitalize %></p>
+                <p class="ft-rating">
+                  <% unless user.rating.nil? %>
+                    <div class="d-flex stars" >
+                      <p class="full-star" ><%= ("<i class='fas fa-star'></i>").html_safe * user.rating.round(1) %></p>
+                      <p class="half-star" ><%= ("<i class='fas fa-star-half-alt'></i>").html_safe if user.rating - user.rating.to_i >= 0.5 && user.rating - user.rating.to_i < 0.95 %></p>
+                      <p class="empty-star" ><%= ("<i class='far fa-star'></i>").html_safe * ( 5 - user.rating.round ) %></p>
+                      <p class="rating" ><%= user.rating.round(1) %></p>
+                    </div>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+
+            <div class="d-flex card-actions" >
+              <p class="action" ><i class="far fa-heart"></i></p>
+              <div class="card-action-line" ></div>
+              <p class="action" ><i class="fas fa-comment"></i></p>
+              <div class="card-action-line" ></div>
+              <%= link_to user_path(user.id) do %>
+                <p class="action" ><i class="far fa-user"></i></p>
+              <% end %>
+              <div class="card-action-line" ></div>
+              <p class="action" ><i class="fas fa-phone"></i></p>
+            </div>
+
+            <div class="user-jobs">
+              <% while @index < 5 %>
+                <p class="job-profession <%= 'search-profession' if user.jobs[@index].profession == @query %>" ><%= user.jobs[@index].profession %> <strong>£<%= user.jobs[@index].rate %></strong></p>
+                <% @index + 1 %>
+              <% end %>
             </div>
           </div>
-
-          <div class="d-flex card-actions" >
-            <p class="action" ><i class="far fa-heart"></i></p>
-            <div class="card-action-line" ></div>
-            <p class="action" ><i class="fas fa-comment"></i></p>
-            <div class="card-action-line" ></div>
-            <%= link_to user_path(user.id) do %>
-              <p class="action" ><i class="far fa-user"></i></p>
-            <% end %>
-            <div class="card-action-line" ></div>
-            <p class="action" ><i class="fas fa-phone"></i></p>
-          </div>
-
-          <div class="user-jobs">
-            <% index = 0 %>
-            <% while index < 5 %>
-              <p class="job-profession <%= 'search-profession' if user.jobs[index].profession == @query %>" ><%= user.jobs[index].profession %> <strong>£<%= user.jobs[index].rate %></strong></p>
-              <% index += 1 %>
-            <% end %>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
