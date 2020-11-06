@@ -95,4 +95,6 @@ class JobsController < ApplicationController
       :format
     end
   end
+
+
 end

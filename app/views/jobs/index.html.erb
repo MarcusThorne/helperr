@@ -1,25 +1,37 @@
-<div class="index-header">
-  <%= image_tag "peoplejumping.jpg", class:"search-image" %>
-  <p class="index-title"><strong>Find the helperr you're looking for!</strong></p>
+<div class="search">
+  <%= image_tag "together.jpg", class:"search-image" %>
+</div>
+
+<div class="index-search">
+  <h4 class="index-title">Search for a <strong>Helperr</strong>...</h4>
+
+  <form class="search-bar">
+    <i class="fas fa-search search-icon"></i>
+    <input name="query" type="search" aria-label="Search" placeholder="Find a helperr..." class="search-input">
+    <button class="btn btn-primary search-submit" type="submit">Search</button>
+  </form>
+
+  <h6 class="filter-dropdown"><strong>Filter</strong> <i class="chevron fas fa-chevron-down"></i></h6>
+
+  <div class="filter-bar">
+    <p class="filter-text"><i class="fas fa-filter"></i>  <strong>Filters</strong></p>
+    <p class="vertical-line" ></p>
+    <p class="filter-text">Location <i class="fas fa-caret-down filter-drop-down"></i>   </p>
+    <p class="vertical-line" ></p>
+    <p class="filter-text">Price <i class="fas fa-caret-down filter-drop-down"></i>  </p>
+    <p class="vertical-line" ></p>
+    <p class="filter-text">Profession <i class="fas fa-caret-down filter-drop-down"></i>  </p>
+    <p class="vertical-line" ></p>
+    <p class="filter-text">Availability <i class="fas fa-caret-down filter-drop-down"></i>  </p>
+  </div>
 </div>
 
 
 <div class="index-content">
-  <div class="search">
-    <form id="search-bar" class=" form-inline">
-      <input name="query" class="index-search" type="search" aria-label="Search" placeholder="Find a Helperr...">
-      <button class="btn btn-primary index-search-btn" type="submit"><i class="fas fa-chevron-right"></i></button>
-    </form>
-  </div>
+  
 
 
-  <div class="filter">
-    <div class="d-flex filter-content">
-      <p class="filter-text"><i class="fas fa-filter"></i>  <strong>Filters</strong></p>
-      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>   </p>
-      <p class="filter-text"><i class="fas fa-caret-down filter-drop-down"></i>  </p>
-    </div>
-  </div>
+  
 
 
   <div class="container job-cards">
@@ -67,9 +79,10 @@
             </div>
 
             <div class="user-jobs">
-              <% while @index < 5 %>
+              <% job_count = user.jobs.count >= 5 ? 5 : user.jobs.count %>
+              <% while @index < job_count %>
                 <p class="job-profession <%= 'search-profession' if user.jobs[@index].profession == @query %>" ><%= user.jobs[@index].profession %> <strong>£<%= user.jobs[@index].rate %></strong></p>
-                <% @index + 1 %>
+                <% @index += 1 %>
               <% end %>
             </div>
           </div>
