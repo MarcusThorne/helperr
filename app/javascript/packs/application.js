@@ -24,6 +24,7 @@ import { seeAllProfessions } from '../components/seeAllProfessions';
 import { seeAllFeatured } from '../components/seeAllFeatured';
 import { seeSideways } from '../components/seeSideways';
 import { hamBurger } from '../components/hamBurgerMenu';
+import { backToTop } from '../components/backToTop';
 // import { disappearAnimation } from '../components/disappearAnimation';
 
 // Internal imports
@@ -36,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   seeAllProfessions();
   seeAllFeatured();
   seeSideways();
+  backToTop();
 });
 
 

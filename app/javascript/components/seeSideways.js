@@ -13,29 +13,77 @@ const seeSideways = () => {
       // timing options
       duration: 600,
     });
-
+    
     setTimeout(() => { 
-      var value = parseInt(window.getComputedStyle(featured).marginLeft) + 584 + 'px'
+      var value = parseInt(window.getComputedStyle(featured).marginLeft) + 584 + 'px';
       featured.style.marginLeft = value;
     }, 600);
+    
+    if (2627 < parseInt(window.getComputedStyle(featured).marginLeft)) {
+      var value = -3212 + 'px';
+      featured.style.marginLeft = value;
 
+      featured.animate([
+        // keyframes
+        { transform: 'translate3D(100%, 0%, 0)' }
+      ], {
+        // timing options
+        duration: 1000,
+      }); 
+    } else if (2333 < parseInt(window.getComputedStyle(featured).marginLeft)) {
+      var value1 = -2334 + -584 + 'px';
+      featured.style.marginLeft = value1;
+
+      featured.animate([
+        // keyframes
+        { transform: 'translate3D(100%, 0%, 0)' }
+      ], {
+        // timing options
+        duration: 1000,
+      });
+    }
   })
   
   btn2.addEventListener("click", function() {
     console.log("Right Button Clicked")
+    
     featured.animate([
       // keyframes
       { transform: 'translate3D(-9%, 0%, 0)' }
     ], {
       // timing options
-      duration: 600,
+      duration: 400,
     });
     
     setTimeout(() => { 
       var value = parseInt(window.getComputedStyle(featured).marginLeft) - 584 + 'px'
       featured.style.marginLeft = value;
-    }, 600);
-    
+    }, 400);
+
+    if (-2627 > parseInt(window.getComputedStyle(featured).marginLeft)) {
+      var value = 3212 + 'px';
+      featured.style.marginLeft = value;
+
+      featured.animate([
+        // keyframes
+        { transform: 'translate3D(-100%, 0%, 0)' }
+      ], {
+        // timing options
+        duration: 1000,
+      });
+    } else if (-2333 > parseInt(window.getComputedStyle(featured).marginLeft)) {
+      var value1 = 2334 + 584 + 'px';
+      featured.style.marginLeft = value1;
+
+      featured.animate([
+        // keyframes
+        { transform: 'translate3D(-100%, 0%, 0)' }
+      ], {
+        // timing options
+        duration: 1000,
+      });
+    }
+
     
   });
 }
