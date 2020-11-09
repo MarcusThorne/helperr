@@ -10,9 +10,9 @@ class JobsController < ApplicationController
       redirect_to jobs_path(params[:query])
 
     elsif params[:format].to_i != 0
-      number = 12
-      start = 1 + ( number * ( params[:format].to_i - 1 ))
-      finish = 12 + ( number * ( params[:format].to_i - 1 ))
+      page = params[:format].to_i
+      start = 1 + ( 12 * ( page - 1 )) - 1
+      finish = 12 + ( 12 * ( page - 1 )) - 1
       @users = User.all[start..finish]
 
     elsif params[:format] == "high_rated"
