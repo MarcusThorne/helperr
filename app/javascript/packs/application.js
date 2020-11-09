@@ -20,7 +20,9 @@ require("channels")
 // import { swipeLeft } from '../components/swipeLeft';
 import 'bootstrap';
 import { changeLocation } from '../components/changeWord';
-import { seeAll } from '../components/seeAll';
+import { seeAllProfessions } from '../components/seeAllProfessions';
+import { seeAllFeatured } from '../components/seeAllFeatured';
+import { seeSideways } from '../components/seeSideways';
 import { hamBurger } from '../components/hamBurgerMenu';
 // import { disappearAnimation } from '../components/disappearAnimation';
 
@@ -31,7 +33,9 @@ document.addEventListener('turbolinks:load', () => {
   // swipeLeft();
   hamBurger();
   changeLocation();
-  seeAll();
+  seeAllProfessions();
+  seeAllFeatured();
+  seeSideways();
 });
 
 

@@ -1,34 +1,103 @@
-#seeAllBtn {
+// professions see all css
+
+#seeAllBtn1 {
+  visibility: hidden;
+  display: none;
+}
+
+.extend-all-professions {
+  width: 100vw;
+  height: 0;
+}
+
+.see-all-active-professions {
+  height: auto;
+  overflow: hidden;
+}
+
+.see-all-active-featured {
+  height: 2536px;
+  overflow: hidden;
+}
+
+.chevron {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid rgb(201, 201, 201);
+}
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+.rotate {
   visibility: hidden;
 }
 
-.extend-all {
-  width: 100vw;
-}
+// featured see all css
 
-.see-all-active {
-  height: auto !important;
+#seeAllButton2 {
+  visibility: visible;
+  &:hover {
+    background-color: rgb(210, 210, 210);
+    transition: 0.1s;
+  }
 }
 
 @media (min-width: 450px) {
-  #seeAllBtn {
+  #seeAllBtn1 {
     visibility: visible;
-    background-color: whitesmoke;
-    padding: 8px;
-    width: 40px;
-    border-radius: 4px;
-    margin: 24px 0 0 0;
+    // background-color: whitesmoke;
+    // padding: 8px;
+    // width: 40px;
+    // border-radius: 4px;
+    // margin: 24px 0 0 0;
     &:hover {
       background-color: rgb(210, 210, 210);
       transition: 0.1s;
     }
   }
+  
+  .extend-all-professions {
+    height: auto;
+  }
+}
 
-  .reverse {
-    transform: rotate(180deg);
+@media (min-width: 960px) {
+  #seeAllBtn2 {
+    visibility: hidden;
+    display: none;
   }
 
-  .rotate {
-    visibility: hidden;
+  #seeAllBtn4 {
+    position: absolute;
+    left: -42px;
+    top: 50%;
+    /* z-index: 218; */
+    transform: rotate(90deg);
+  }
+
+  #seeAllBtn5 {
+    position: absolute;
+    right: -42px;
+    top: 50%;
+    /* z-index: 218; */
+    transform: rotate(270deg);
+  }
+
+  .see-sideways {
+    margin-left: 1752px !important;
+  }
+
+  .featured-left-right {
+    display: flex;
+    margin-left: 2920px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .featured-left-right { 
+    margin-left: 2334px;
   }
 }
