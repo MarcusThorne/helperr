@@ -1,13 +1,8 @@
-// professions see all css
-
+// 1. professions content
 #seeAllBtn1 {
+  // invisiible because professions is a swipe right function on mobile 
   visibility: hidden;
   display: none;
-}
-
-#seeAllBtn4, #seeAllBtn5 {
-  visibility: hidden;
-  height: 0;
 }
 
 .extend-all-professions {
@@ -15,6 +10,24 @@
   margin-top: 16px;
 }
 
+// 2. featured content
+#seeAllBtn2 {
+  margin: 8px;
+
+  &:hover {
+    background-color: rgb(210, 210, 210);
+    transition: 0.1s;
+  }
+}
+
+#seeAllBtn4, #seeAllBtn5 {
+  // invisible as these are left and right buttons for laptop and bigger for featured users
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+// 3. professions and featured content
 .see-all-active {
   height: auto;
   overflow: hidden;
@@ -28,6 +41,7 @@
 }
 
 .reverse {
+  // turns chevron around after being clicked on.
   transform: rotate(180deg) !important;
 }
 
@@ -35,71 +49,54 @@
   visibility: hidden;
 }
 
-// featured see all css
-
-#seeAllButton2:hover {
-  background-color: rgb(210, 210, 210);
-  transition: 0.1s;
-}
-
 @media (min-width: 450px) {
+  //professions content 
   #seeAllBtn1 {
     visibility: visible;
-    // background-color: whitesmoke;
-    // padding: 8px;
-    // width: 40px;
-    // border-radius: 4px;
-    // margin: 24px 0 0 0;
+
     &:hover {
       background-color: rgb(210, 210, 210);
       transition: 0.1s;
     }
   }
   
+  // professions and featured content 
   .extend-all-professions {
     height: auto;
   }
 }
 
-@media (min-width: 960px) {
-  #seeAllBtn4, #seeAllBtn5 {
-    height: auto;
-    visibility: visible;
-  }
-
+@media (min-width: 960px) { 
+  // professions content
   #seeAllBtn2 {
     visibility: hidden;
     display: none;
   }
+  
+  // featured content
+  .relative-left-right {
+    position: relative;
+  }
+
+  #seeAllBtn4, #seeAllBtn5 {
+    height: auto;
+    visibility: visible;
+    position: absolute;
+    top: 50%;
+  }
 
   #seeAllBtn4 {
-    position: absolute;
-    left: -42px;
-    top: 50%;
-    /* z-index: 218; */
+    left: -48px;
     transform: rotate(90deg);
   }
 
   #seeAllBtn5 {
-    position: absolute;
-    right: -42px;
-    top: 50%;
-    /* z-index: 218; */
+    right: -48px;
     transform: rotate(270deg);
   }
-
-  .see-sideways {
-    margin-left: 1752px !important;
-  }
-
-  .featured-left-right {
+  
+  .left-right {
     display: flex;
-    margin-left: 2628px;
-  }
-}
-
-@media (min-width: 1300px) {
-  .featured-left-right { 
-    margin-left: 2334px;
+    // puts the featured users to the first one from left to right, then javascript minus' from the margin when the button is clicked.
   }
 }

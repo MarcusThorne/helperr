@@ -1,45 +1,47 @@
 const seeSideways = () => {
   var btn1 = document.querySelector("#seeAllBtn4");
   var btn2 = document.querySelector("#seeAllBtn5");
-  var featured = document.querySelector(".featured-left-right");
+  var featured = document.querySelector(".left-right");
   
   btn1.addEventListener("click", function() {
     console.log("Left Button Clicked")
 
     featured.animate([
       // keyframes
-      { transform: 'translate3D(9%, 0%, 0)' }
+      { transform: 'translate3D(8%, 0%, 0)' }
     ], {
       // timing options
-      duration: 600,
+      duration: 400,
     });
     
     setTimeout(() => { 
-      var value = parseInt(window.getComputedStyle(featured).marginLeft) + 584 + 'px';
+      var value = parseInt(window.getComputedStyle(featured).marginLeft) + 276 + 'px';
       featured.style.marginLeft = value;
     }, 600);
     
-    if (2627 < parseInt(window.getComputedStyle(featured).marginLeft)) {
-      var value = -3212 + 'px';
+    if (828 === parseInt(window.getComputedStyle(document.querySelector(".featured")).width)) {
+      if (-1 < parseInt(window.getComputedStyle(featured).marginLeft)) {
+        var value1 = (-2484 - 276) + 'px';
+        featured.style.marginLeft = value1;
+  
+        featured.animate([
+          // keyframes
+          { transform: 'translate3D(-100%, 0%, 0)' }
+        ], {
+          // timing options
+          duration: 500,
+        });
+      }
+    } else if (-1 < parseInt(window.getComputedStyle(featured).marginLeft)) {
+      var value = (-2760 - 276) + 'px';
       featured.style.marginLeft = value;
 
       featured.animate([
         // keyframes
-        { transform: 'translate3D(100%, 0%, 0)' }
+        { transform: 'translate3D(-100%, 0%, 0)' }
       ], {
         // timing options
-        duration: 1000,
-      }); 
-    } else if (2333 < parseInt(window.getComputedStyle(featured).marginLeft)) {
-      var value1 = -2334 + -584 + 'px';
-      featured.style.marginLeft = value1;
-
-      featured.animate([
-        // keyframes
-        { transform: 'translate3D(100%, 0%, 0)' }
-      ], {
-        // timing options
-        duration: 1000,
+        duration: 500,
       });
     }
   })
@@ -49,42 +51,43 @@ const seeSideways = () => {
     
     featured.animate([
       // keyframes
-      { transform: 'translate3D(-9%, 0%, 0)' }
+      { transform: 'translate3D(-8%, 0%, 0)' }
     ], {
       // timing options
       duration: 400,
     });
     
     setTimeout(() => { 
-      var value = parseInt(window.getComputedStyle(featured).marginLeft) - 584 + 'px'
+      var value = parseInt(window.getComputedStyle(featured).marginLeft) - 276 + 'px'
       featured.style.marginLeft = value;
     }, 400);
 
-    if (-2627 > parseInt(window.getComputedStyle(featured).marginLeft)) {
-      var value = 3212 + 'px';
+     
+    if (828 === parseInt(window.getComputedStyle(document.querySelector(".featured")).width)) {
+      if (-2483 > parseInt(window.getComputedStyle(featured).marginLeft)) {
+        var value1 = 276 + 'px';
+        featured.style.marginLeft = value1;
+  
+        featured.animate([
+          // keyframes
+          { transform: 'translate3D(100%, 0%, 0)' }
+        ], {
+          // timing options
+          duration: 500,
+        });
+      }
+    } else if (-2759 > parseInt(window.getComputedStyle(featured).marginLeft)) {
+      var value = 276 + 'px';
       featured.style.marginLeft = value;
 
       featured.animate([
         // keyframes
-        { transform: 'translate3D(-100%, 0%, 0)' }
+        { transform: 'translate3D(100%, 0%, 0)' }
       ], {
         // timing options
-        duration: 1000,
-      });
-    } else if (-2333 > parseInt(window.getComputedStyle(featured).marginLeft)) {
-      var value1 = 2334 + 584 + 'px';
-      featured.style.marginLeft = value1;
-
-      featured.animate([
-        // keyframes
-        { transform: 'translate3D(-100%, 0%, 0)' }
-      ], {
-        // timing options
-        duration: 1000,
+        duration: 500,
       });
     }
-
-    
   });
 }
 
