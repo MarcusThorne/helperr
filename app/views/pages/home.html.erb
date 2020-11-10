@@ -16,7 +16,7 @@
 </div>
 
 
-<h4 class="profession-title">Get started with one of our listed Jobs</h4>
+<h4 class="professions-title title">Get started with one of our listed Jobs</h4>
 
 <div class="professions">
   <% @professions.each do |job| %>
@@ -50,139 +50,140 @@
   <div class="about-us-img-1"></div>
 
   <div class="about-us-content-1">
-    <h4 class="au-title">How it works!</h4>
+    <h4 class="au-title"><strong>How it works...</strong></h4>
     <div class="hw-description">
-      <p class="steps" >1. Find the profession you desire <i class="fas fa-check tick"></i></p>
-      <p class="steps" >2. Send a personal message to one of our helperrs <i class="fas fa-check tick"></i></p>
-      <p class="steps" >3. Agree on a hourly rate you're happy with <i class="fas fa-check tick"></i></p>
-      <p class="steps" >4. Agree on the perfect time and date <i class="fas fa-check tick"></i></p>
-      <p class="steps" >5. Wait for your helperr to complete the task <i class="fas fa-check tick"></i></p>
-      <p class="steps" >6. Pay your helperr via our secure payment system <i class="fas fa-check tick"></i></p>
+      <div class="steps step1" >
+        <%= image_tag "business-women.png", class:"about-image" %> 
+        <h5><strong>1. Find</strong></h5>
+        <p>From our selection of professions and users, find whats best suited to you!</p>  
+      </div>
+      <div class="steps step2" >
+        <%= image_tag "chat.png", class:"about-image" %>
+        <h5><strong>2. Contact</strong></h5>
+        <p>Contact the helper via our chat box, or you can email them or call. It's up to you.</p> 
+      </div>
+      <div class="steps step3" >
+        <%= image_tag "calendar.png", class:"about-image" %>
+        <h5><strong>4. Time & Date</strong></h5>
+        <p>Find a helper thats willing to help you on the days that are best for you.</p> 
+      </div>
+      <div class="steps step4" >
+        <%= image_tag "agree.png", class:"about-image" %>
+        <h5><strong>3. Price</strong></h5>
+        <p>Agree on a price you're happy with, pay no more than the agreed price once the jobs complete!</p> 
+      </div>
+      <div class="steps step5" >
+        <%= image_tag "wait.png", class:"about-image" %>
+        <h5><strong>. Wait</strong></h5>
+        <p>Sit and relax while our helper completes the task you've assigned.</p> 
+      </div>
+      <div class="steps step6" >
+        <%= image_tag "pay.png", class:"about-image" %>
+        <h5><strong>6. Pay</strong></h5>
+        <p>Job done! Now all that's left to do is complete the payment and perhaps give the helper your feedback.</p> 
+      </div>
     </div>
-    <%= link_to about_us_path do %>
-      <button class="au-btn btn btn-primary">Learn More!</button>
-    <% end %>
   </div>
 </div>
 
 
 <div class="all-featured">
-  <div class="all-featured-container">
-    <h4 class="featured-title">Take a look at our highest rated Helperrs</h4>
+  <h4 class="title featured-title">Take a look at our highest rated Helperrs</h4>
+      
+  <div class="relative-left-right">
+    <% if @rated_users != [] && @rated_users.count >= 12 %>
+      <div class="featured">
+        <div class="left-right">
+          <% @rated_users.sample(12).each do |user| %>
+            <div class="feature">
+              <%= link_to jobs_path do %>
+                <div class="feature-content">
+                  <p class="doj">DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %></p>
+                  <p class="tag">Featured</p>
 
-      <% if @rated_users != [] %>
+                  <div>
+                    <% if user.photo.attached? %>
+                      <%= cl_image_tag u.photo.key, class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% else %>
+                      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% end %>
 
-        <div class="d-flex justify-content-center extend-all-featured">
-          <p id="seeAllBtn4" class="d-flex justify-content-around see-all-sideways"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
-        </div>
-
-        <div class="featured">
-          <div class="featured-left-right">
-            <% @rated_users.sample(12).each do |user| %>
-              <div class="feature">
-                <%= link_to jobs_path do %>
-                  <p class="doj">
-                    DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %>
-                  </p>
-
-                  <p class="ft">Featured</p>
-
-                  <div class="feature-content">
-                    <div>
-                      <% if user.photo.attached? %>
-                        <%= cl_image_tag u.photo.key, class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
-                      <% else %>
-                        <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
-                      <% end %>
-
-                      <p class="ft-rating">
-                        <% unless user.rating.nil? %>
-                          <% if user.rating.round(1) < 5.0 %>
-                            <%= user.rating.round(1) %>
-                            <% 4.times do %>
-                              <i class="fas fa-star"></i>
-                            <% end %>
-                            <i class="fas fa-star-half-alt"></i>
-                          <% else %>
-                            <%= user.rating.round(1) %>
-                            <% 5.times do %>
-                              <i class="fas fa-star"></i>
-                            <% end %>
+                    <p class="rating">
+                      <% unless user.rating.nil? %>
+                        <% if user.rating.round(1) < 5.0 %>
+                          <%= user.rating.round(1) %>
+                          <% 4.times do %>
+                            <i class="fas fa-star"></i>
+                          <% end %>
+                          <i class="fas fa-star-half-alt"></i>
+                        <% else %>
+                          <%= user.rating.round(1) %>
+                          <% 5.times do %>
+                            <i class="fas fa-star"></i>
                           <% end %>
                         <% end %>
-                      </p>
-                    </div>
-
-                    <p class="ft-username"><%= user.username %></p>
-                    <p class="ft-email"><%= user.email %></p>
-                    <p class="ft-location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
-                    <div class="all-ft">
-                      <% unless user.jobs.nil? %>
-                        <% user.jobs.sample(3).each do |job| %>
-                          <ul>
-                            <li class="ft-professions"><%= job.profession %>  <strong class="ft-rate">£<%= job.rate %></strong>/ hr</li>
-                          </ul>
-                        <% end %>
                       <% end %>
-                    </div>
+                    </p>
                   </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-        </div>
 
-       <div class="d-flex justify-content-center extend-all-featured">
-          <p id="seeAllBtn5" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
+                  <p class="username"><%= user.username %></p>
+                  <p class="email"><%= user.email %></p>
+                  <p class="location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
+                  <div class="jobs">
+                    <% unless user.jobs.nil? %>
+                      <% user.jobs.sample(3).each do |job| %>
+                        <ul>
+                          <li class="job-title"><p><%= job.profession %></p>  <p><strong class="rate">£<%= job.rate %></strong>/ hr</p></li>
+                        </ul>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-      
-      <% else %>
-
-        <div class="d-flex justify-content-center extend-all-featured">
-          <p id="seeAllBtn4" class="d-flex justify-content-around see-all-sideways"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
-        </div>
-        
-        <div class="featured">
-          <div class="featured-left-right">
-            <% 12.times do %>
-              <div class="feature">
-                <%= link_to jobs_path do %>
+      </div>
+    <% else %>
+      <div class="featured">
+        <div class="left-right">
+          <% 12.times do %>
+            <div class="feature">
+              <%= link_to jobs_path do %>
+                <div class="feature-content">
                   <p class="doj">DOJ : 00 - 00 - 00</p>
-                  <p class="ft">Featured</p>
+                  <p class="tag">Featured</p>
 
-                  <div class="feature-content">
-                    <div>
-                      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div>
+                    <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
 
-                      <p class="ft-rating">5.0
-                        <% 5.times do %>
-                          <i class="fas fa-star"></i>
-                        <% end %>
-                      </p>
-                    </div>
-
-                    <p class="ft-username">Username</p>
-                    <p class="ft-email">Email@example.com</p>
-                    <p class="ft-location"><i class="fas fa-thumbtack"></i>  Location</p>
-                    <div class="all-ft">
-                      <ul>
-                        <% 3.times do %>
-                          <li class="ft-professions">Profession  <strong class="ft-rate">£0.00</strong>/ hr</li>
-                        <% end %>
-                      </ul>
-                    </div>
+                    <p class="rating">5.0
+                      <% 5.times do %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                    </p>
                   </div>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+
+                  <p class="username">Username</p>
+                  <p class="email">Email@example.com</p>
+                  <p class="location"><i class="fas fa-thumbtack"></i>  Location</p>
+                  <div class="jobs">
+                    <ul>
+                      <% 3.times do %>
+                        <li class="job-title"><p>Profession</p>  <p><strong class="rate">£0.00</strong>/ hr</p></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-        
-        <div class="d-flex justify-content-center extend-all-featured">
-          <p id="seeAllBtn5" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
-        </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+    
+    <p id="seeAllBtn4" class="d-flex justify-content-around see-all-sideways"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>  
+    <p id="seeAllBtn5" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
   </div>
 </div>
 

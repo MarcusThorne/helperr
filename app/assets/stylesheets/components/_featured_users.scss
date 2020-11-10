@@ -1,31 +1,108 @@
 .featured {
-  display: grid;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  grid-template-rows: 1fr;
-  grid-gap: 24px;
   overflow: hidden;
-  height: 436px;
-  padding: 8px;
+  height: 426px;
+  position: relative;
 }
 
+// everything inside featured cards
 .feature {
   display: flex;
-  height: 404px;
   flex-direction: column;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   position: relative;
-  margin: 16px;
-}
+  margin: 16px 8px;
 
-.featured-title {
-  margin: 0 12.5vw -24px 12.5vw;
-  font-weight: bold;
-  font-family: 'Titillium Web', sans-serif;
-  text-align: center;
-  width: 75vw;
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 12px;
+    width: 240px;
+    justify-content: space-around;
+    border-radius: 4px;
+
+    .tag {
+      background-color: #167ffb;
+      position: absolute;
+      left: 0;
+      top: 8px;
+      padding: 1px 16px;
+      color: white;
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }  
+
+    //date of join
+    .doj {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-img {
+      margin-top: 32px;
+    }
+
+    .rating {
+      color: #f9c339;
+      margin-top: 8px;
+    }
+
+    .username {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: -2px;
+    }
+
+    .email {
+      font-size: 14px;
+      margin-top: -16px;
+      width: max-content;
+    }
+
+    .location {
+      background-color: rgba(128, 128, 128, 0.1);
+      padding: 4px 16px;
+      width: 200px;
+      font-weight: bold;
+    }
+    
+    .jobs {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      width: 220px;
+      padding-top: 26px;
+      height: 110px;
+      color: rgb(88, 88, 88);
+      font-size: 14px;
+
+      > ul {
+        padding: 0;
+      }    
+      
+      .job-title {
+        display: flex;
+        border-radius: 4px;
+        text-align: left;
+        justify-content: space-between;
+        margin: -10px 24px;
+
+        .rate {
+          color: black;
+        }        
+        
+        > p {
+          margin: 0 !important;
+        }
+      }
+    }
+  } 
 }
 
 .feature > a, a:hover, a:focus, a:active {
@@ -33,96 +110,15 @@
   color: black;
 }
 
-.feature-content {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  padding: 12px;
-  width: 240px;
-
-  > p {
-    width: max-content;
-  }
-}
-
-.doj {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.featured-img {
-  margin-top: 32px;
-  justify-content: space-around;
-}
-
-.ft-username {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: -2px;
-}
-
-.ft-email {
-  font-size: 14px;
-  margin-top: -16px;
-}
-
-.ft-location {
-  background-color: rgba(128, 128, 128, 0.1);
-  padding: 4px 16px;
-  width: 200px;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-.ft-rating {
-  color: #f9c339;
-  justify-content: right;
-  margin-top: 8px;
-}
-
-.ft-professions {
-  border-radius: 4px;
-  text-align: left;
-  justify-content: space-around;
-  margin: -10px 0;
-}
-
-.all-ft {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  width: 220px;
-  padding-top: 26px;
-  height: 110px;
-  color: rgb(88, 88, 88);
-  font-size: 14px;
-}
-
-.ft {
-  background-color: #167ffb;
-  position: absolute;
-  left: 0;
-  top: 8px;
-  padding: 1px 16px;
-  color: white;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-
-.ft-rate {
-  color: black;
-}
-
 @media (min-width: 375px) {
-  .feature-content {
-    width: 260px;
-  }
-
-  .all-ft {
-    width: 236px;
-    font-size: 15px;
+  .feature {
+    .feature-content {
+      width: 260px;
+      
+      .jobs {
+        width: 234px;
+      }
+    }
   }
 }
 
@@ -131,26 +127,14 @@
     flex-direction: row;
     display: flex;
     overflow-y: hidden;
-    width: 584px;
-  }
-
-  .featured-title {
-    text-align: left;
-    margin-bottom: 0 !important;
-    width: 55vw;
-    margin: 0 1.5vw;
-  }
-
-  .all-featured-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    width: 552px;
   }
 
   .all-featured {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100vw;
   }
 
@@ -161,11 +145,7 @@
 
 @media (min-width: 1300px) {
   .featured {
-    width: 890px;
-  }
-
-  .all-featured-container {
-    width: auto;
+    width: 828px;
   }
 
   .all-featured {

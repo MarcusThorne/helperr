@@ -4,17 +4,17 @@ const seeAllFeatured = () => {
 
   function topPlacement() {
     if (document.querySelector(".professions").classList.contains("see-all-active")) {
-      return 7800;
+      return 7850;
     } else {
-      return 6200;
+      return 6250;
     }
   }
 
   function bottomPlacement() {
     if (document.querySelector(".professions").classList.contains("see-all-active")) {
-      return 3550;
+      return 3600;
     } else {
-      return 1950;
+      return 2000;
     }
   }
 
