@@ -4,17 +4,17 @@ const seeAllFeatured = () => {
 
   function topPlacement() {
     if (document.querySelector(".professions").classList.contains("see-all-active")) {
-      return 7850;
+      return 9500;
     } else {
-      return 6250;
+      return 7400;
     }
   }
 
   function bottomPlacement() {
     if (document.querySelector(".professions").classList.contains("see-all-active")) {
-      return 3600;
+      return 4900;
     } else {
-      return 2000;
+      return 2800;
     }
   }
 
@@ -22,7 +22,7 @@ const seeAllFeatured = () => {
     showCard.classList.toggle("see-all-active");
     btn.classList.toggle("reverse");
     console.log("Clicked see all button");
-    
+
     if (showCard.classList.contains("see-all-active")) {
       window.scroll({ top: topPlacement(), behavior: 'smooth' });
       showCard.animate([

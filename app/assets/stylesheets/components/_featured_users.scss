@@ -35,7 +35,7 @@
       color: white;
       border-radius: 0 4px 4px 0;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    }  
+    }
 
     //date of join
     .doj {
@@ -47,6 +47,10 @@
 
     .feature-img {
       margin-top: 32px;
+      height: 75px;
+      width: 75px;
+      border-radius: 50%;
+      object-fit: fill;
     }
 
     .rating {
@@ -72,7 +76,7 @@
       width: 200px;
       font-weight: bold;
     }
-    
+
     .jobs {
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 4px;
@@ -84,8 +88,8 @@
 
       > ul {
         padding: 0;
-      }    
-      
+      }
+
       .job-title {
         display: flex;
         border-radius: 4px;
@@ -95,14 +99,14 @@
 
         .rate {
           color: black;
-        }        
-        
+        }
+
         > p {
           margin: 0 !important;
         }
       }
     }
-  } 
+  }
 }
 
 .feature > a, a:hover, a:focus, a:active {
@@ -114,7 +118,7 @@
   .feature {
     .feature-content {
       width: 260px;
-      
+
       .jobs {
         width: 234px;
       }

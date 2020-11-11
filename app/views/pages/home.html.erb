@@ -15,7 +15,6 @@
   </div>
 </div>
 
-
 <h4 class="professions-title title">Get started with one of our listed Jobs</h4>
 
 <div class="professions">
@@ -24,7 +23,7 @@
       <%= link_to jobs_path(job) do %>
         <div class="profession">
           <div class="job-photo <%= job.downcase.delete(" ") %>"></div>
-          
+
           <div class="profession-info">
             <p class="profession-name"><strong><%= job %></strong></p>
             <% if @low_rates.include?(job) %>
@@ -35,7 +34,7 @@
               <p class="price-range">From <strong class="price">£13.50</strong> to <strong class="price">£81.00</strong> /HOUR</p>
             <% end %>
           </div>
-        </div>  
+        </div>
       <% end %>
     <% end %>
   <% end %>
@@ -47,13 +46,13 @@
 
 
 <div class="about-us">
-  <div class="about-us-img-1"></div>
+  <%= image_tag "helping.jpg", class:"about-us-image" %>
 
   <div class="about-us-content-1">
-    <h4 class="au-title"><strong>How it works...</strong></h4>
+    <h4 class="about-title"><strong>How it works...</strong></h4>
     <div class="hw-description">
       <div class="steps step1" >
-        <%= image_tag "business-women.png", class:"about-image" %> 
+        <%= image_tag "business-women.png", class:"about-image" %>
         <h5><strong>1. Find</strong></h5>
         <p>From our selection of professions and users, find whats best suited to you!</p>  
       </div>
@@ -64,17 +63,17 @@
       </div>
       <div class="steps step3" >
         <%= image_tag "calendar.png", class:"about-image" %>
-        <h5><strong>4. Time & Date</strong></h5>
+        <h5><strong>3. Time & Date</strong></h5>
         <p>Find a helper thats willing to help you on the days that are best for you.</p> 
       </div>
       <div class="steps step4" >
         <%= image_tag "agree.png", class:"about-image" %>
-        <h5><strong>3. Price</strong></h5>
+        <h5><strong>4. Price</strong></h5>
         <p>Agree on a price you're happy with, pay no more than the agreed price once the jobs complete!</p> 
       </div>
       <div class="steps step5" >
         <%= image_tag "wait.png", class:"about-image" %>
-        <h5><strong>. Wait</strong></h5>
+        <h5><strong>5. Wait</strong></h5>
         <p>Sit and relax while our helper completes the task you've assigned.</p> 
       </div>
       <div class="steps step6" >
@@ -89,7 +88,7 @@
 
 <div class="all-featured">
   <h4 class="title featured-title">Take a look at our highest rated Helperrs</h4>
-      
+
   <div class="relative-left-right">
     <% if @rated_users != [] && @rated_users.count >= 12 %>
       <div class="featured">
@@ -103,7 +102,7 @@
 
                   <div>
                     <% if user.photo.attached? %>
-                      <%= cl_image_tag u.photo.key, class: "avatar-card featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                      <%= cl_image_tag u.photo.key, class: "featured-img", 'aria-haspopup': true, 'aria-expanded': false %>
                     <% else %>
                       <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
                     <% end %>
@@ -181,7 +180,7 @@
         </div>
       </div>
     <% end %>
-    
+
     <p id="seeAllBtn4" class="d-flex justify-content-around see-all-sideways"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>  
     <p id="seeAllBtn5" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
   </div>
@@ -193,9 +192,9 @@
 
 
 <div class="about-us">
-  <div class="about-us-img-2"></div>
+  <%= image_tag "workingmen.jpg", class:"about-us-image" %>
 
-  <div class="about-us-content-2">
+  <div class="about-content">
     <h4 class="au-title">Providing work when it's hard to find!</h4>
     <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!</p>
     <%= link_to about_us_path do %>
@@ -206,8 +205,7 @@
   <div class="about-us-img-3"></div>
 </div>
 
-
-<div class="info-home">
+<div class="information">
   <div class="info">
     <h4><i class="far fa-clock"></i>  Your <strong>Terms</strong></h4>
     <p>Do the job for the price you want, <br>when you want.</p>

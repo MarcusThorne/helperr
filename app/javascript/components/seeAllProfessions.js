@@ -16,7 +16,7 @@ const seeAllProfessions = () => {
           return 1920;
         }
       } else {
-        return 2150;
+        return 2250;
       }
     }
 
@@ -24,10 +24,10 @@ const seeAllProfessions = () => {
       if (window.getComputedStyle(document.querySelector(".professions")).display === 'grid' ) {
         return 750;
       } else {
-        return 500;
+        return 600;
       }
     }
-    
+
     if (showCard.classList.contains("see-all-active")){
       window.scroll({ top: topPlacement(), behavior: 'smooth' });
       showCard.animate([
