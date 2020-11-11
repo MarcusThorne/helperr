@@ -1,181 +1,48 @@
 .about-us {
   background-color: whitesmoke;
-  height: 520px;
   margin: 120px 0;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-bottom: 32px;
 }
 
 .about-image {
-  width: 60px;
-  object-position: top;
-  height: 52px;
+  width: 40px;
   object-fit: cover;
+  object-position: top;
+  height: 35px;
 }
 
-.tick {
-  color: rgb(98, 180, 98);
-}
-
-.about-us-img-1 {
-  height: 300px;
-  width: 100%;
-  background-image: asset-url("helping.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.about-us-img-2 {
-  height: 300px;
-  width: 100%;
-  background-image: asset-url("delivery.jpg");
-  background-position: center;
-  background-size: cover;
-  box-shadow: 0 0 10px rgba(0,0, 0, 0.2);
-}
-
-.about-us-content-1 {
-  justify-content: space-around;
-  text-align: center;
+.about-title {
+  text-align: left;
+  width: 250px;
   margin: 24px auto;
 }
 
-.about-us-content-2 {
-  justify-content: space-around;
-  text-align: center;
-  margin: 24px 46px;
+.about-content {
+  margin: 40px;
 }
 
-.au-btn {
-  position: absolute;
-  bottom: 24px;
-}
-
-.au-title {
-  margin-top: 48px;
-  width: 32vw;
-  margin-left: 20px;
-}
-
-.hw-description {
-  text-align: center;
-  display: grid;
-  grid-gap: 18px 32px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 40px;
-  width: 810px;
-}
-
-.au-description {
-  margin-top: 40px;
+.about-us-image {
+  margin-top: 24px;
+  width: 100vw;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
 .steps {
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-  background-color: rgb(253, 253, 253);
-  border-radius: 16px;
-  padding: 8px 16px;
-  border: 1px solid rgb(235, 235, 235);
+  width: 250px;
+  margin: 32px auto;
+  padding: 12px 16px;
+  border-radius: 8px;
 
-  > p {
-    font-size: 14px;
+  p {
     margin: 0;
   }
 }
 
-.step2 {
-  margin-top: -24px;
-  margin-bottom: 24px;
+.step1, .step3, .step5 {
+  margin-left: 10%;
 }
 
-.step5 {
-  margin-top: -24px;
-  margin-bottom: 24px;
-}
-
-@media (min-width: 600px) {
-  .au-description {
-    margin: 40px 112px;
-  }
-}
-
-@media (min-width: 960px) {
-  .about-us {
-    display: flex;
-    text-align: left;
-    position: relative;
-    width: 100vw;
-    margin: 200px 0 200px 0;
-    flex-direction: row;
-  }
-
-  .hw-description {
-    text-align: left;
-  }
-
-  .about-us-content-1 {
-    text-align: left;
-    margin: 0;
-    width: auto;
-  }
-
-  .about-us-content-2 {
-    text-align: left;
-    margin: 16px 0 16px 40px;
-    width: auto;
-  }
-
-  .about-us-img-1 {
-    height: 460px;
-    width: 40%;
-    margin-top: 30px;
-    border: 2px solid rgb(255, 255, 255);
-  }
-
-  .au-description {
-    width: 450px;
-    margin: 24px 0;
-  }
-
-  .au-description li {
-    width: 450px;
-  }
-
-  .about-us {
-    display: flex;
-    justify-content: center;
-  }
-
-  .about-us-img-1 {
-    margin-right: 3%;
-    width: 500px;
-  }
-
-  .about-us-img-2 {
-    display: none;
-  }
-
-  .about-us-img-3 {
-    width: 500px;
-    height: auto;
-    margin-left: 3%;
-    background-image: asset-url("delivery.jpg");
-    background-position: center;
-    background-size: cover;
-    box-shadow: 0 0 10px rgba(0,0, 0, 0.3);
-  }
-}
-
-@media (min-width: 1700px) {
-  .au-description {
-    font-size: 18px;
-  }
-
-  .hw-description {
-    font-size: 18px;
-  }
+.step2, .step4, .step6 {
+  margin-right: 10%;
 }
