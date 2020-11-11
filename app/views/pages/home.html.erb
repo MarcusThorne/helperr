@@ -44,42 +44,43 @@
   <p id="seeAllBtn1" class="d-flex justify-content-around"><i class="chevron chevron-professions fas fa-chevron-down"></i></p>
 </div>
 
+<div class="about-margin">
+  <div class="about-us">
+    <%= image_tag "helping.jpg", class:"about-us-image" %>
 
-<div class="about-us">
-  <%= image_tag "helping.jpg", class:"about-us-image" %>
-
-  <div class="about-us-content-1">
-    <h4 class="about-title"><strong>How it works...</strong></h4>
-    <div class="hw-description">
-      <div class="steps step1" >
-        <%= image_tag "business-women.png", class:"about-image" %>
-        <h5><strong>1. Find</strong></h5>
-        <p>From our selection of professions and users, find whats best suited to you!</p>  
-      </div>
-      <div class="steps step2" >
-        <%= image_tag "chat.png", class:"about-image" %>
-        <h5><strong>2. Contact</strong></h5>
-        <p>Contact the helper via our chat box, or you can email them or call. It's up to you.</p> 
-      </div>
-      <div class="steps step3" >
-        <%= image_tag "calendar.png", class:"about-image" %>
-        <h5><strong>3. Time & Date</strong></h5>
-        <p>Find a helper thats willing to help you on the days that are best for you.</p> 
-      </div>
-      <div class="steps step4" >
-        <%= image_tag "agree.png", class:"about-image" %>
-        <h5><strong>4. Price</strong></h5>
-        <p>Agree on a price you're happy with, pay no more than the agreed price once the jobs complete!</p> 
-      </div>
-      <div class="steps step5" >
-        <%= image_tag "wait.png", class:"about-image" %>
-        <h5><strong>5. Wait</strong></h5>
-        <p>Sit and relax while our helper completes the task you've assigned.</p> 
-      </div>
-      <div class="steps step6" >
-        <%= image_tag "pay.png", class:"about-image" %>
-        <h5><strong>6. Pay</strong></h5>
-        <p>Job done! Now all that's left to do is complete the payment and perhaps give the helper your feedback.</p> 
+    <div class="about-us-content-1">
+      <h4 class="about-title"><strong>How it works...</strong></h4>
+      <div class="hw-description">
+        <div class="steps step1" >
+          <%= image_tag "business-women.png", class:"about-image" %>
+          <h5><strong>1. Find</strong></h5>
+          <p>From our selection of professions and users, find whats best suited to you!</p>  
+        </div>
+        <div class="steps step2" >
+          <%= image_tag "chat.png", class:"about-image" %>
+          <h5><strong>2. Contact</strong></h5>
+          <p>Contact the helper via our chat box, or you can email them or call. It's up to you.</p> 
+        </div>
+        <div class="steps step3" >
+          <%= image_tag "calendar.png", class:"about-image" %>
+          <h5><strong>3. Time & Date</strong></h5>
+          <p>Find a helper thats willing to help you on the days that are best for you.</p> 
+        </div>
+        <div class="steps step4" >
+          <%= image_tag "agree.png", class:"about-image" %>
+          <h5><strong>4. Price</strong></h5>
+          <p>Agree on a price you're happy with, pay no more than the agreed price once the jobs complete!</p> 
+        </div>
+        <div class="steps step5" >
+          <%= image_tag "wait.png", class:"about-image" %>
+          <h5><strong>5. Wait</strong></h5>
+          <p>Sit and relax while our helper completes the task you've assigned.</p> 
+        </div>
+        <div class="steps step6" >
+          <%= image_tag "pay.png", class:"about-image" %>
+          <h5><strong>6. Pay</strong></h5>
+          <p>Job done! Now all that's left to do is complete the payment and perhaps give the helper your feedback.</p> 
+        </div>
       </div>
     </div>
   </div>
@@ -191,34 +192,38 @@
 </div>
 
 
-<div class="about-us">
-  <%= image_tag "workingmen.jpg", class:"about-us-image" %>
+<div class="about-margin">
+  <div class="about-us">
+    <%= image_tag "workingmen.jpg", class:"about-us-image about-img2" %>
 
-  <div class="about-content">
-    <h4 class="au-title">Providing work when it's hard to find!</h4>
-    <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!</p>
-    <%= link_to about_us_path do %>
-      <button class="au-btn btn btn-primary">Learn More!</button>
-    <% end %>
+    <div class="about-content">
+      <h4 class="au-title">Providing work when it's hard to find!</h4>
+      <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!</p>
+      <%= link_to about_us_path do %>
+        <button class="au-btn btn btn-primary">Learn More!</button>
+      <% end %>
+    </div>
+
+    <%= image_tag "workingmen.jpg", class:"about-us-image about-img3" %>
   </div>
 
-  <div class="about-us-img-3"></div>
-</div>
+  <div class="line"></div>
 
-<div class="information">
-  <div class="info">
-    <h4><i class="far fa-clock"></i>  Your <strong>Terms</strong></h4>
-    <p>Do the job for the price you want, <br>when you want.</p>
-  </div>
+  <div class="information">
+    <div class="info">
+      <h4><i class="far fa-clock"></i>  Your <strong>Terms</strong></h4>
+      <p>Do the job for the price you want, <br>when you want.</p>
+    </div>
 
-  <div class="info">
-    <h4><i class="fas fa-globe-europe"></i>  Your <strong>Profession</strong></h4>
-    <p>Don't stick to a job you hate, <br>get paid for what you love.</p>
-  </div>
+    <div class="info">
+      <h4><i class="fas fa-globe-europe"></i>  Your <strong>Profession</strong></h4>
+      <p>Don't stick to a job you hate, <br>get paid for what you love.</p>
+    </div>
 
-  <div class="info">
-    <h4><i class="fas fa-shield-alt"></i>  Your <strong>Protection</strong></h4>
-    <p>We provide a safe and secure way <br>for you to pay.</p>
+    <div class="info">
+      <h4><i class="fas fa-shield-alt"></i>  Your <strong>Protection</strong></h4>
+      <p>We provide a safe and secure way <br>for you to pay.</p>
+    </div>
   </div>
 </div>
 

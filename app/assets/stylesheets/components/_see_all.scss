@@ -99,4 +99,8 @@
     display: flex;
     // puts the featured users to the first one from left to right, then javascript minus' from the margin when the button is clicked.
   }
+
+  .extend-all-featured {
+    height: 0;
+  }
 }
