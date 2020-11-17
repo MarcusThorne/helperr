@@ -1,21 +1,53 @@
-<h3>Helperr's Hired</h3>
-<% if @jobs.count == 0 %>
-  <h5>You haven't hired anyone yet!</h5>
-<% else %>
-  <% @jobs.each do |job| %>
-    <h5><%= job.name %></h5>
-  <% end %>
-<% end %>
+<div class="profile">
+  <div class= "profile-content user-info">
+    <p><%= image_tag @cover_photo, class: "cover-photo" %></p>
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, class: "featured-img profile-avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+    <% else %>
+      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
+    <% end %>
+    <%= link_to my_profile_path do %>
+      <i class="profile-edit fas fa-pencil-alt"></i>
+    <% end %>
+    <h2><%= @user.name %></h2>
+    <%= @user.username %>
+    <p><i class="fas fa-thumbtack"></i>  <%= @user.location %></p>
+    <div class="ft-rating profile-rating">
+      <% unless @user.rating.nil? %>
+        <div class="d-flex stars" >
+          <p class="full-star" ><%= ("<i class='fas fa-star'></i>").html_safe * @user.rating.round(1) %></p>
+          <p class="half-star" ><%= ("<i class='fas fa-star-half-alt'></i>").html_safe if @user.rating - @user.rating.to_i >= 0.5 && @user.rating - @user.rating.to_i < 0.95 %></p>
+          <p class="empty-star" ><%= ("<i class='far fa-star'></i>").html_safe * ( 5 - @user.rating.round ) %></p>
+          <p class="rating" ><%= @user.rating.round(1) %></p>
+        </div>
+      <% end %>
+    </div>
+    
+    <p class="profile-bio">Bio...</p>
+  </div>
 
-<h3>Listed Jobs</h3>
-<% if @jobs_sell.count == 0 %>
-  <h5>You haven't listed a job yet!</h5>
-<% else %>
-  <% @jobs_sell.each do |job| %>
-    <h5><%= job.profession %></h5>
-  <% end %>
-<% end %>
+  <div class= "profile-content helperrs-hired">
+    <h3>Helperr's Hired</h3>
+    <% if @hired.count == 0 %>
+      <h5>You haven't hired anyone yet!</h5>
+    <% else %>
+      <% @hired.each do |job| %>
+        <h5><%= job.name %></h5>
+      <% end %>
+    <% end %>
+  </div>
 
-<%= link_to "create a job", new_job_path %>
-<%= current_user.username %>
-<%= current_user.location %>
+  <div class= "profile-content listed-jobs">
+    <h3>Listed Jobs</h3>
+    <% if @jobs_sell.count == 0 %>
+      <h5>You haven't listed a job yet!</h5>
+    <% else %>
+      <% @jobs_sell.each do |job| %>
+        <h5><%= job.profession %></h5>
+      <% end %>
+    <% end %>
+
+    <button class="create-listing btn btn-primary"><%= link_to "Add a listing", new_job_path %></button>
+  </div>
+</div>
+

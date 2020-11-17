@@ -20,10 +20,14 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @jobs = current_user.purchases.map do |purchase|
+    @user = current_user
+    @hired = current_user.purchases.map do |purchase|
       purchase.job
     end
     @jobs_sell = current_user.jobs
+
+    images = ["painting.jpg", "helping.jpg"]
+    @cover_photo = images.sample
   end
 
   def messages
