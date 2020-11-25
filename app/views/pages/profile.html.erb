@@ -4,7 +4,7 @@
     <% if @user.photo.attached? %>
       <%= cl_image_tag @user.photo.key, class: "featured-img profile-avatar", 'aria-haspopup': true, 'aria-expanded': false %>
     <% else %>
-      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
+      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "featured-img profile-avatar", 'aria-haspopup': true, 'aria-expanded': false %>
     <% end %>
     <%= link_to my_profile_path do %>
       <i class="profile-edit fas fa-pencil-alt"></i>

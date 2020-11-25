@@ -68,13 +68,12 @@
 
             <div class="d-flex card-actions" >
               <p class="action" ><i class="far fa-heart"></i></p>
-              <div class="card-action-line" ></div>
-              <p class="action" ><i class="fas fa-comment"></i></p>
-              <div class="card-action-line" ></div>
+              <%= link_to message_path(user.id) do %>
+                <p class="action" ><i class="fas fa-comment"></i></p>
+              <% end %>
               <%= link_to user_path(user.id) do %>
                 <p class="action" ><i class="far fa-user"></i></p>
               <% end %>
-              <div class="card-action-line" ></div>
               <p class="action" ><i class="fas fa-phone"></i></p>
             </div>
 
