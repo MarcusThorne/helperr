@@ -1,0 +1,13 @@
+<div class="user-chat">
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, class: "message-avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+  <% else %>
+    <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "message-avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+  <% end %>
+  <%= @user.username %>
+</div>
+
+<form class="message-bar">
+  <input name="query" type="search" aria-label="Search" placeholder="Message helperr..." class="message-box">
+  <button class="btn btn-primary message-submit" type="submit">Send</button>
+</form>
