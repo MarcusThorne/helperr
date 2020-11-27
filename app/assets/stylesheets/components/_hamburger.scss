@@ -8,6 +8,8 @@
   top: 0;
   padding: 26px;
   font-family: 'Titillium Web', sans-serif;
+  display: none;
+  visibility: hidden;
   
   > a {
     margin: 0.3rem 0;
@@ -58,9 +60,7 @@
   visibility: visible;
 }
 
-@media (min-width: 720px) {
-  .hamburger-on {
-    display: none;
-    visibility: hidden;
-  }
+.hamburger-on {
+  display: none;
+  visibility: hidden;
 }

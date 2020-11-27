@@ -25,6 +25,8 @@ import { seeAllFeatured } from '../components/seeAllFeatured';
 import { seeSideways } from '../components/seeSideways';
 import { hamBurger } from '../components/hamBurgerMenu';
 import { backToTop } from '../components/backToTop';
+import { moveSearchImage } from '../components/moveSearchImage';
+import { removeObject } from '../components/removeObject';
 // import { disappearAnimation } from '../components/disappearAnimation';
 
 // Internal imports
@@ -38,6 +40,8 @@ document.addEventListener('turbolinks:load', () => {
   seeAllFeatured();
   seeSideways();
   backToTop();
+  moveSearchImage();
+  removeObject();
 });
 
 
