@@ -66,16 +66,15 @@
       
       <% if user_signed_in? %>
         <li class="nav-item active d-flex">
-          <% if current_page?(root_path) %>
-            <% if @job.nil? %>
-              <%= link_to "Services", jobs_path, class: "navbar-link nav-link mr-4" %>
-            <% else %>
-              <%= link_to "Services", job_path(@job), class: "navbar-link nav-link mr-4" %>
-            <% end %>
+          <p class="<%= 'blue-link' if current_page?(root_path) %>"><%= link_to "Home", root_path, class: "navbar-link nav-link mr-4" %></p>
+          <% if @job.nil? %>
+            <p class="<%= 'blue-link' if current_page?(jobs_path) %>"><%= link_to "Services", jobs_path, class: "navbar-link nav-link mr-4" %>
           <% else %>
-            <%= link_to "Home", root_path, class: "navbar-link nav-link mr-4" %>
+            <p class="<%= 'blue-link' if current_page?(job_path(@job)) %>"><%= link_to "Services", job_path(@job), class: "navbar-link nav-link mr-4" %>
           <% end %>
-          <%= link_to "Messages", messages_path, class: "navbar-link nav-link mr-4" %>
+          <p class="<%= "blue-link" if current_page?(about_us_path) %>"><%= link_to "About Us", about_us_path, class: "navbar-link nav-link mr-4" %></p>
+          <p class="navbar-seperation"></p>
+          <p class="<%= 'blue-link' if current_page?(messages_path) %>"><%= link_to "Messages", messages_path, class: "navbar-link nav-link mx-4" %>
         </li>
         
         <li class="nav-item dropdown">
