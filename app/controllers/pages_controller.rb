@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @users = User.all
     @jobs = Job.all
     @rated_users = @users.each.select { |user| user.rating > 4.6 unless user.rating.nil? }
+    @coverphoto = ["cooking.jpg", "painting.jpg", "peoplejumping.jpg", "moving.jpg", "sewing.jpg"]
 
     if params[:query].present?
       @jobs = Job.search_by_profession(params[:query])
