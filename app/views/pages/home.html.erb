@@ -19,15 +19,15 @@
 
 <div class="all-featured">
   <div class="socials-bar">
-    <div class="social social1"><p class="social-images trusted"></p> Trusted</div>
-    <div class="social social2"><p class="social-images secure"></p> Secure</div>
-    <div class="social social2"><p class="social-images safe"></p> Safe</div>
-    <div class="social social3"><p class="social-images easy"></p> Easy</div>
-    <div class="social social4"><p class="social-images reliable"></p> Reliable</div>
-    <div class="social social4"><p class="social-images efficient"></p> Efficient</div>
+    <div class="social social1"><p class="social-images find"></p> Find <p class="instructions">Step 1.</p></div>
+    <div class="social social2"><p class="social-images contact"></p> Contact <p class="instructions">Step 2.</p></div>
+    <div class="social social2"><p class="social-images timedate"></p> Time & Date <p class="instructions">Step 3.</p></div>
+    <div class="social social3"><p class="social-images agree"></p> Agree <p class="instructions">Step 4.</p></div>
+    <div class="social social4"><p class="social-images wait"></p> Wait <p class="instructions">Step 5.</p></div>
+    <div class="social social4"><p class="social-images pay"></p> Pay <p class="instructions">Step 6.</p></div>
   </div>
 
-  <h4 class="title featured-title">Take a look at our highest rated Helperrs</h4>
+  <h4 class="featured-title">Take a look at our highest rated Helperrs</h4>
 
   <div class="relative-left-right">
     <% if @rated_users != [] && @rated_users.count >= 12 %>
@@ -37,7 +37,13 @@
             <div class="feature">
               <%= link_to jobs_path do %>
                 <div class="feature-content">
-                  <p class="doj">DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %></p>
+                  <div>
+                    <% if user.cover_photo.attached? %>
+                      <%= cl_image_tag user.cover_photo.key, class: "cover-photo", 'aria-haspopup': true, 'aria-expanded': false, crop: :thumb, gravity: :face %>
+                    <% else %>
+                      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "cover-photo", 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% end %>
+                  </div>
 
                   <div>
                     <% if user.photo.attached? %>
@@ -89,18 +95,15 @@
             <div class="feature">
               <%= link_to jobs_path do %>
                 <div class="feature-content">
-                  <p class="doj">DOJ : 00 - 00 - 00</p>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "featured-cover-photo", 'aria-haspopup': true, 'aria-expanded': false %>
 
-                  <div>
                     <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
 
-                    <p class="rating">5.0
-                      <% 5.times do %>
-                        <i class="fas fa-star"></i>
-                      <% end %>
-                    </p>
-                  </div>
-
+                  <p class="rating">5.0
+                    <% 5.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                  </p>
                   <p class="username">Username</p>
                   <p class="email">Email@example.com</p>
                   <p class="location"><i class="fas fa-thumbtack"></i>  Location</p>
@@ -161,34 +164,34 @@
       <h4 class="about-title"><strong>How it works...</strong></h4>
       <div class="hw-description">
         <div class="steps step1" >
-          <%= image_tag "business-women.png", class:"about-image" %>
+          <%# <%= image_tag "business-women.png", class:"about-image" %> %>
           <h5><strong>1. Find</strong></h5>
-          <p>From our selection of professions and users, find whats best suited to you!</p>  
+          <p>From our selection of professions and users, find whats best suited to you!</p>
         </div>
         <div class="steps step2" >
-          <%= image_tag "chat.png", class:"about-image" %>
+          <%# <%= image_tag "chat.png", class:"about-image" %> %>
           <h5><strong>2. Contact</strong></h5>
-          <p>Contact the helper via our chat box, or you can email them or call. It's up to you.</p> 
+          <p>Contact the helper via our chat box, or you can email them or call. It's up to you.</p>
         </div>
         <div class="steps step3" >
-          <%= image_tag "calendar.png", class:"about-image" %>
+          <%# <%= image_tag "calendar.png", class:"about-image" %> %>
           <h5><strong>3. Time & Date</strong></h5>
-          <p>Find a helper thats willing to help you on the days that are best for you.</p> 
+          <p>Find a helper thats willing to help you on the days that are best for you.</p>
         </div>
         <div class="steps step4" >
-          <%= image_tag "agree.png", class:"about-image" %>
+          <%# <%= image_tag "agree.png", class:"about-image" %> %>
           <h5><strong>4. Price</strong></h5>
-          <p>Agree on a price you're happy with, pay no more than the agreed price once the jobs complete!</p> 
+          <p>Agree on a price you're happy with, pay no more than the agreed price once the jobs complete!</p>
         </div>
         <div class="steps step5" >
-          <%= image_tag "wait.png", class:"about-image" %>
+          <%# <%= image_tag "wait.png", class:"about-image" %> %>
           <h5><strong>5. Wait</strong></h5>
-          <p>Sit and relax while our helper completes the task you've assigned.</p> 
+          <p>Sit and relax while our helper completes the task you've assigned.</p>
         </div>
         <div class="steps step6" >
-          <%= image_tag "pay.png", class:"about-image" %>
+          <%# <%= image_tag "pay.png", class:"about-image" %> %>
           <h5><strong>6. Pay</strong></h5>
-          <p>Job done! Now all that's left to do is complete the payment and perhaps give the helper your feedback.</p> 
+          <p>Job done! Now all that's left to do is complete the payment and perhaps give the helper your feedback.</p>
         </div>
       </div>
     </div>

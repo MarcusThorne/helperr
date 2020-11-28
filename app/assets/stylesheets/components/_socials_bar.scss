@@ -13,7 +13,7 @@
 .social {
   height: 166px;
   width: 244px;
-  padding: 48px;
+  padding: 23px;
   border-radius: 4px;
   text-align: center;
   align-items: center;
@@ -28,16 +28,32 @@
     margin-top: -8px;
     height: 166px;
 
-    > .trusted {
-      background-image: asset-url('trustwhite');
+    .find {
+      background-image: asset-url('findwhite');
     }
 
-    > .secure {
-      background-image: asset-url('securewhite');
+    .contact {
+      background-image: asset-url('contactwhite');
     }
 
-    > .easy {
-      background-image: asset-url('easywhite');
+    .timedate {
+      background-image: asset-url('timedatewhite');
+    }
+
+    .agree {
+      background-image: asset-url('agreewhite');
+    }
+
+    .wait {
+      background-image: asset-url('waitwhite');
+    }
+
+    .pay {
+      background-image: asset-url('paywhite');
+    }
+
+    .instructions {
+      background-color: #4a9bf8;
     }
   }
 }
@@ -48,14 +64,34 @@
   width: 34px;
 }
 
-.trusted {
-  background-image: asset-url('trust.png');
+.instructions {
+  border-radius: 32px;
+  background-color: #e9ecef;
+  padding: 3px 16px;
+  font-size: 14px;
+  margin-top: 6px;
 }
 
-.secure {
-  background-image: asset-url('secure.png');
+.find {
+  background-image: asset-url('findblue');
 }
 
-.easy {
-  background-image: asset-url('easy.png')
+.contact {
+  background-image: asset-url('contactblue');
+}
+
+.timedate {
+  background-image: asset-url('timedateblue');
+}
+
+.agree {
+  background-image: asset-url('agreeblue');
+}
+
+.wait {
+  background-image: asset-url('waitblue');
+}
+
+.pay {
+  background-image: asset-url('payblue');
 }

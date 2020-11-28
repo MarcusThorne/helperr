@@ -1,23 +1,37 @@
 .navbar-content {
   height: 80px;
-  border-radius: 4px;
-  background-color: white;
+  background-color: transparent;
   z-index: 50;
+  transition: 0.5s;
   width: 100%;
   top: 0;
   margin: 0 auto;
   position: fixed;
   transform: translateX(-50%);
   left: 50%;
-  z-index: 5;
-  padding: 21px 180px;
+  z-index: 20;
+  padding: 14px 240px;
 }
 
 .navbar-logo {
-  background-image: asset-url('helperr-black.png');
+  background-image: asset-url('helperlogowhite.png');
   background-size: cover;
   height: 32px;
   width: 128px;
+  margin: auto;
+}
+
+.scrolling-active {
+  background-color: rgba(255, 255, 255, 0.945);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
+  .navbar-logo {
+    background-image: asset-url('helperr-black.png');
+  }
+}
+
+.scrolling-active .navbar-link {
+  color: black;
 }
 
 .log-on-icon {
