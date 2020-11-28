@@ -30,23 +30,3 @@ a {
   text-align: center;
   margin: 0 0 0 12.5vw;
 }
-
-@media (min-width: 720px) {
-  .professions-title {
-    text-align: left;
-    width: 60vw !important;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 960px) {
-  .professions-title {
-    width: 736px !important;
-  }
-}
-
-@media (min-width: 1300px) {
-  .professions-title {
-    width: 984px !important;
-  }
-}

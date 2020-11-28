@@ -9,7 +9,7 @@
   position: fixed;
   transform: translateX(-50%);
   left: 50%;
-  z-index: 20;
+  z-index: 2000;
   padding: 14px 240px;
 }
 
@@ -54,6 +54,10 @@
   }
 }
 
+.link {
+  margin-bottom: 0;
+}
+
 .navbar-seperation {
   border-right: 1px solid grey;
   height: 16px;
@@ -62,7 +66,7 @@
 
 .blue-link {
   > a {
-    color: #167FFB;
+    color: #167FFB !important;
   }
 }
 

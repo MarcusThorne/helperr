@@ -52,6 +52,19 @@
                       <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
                     <% end %>
 
+                  <p class="username"><%= user.username %></p>
+                  <p class="email"><%= user.email %></p>
+                  <p class="location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
+                  <div class="jobs">
+                    <% unless user.jobs.nil? %>
+                      <% user.jobs.sample(3).each do |job| %>
+                        <ul>
+                          <li class="job-title"><p><%= job.profession %></p>  <p><strong class="rate">£<%= job.rate %></strong>/ hr</p></li>
+                        </ul>
+                      <% end %>
+                    <% end %>
+                  </div>
+
                     <p class="rating">
                       <% unless user.rating.nil? %>
                         <% if user.rating.round(1) < 5.0 %>
@@ -69,19 +82,6 @@
                       <% end %>
                     </p>
                   </div>
-
-                  <p class="username"><%= user.username %></p>
-                  <p class="email"><%= user.email %></p>
-                  <p class="location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
-                  <div class="jobs">
-                    <% unless user.jobs.nil? %>
-                      <% user.jobs.sample(3).each do |job| %>
-                        <ul>
-                          <li class="job-title"><p><%= job.profession %></p>  <p><strong class="rate">£<%= job.rate %></strong>/ hr</p></li>
-                        </ul>
-                      <% end %>
-                    <% end %>
-                  </div>
                 </div>
               <% end %>
             </div>
@@ -95,25 +95,24 @@
             <div class="feature">
               <%= link_to jobs_path do %>
                 <div class="feature-content">
-                  <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "featured-cover-photo", 'aria-haspopup': true, 'aria-expanded': false %>
 
-                    <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= image_tag @coverphoto.sample, class: "featured-cover-photo", 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
 
-                  <p class="rating">5.0
+                  <div class="featured-top">
+                    <p class="username">Username</p>
+                    <p class="save"><i class="fab like-btn fa-gratipay"></i></p>
+                  </div>
+                  <p class="location"><i class="fas fa-thumbtack"></i>  Location</p>
+                  <p class="email">Email@example.com</p>
+
+                  <div class="rating">
                     <% 5.times do %>
                       <i class="fas fa-star"></i>
                     <% end %>
-                  </p>
-                  <p class="username">Username</p>
-                  <p class="email">Email@example.com</p>
-                  <p class="location"><i class="fas fa-thumbtack"></i>  Location</p>
-                  <div class="jobs">
-                    <ul>
-                      <% 3.times do %>
-                        <li class="job-title"><p>Profession</p>  <p><strong class="rate">£0.00</strong>/ hr</p></li>
-                      <% end %>
-                    </ul>
+                    <p class="number-rating">(0 reviews)</p>
                   </div>
+
                 </div>
               <% end %>
             </div>
@@ -127,7 +126,9 @@
   </div>
 </div>
 
-<h4 class="professions-title title">Get started with one of our listed Jobs</h4>
+<h4 class="professions-title">Popular Professions</h4>
+<p class="professions-subtitle">Take a quick look through our listings</p>
+<div class="professions-box"></div>
 
 <div class="professions">
   <% @professions.each do |job| %>

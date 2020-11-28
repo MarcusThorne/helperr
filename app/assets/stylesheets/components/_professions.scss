@@ -1,44 +1,74 @@
 .professions {
-  display: flex;
+  display: grid;
   overflow-y: hidden;
   width: 90vw;
   margin-left: 5vw;
+  width: 984px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.professions-title {
+  margin-top: 88px;
+  text-align: center;
+  font-size: 32px;
+  color: #167FFB;
+}
+
+.professions-subtitle {
+  color: rgb(131, 131, 131);
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.professions-box {
+  width: 80px;
+  margin: 18px auto;
+  border-bottom: 3px solid #167FFB;
 }
 
 .profession {
   margin: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   width: 208px;
   border-radius: 4px;
   background-color: white;
 }
 
 .profession-info {
-  padding: 30px 12px;
-  margin-top: -8px;
+  padding: 24px 12px;
+  margin-top: -112px;
   height: 104px;
-  
+
   .profession-name {
-    color: black;
-    font-size: 18px;
+    color: white;
+    font-size: 12px;
     margin-bottom: 4px;
+    background-color: #167FFB;
+    padding: 8px 24px;
+    border-radius: 16px;
+    width: max-content;
   }
-  
+
   .price-range {
     font-size: 14px;
-    color: rgba(128,128,128,0.514);
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
     font-family: 'Titillium Web', sans-serif;
   }
 
   .price {
-    color: rgb(53, 53, 53);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
   }
 }
 
 @media (min-width: 450px) {
   .professions {
     flex-direction: column;
-    height: 496px;
+    height: 648px;
     margin-bottom: 16px;
   }
 
@@ -49,7 +79,7 @@
   }
 
   .profession-info {
-    padding: 40px 24px;
+    padding: 24px 24px;
   }
 }
 
@@ -64,9 +94,8 @@
   .professions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 568px;
     width: 736px;
-    margin: auto;
+    margin: 48px auto;
     grid-gap: 32px 24px;
     padding: 8px;
   }
@@ -78,23 +107,13 @@
   }
 
   .profession-info {
-    padding-left: 16px;
-  }
-
-  .profession-title {
-    text-align: left;
-    margin: auto;
-    width: 720px;
+    padding-left: 26px;
   }
 }
 
 @media (min-width: 1240px) {
   .professions {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 984px;
-  }
-
-  .profession-title {
-    width: 956px;
   }
 }
