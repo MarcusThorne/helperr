@@ -1,7 +1,7 @@
 <div class="search">
   <div class="search-box">
     <%= render 'shared/navbar' %>
-    
+
     <div class="search-infomation">
       <h1>Find the right <strong>Helperr</strong> for the job</h1>
       <h5 class="mt-3">Your time, your choice</h5>
@@ -17,12 +17,110 @@
   </div>
 </div>
 
-<div class="socials-bar">
-  <div class="socials-content">
-    <p><%= image_tag "trust.png", class: "socials-icon" %> Trusted</p>
-    <p><%= image_tag "secure.png", class: "socials-icon" %> Safe & Secure</p>
-    <p><%= image_tag "easy.png", class: "socials-icon" %> Easy to Use</p>
-    <p><%= image_tag "reliable.png", class: "socials-icon" %> Reliable Users</p>
+<div class="all-featured">
+  <div class="socials-bar">
+    <div class="social social1"><p class="social-images trusted"></p> Trusted</div>
+    <div class="social social2"><p class="social-images secure"></p> Secure</div>
+    <div class="social social2"><p class="social-images safe"></p> Safe</div>
+    <div class="social social3"><p class="social-images easy"></p> Easy</div>
+    <div class="social social4"><p class="social-images reliable"></p> Reliable</div>
+    <div class="social social4"><p class="social-images efficient"></p> Efficient</div>
+  </div>
+
+  <h4 class="title featured-title">Take a look at our highest rated Helperrs</h4>
+
+  <div class="relative-left-right">
+    <% if @rated_users != [] && @rated_users.count >= 12 %>
+      <div class="featured">
+        <div class="left-right">
+          <% @rated_users.sample(12).each do |user| %>
+            <div class="feature">
+              <%= link_to jobs_path do %>
+                <div class="feature-content">
+                  <p class="doj">DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %></p>
+
+                  <div>
+                    <% if user.photo.attached? %>
+                      <%= cl_image_tag user.photo.key, class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% else %>
+                      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% end %>
+
+                    <p class="rating">
+                      <% unless user.rating.nil? %>
+                        <% if user.rating.round(1) < 5.0 %>
+                          <%= user.rating.round(1) %>
+                          <% 4.times do %>
+                            <i class="fas fa-star"></i>
+                          <% end %>
+                          <i class="fas fa-star-half-alt"></i>
+                        <% else %>
+                          <%= user.rating.round(1) %>
+                          <% 5.times do %>
+                            <i class="fas fa-star"></i>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    </p>
+                  </div>
+
+                  <p class="username"><%= user.username %></p>
+                  <p class="email"><%= user.email %></p>
+                  <p class="location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
+                  <div class="jobs">
+                    <% unless user.jobs.nil? %>
+                      <% user.jobs.sample(3).each do |job| %>
+                        <ul>
+                          <li class="job-title"><p><%= job.profession %></p>  <p><strong class="rate">£<%= job.rate %></strong>/ hr</p></li>
+                        </ul>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="featured">
+        <div class="left-right">
+          <% 12.times do %>
+            <div class="feature">
+              <%= link_to jobs_path do %>
+                <div class="feature-content">
+                  <p class="doj">DOJ : 00 - 00 - 00</p>
+
+                  <div>
+                    <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
+
+                    <p class="rating">5.0
+                      <% 5.times do %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                    </p>
+                  </div>
+
+                  <p class="username">Username</p>
+                  <p class="email">Email@example.com</p>
+                  <p class="location"><i class="fas fa-thumbtack"></i>  Location</p>
+                  <div class="jobs">
+                    <ul>
+                      <% 3.times do %>
+                        <li class="job-title"><p>Profession</p>  <p><strong class="rate">£0.00</strong>/ hr</p></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <p id="seeAllBtn4" class="d-flex justify-content-around see-all-sideways"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>  
+    <p id="seeAllBtn5" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
   </div>
 </div>
 
@@ -97,106 +195,6 @@
   </div>
 </div>
 
-
-<div class="all-featured">
-  <h4 class="title featured-title">Take a look at our highest rated Helperrs</h4>
-
-  <div class="relative-left-right">
-    <% if @rated_users != [] && @rated_users.count >= 12 %>
-      <div class="featured">
-        <div class="left-right">
-          <% @rated_users.sample(12).each do |user| %>
-            <div class="feature">
-              <%= link_to jobs_path do %>
-                <div class="feature-content">
-                  <p class="doj">DOJ : <%= user.created_at.day %>-<%= user.created_at.month %>-<%= user.created_at.year %></p>
-                  <p class="tag">Featured</p>
-
-                  <div>
-                    <% if user.photo.attached? %>
-                      <%= cl_image_tag user.photo.key, class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
-                    <% else %>
-                      <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
-                    <% end %>
-
-                    <p class="rating">
-                      <% unless user.rating.nil? %>
-                        <% if user.rating.round(1) < 5.0 %>
-                          <%= user.rating.round(1) %>
-                          <% 4.times do %>
-                            <i class="fas fa-star"></i>
-                          <% end %>
-                          <i class="fas fa-star-half-alt"></i>
-                        <% else %>
-                          <%= user.rating.round(1) %>
-                          <% 5.times do %>
-                            <i class="fas fa-star"></i>
-                          <% end %>
-                        <% end %>
-                      <% end %>
-                    </p>
-                  </div>
-
-                  <p class="username"><%= user.username %></p>
-                  <p class="email"><%= user.email %></p>
-                  <p class="location"><i class="fas fa-thumbtack"></i>  <%= user.location %></p>
-                  <div class="jobs">
-                    <% unless user.jobs.nil? %>
-                      <% user.jobs.sample(3).each do |job| %>
-                        <ul>
-                          <li class="job-title"><p><%= job.profession %></p>  <p><strong class="rate">£<%= job.rate %></strong>/ hr</p></li>
-                        </ul>
-                      <% end %>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% else %>
-      <div class="featured">
-        <div class="left-right">
-          <% 12.times do %>
-            <div class="feature">
-              <%= link_to jobs_path do %>
-                <div class="feature-content">
-                  <p class="doj">DOJ : 00 - 00 - 00</p>
-                  <p class="tag">Featured</p>
-
-                  <div>
-                    <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar-card feature-img", 'aria-haspopup': true, 'aria-expanded': false %>
-
-                    <p class="rating">5.0
-                      <% 5.times do %>
-                        <i class="fas fa-star"></i>
-                      <% end %>
-                    </p>
-                  </div>
-
-                  <p class="username">Username</p>
-                  <p class="email">Email@example.com</p>
-                  <p class="location"><i class="fas fa-thumbtack"></i>  Location</p>
-                  <div class="jobs">
-                    <ul>
-                      <% 3.times do %>
-                        <li class="job-title"><p>Profession</p>  <p><strong class="rate">£0.00</strong>/ hr</p></li>
-                      <% end %>
-                    </ul>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-
-    <p id="seeAllBtn4" class="d-flex justify-content-around see-all-sideways"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>  
-    <p id="seeAllBtn5" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
-  </div>
-</div>
 
 <div class="d-flex justify-content-center extend-all-featured">
   <p id="seeAllBtn2" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
