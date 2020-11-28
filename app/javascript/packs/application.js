@@ -27,6 +27,7 @@ import { hamBurger } from '../components/hamBurgerMenu';
 import { backToTop } from '../components/backToTop';
 import { moveSearchImage } from '../components/moveSearchImage';
 import { removeObject } from '../components/removeObject';
+import { navbarColor } from '../components/navbarColor';
 // import { disappearAnimation } from '../components/disappearAnimation';
 
 // Internal imports
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   backToTop();
   moveSearchImage();
   removeObject();
+  navbarColor();
 });
 
 

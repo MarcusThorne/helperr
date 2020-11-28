@@ -1,27 +1,61 @@
 .socials-bar {
-  width: 100vw;
-  height: 104px;
-  background-color: rgb(238, 238, 238);
-  margin: -200px 0 200px 0;
-  border-bottom: 1px solid rgb(243, 243, 243);
-  display: none;
-  visibility: hidden;
+  top: -32px;
+  width: 65vw;
+  height: 166px;
+  display: flex;
+  background-color: white;
+  border-radius: 4px;
   justify-content: space-around;
+  position: absolute;
+  z-index: 10;
+}
 
-  .socials-content {
-    display: flex;
-    justify-content: space-around;
-    width: 50vw;
-    padding: 34px 0;
-    height: 104px;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(163, 163, 163);
-    text-shadow: 0 0 10px white;
+.social {
+  height: 166px;
+  width: 244px;
+  padding: 48px;
+  border-radius: 4px;
+  text-align: center;
+  align-items: center;
+  transition: margin-top 0.5s;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    background-color: #167ffb;
+    color: white;
+    box-shadow: 0 4px 10px #1681fb81;
+    margin-top: -8px;
+    height: 166px;
+
+    > .trusted {
+      background-image: asset-url('trustwhite');
+    }
+
+    > .secure {
+      background-image: asset-url('securewhite');
+    }
+
+    > .easy {
+      background-image: asset-url('easywhite');
+    }
   }
 }
 
-.socials-icon {
-  width: 40px;
-  opacity: 50%;
+.social-images {
+  background-size: cover;
+  height: 50px;
+  width: 34px;
+}
+
+.trusted {
+  background-image: asset-url('trust.png');
+}
+
+.secure {
+  background-image: asset-url('secure.png');
+}
+
+.easy {
+  background-image: asset-url('easy.png')
 }

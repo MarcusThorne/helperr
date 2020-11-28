@@ -11,7 +11,7 @@ const hamBurger = () => {
     on.classList.toggle("hamburger-off");
     placeHolder.classList.toggle("hamburger-placeholder-active");
     var active = document.querySelector(".hamburger-active");
-    
+
     if (hamburger.classList.contains("hamburger-active")){
       console.log("Ham Burger Active");
       active.animate([

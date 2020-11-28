@@ -1,0 +1,5 @@
+const navbarColor = () => {
+
+}
+
+export {navbarColor};

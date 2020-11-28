@@ -2,7 +2,7 @@
 
   <!-- The content inside the hamburger, only shows when screen in below 720px -->
   <div class="hamburger d-flex flex-column">
-    
+
     <% if user_signed_in? %>
       <div class="top-section">
         <div class="d-flex justify-content-between mb-3">
@@ -16,7 +16,7 @@
           <% end %>
         </div>
       </div>
-    
+
     <% else %>
       <div class="top-section">
         <div class="d-flex justify-content-between">
@@ -26,7 +26,7 @@
         </div>
       </div>
     <% end %>
-    
+
     <% unless user_signed_in? %>
       <%= link_to "Sign In", new_user_session_path %>
     <% end %>
@@ -52,7 +52,8 @@
 
   <!-- the helperr logo with link to homepage -->
   <%= link_to root_path do %>
-    <%= image_tag "helperr-black.png", class: 'navbar-logo' %>
+    <p class="navbar-logo"></p>
+    <p class="navbar-logo2 logo-hidden"></p>
   <% end %>
 
   <!-- link to log in page -->
@@ -63,7 +64,7 @@
   <!-- links for to services, messages and home depending on the current page and wheather the user is signed in or not -->
   <div class="navbar-links">
     <ul class="navbar-nav flex-row mr-auto">
-      
+
       <% if user_signed_in? %>
         <li class="nav-item active d-flex">
           <p class="<%= 'blue-link' if current_page?(root_path) %>"><%= link_to "Home", root_path, class: "navbar-link nav-link mr-4" %></p>
@@ -76,7 +77,7 @@
           <p class="navbar-seperation"></p>
           <p class="<%= 'blue-link' if current_page?(messages_path) %>"><%= link_to "Messages", messages_path, class: "navbar-link nav-link mx-4" %>
         </li>
-        
+
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, crop: :thumb, gravity: :face %>

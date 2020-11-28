@@ -1,9 +1,17 @@
+.all-featured {
+  width: 100vw;
+  height: 800px;
+  background-color: #f8f9fa;
+  position: relative;
+  padding-top: 104px;
+}
+
 .featured {
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  height: 426px;
+  height: 360px;
   position: relative;
 }
 
@@ -15,6 +23,7 @@
   border-radius: 4px;
   position: relative;
   margin: 16px 8px;
+  height: 352px;
 
   .feature-content {
     display: flex;
@@ -115,18 +124,6 @@
   color: black;
 }
 
-@media (min-width: 375px) {
-  .feature {
-    .feature-content {
-      width: 260px;
-
-      .jobs {
-        width: 234px;
-      }
-    }
-  }
-}
-
 @media (min-width: 960px) {
   .featured {
     flex-direction: row;
@@ -144,17 +141,13 @@
   }
 
   .feature-content {
-    width: auto;
+    width: 80px;
+    height: 352px;
   }
 }
 
 @media (min-width: 1300px) {
   .featured {
-    width: 828px;
-  }
-
-  .all-featured {
-    overflow: hidden;
-    height: 472px;
+    width: 1022px;
   }
 }

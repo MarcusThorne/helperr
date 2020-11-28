@@ -9,7 +9,7 @@ const moveSearchImage = () => {
   addEventListener('scroll', function(){
     if (window.scrollY === 0) {
       image.style.backgroundPosition = '50% 0px';
-    } 
+    }
     else if (window.scrollY > 0 && window.scrollY < 900) {
       image.style.backgroundPosition = position();
     }
