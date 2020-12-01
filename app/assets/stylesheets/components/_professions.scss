@@ -1,7 +1,6 @@
 .professions {
   display: grid;
   overflow-y: hidden;
-  width: 90vw;
   margin-left: 5vw;
   width: 984px;
   display: grid;
@@ -35,12 +34,21 @@
   width: 208px;
   border-radius: 4px;
   background-color: white;
+  height: 264px;
+  overflow: hidden;
+
+  &:hover {
+    .job-photo {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .profession-info {
   padding: 24px 12px;
   margin-top: -112px;
   height: 104px;
+  z-index: 10;
 
   .profession-name {
     color: white;
@@ -68,7 +76,7 @@
 @media (min-width: 450px) {
   .professions {
     flex-direction: column;
-    height: 648px;
+    height: 576px;
     margin-bottom: 16px;
   }
 
