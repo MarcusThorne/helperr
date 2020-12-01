@@ -1,14 +1,27 @@
 .about-us {
-  background-color: white;
+  background-color: #f8f9fa;
   margin: 120px 0;
-  text-align: center;
-  padding-bottom: 32px;
+  text-align: left;
+  padding-bottom: 24px;
 }
 
-.about-title {
-  text-align: left;
-  width: 250px;
-  margin: 24px auto;
+.about-us-title {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 0;
+
+  .about-title {
+    font-size: 32px;
+    color: #167FFB;
+    text-align: left;
+    margin-top: 88px;
+  }
+  
+  .about-box {
+    width: 80px;
+    border-bottom: 3px solid #167FFB;
+  }
 }
 
 .about-content {
@@ -27,20 +40,81 @@
 }
 
 .about-image {
-  width: 40px;
   object-fit: cover;
   object-position: top;
-  height: 35px;
+  height: auto;
+}
+
+.about-image1 {
+  width: 124px;
+}
+
+.about-image2 {
+  width: 160px;
+}
+
+.about-image3 {
+  width: 112px;
+  height: 100px;
+}
+
+.about-image4 {
+  width: 88px;
+}
+
+.about-image5 {
+  width: 124px;
+  height: 104px;
+}
+
+.about-image6 {
+  width: 94px;
 }
 
 .steps {
-  width: 250px;
   margin: 32px auto;
-  padding: 12px 16px;
   border-radius: 8px;
+  display: flex;
+  transition: 0.5s;
+  padding: 12px 24px;
 
   p {
     margin: 0;
+  }
+
+  &:hover {
+    background-color: white;
+    border-radius: 4px;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(81, 127, 255, 0.1);
+  }
+}
+
+.active-step {
+  background-color: white;
+  border-radius: 4px;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(81, 127, 255, 0.1);
+}
+
+.about-info-odd {
+  margin: 0 12px;
+  font-size: 15px;
+  margin: auto 16px;
+
+  h5 {
+    color:  #167FFB;
+  }
+}
+
+.about-info-even {
+  margin: 0 12px;
+  font-size: 15px;
+  text-align: right;
+  margin: auto 16px;
+
+  h5 {
+    color:  #167FFB;
   }
 }
 
@@ -50,6 +124,7 @@
     grid-template-columns: 1fr 1fr;
     width: 736px;
     margin: 0 auto;
+    grid-gap: 0 64px;
   }
 }
 
@@ -65,7 +140,6 @@
 
   .about-us {
     display: flex;
-    padding: 56px 0;
     margin: 0;
     justify-content: center;
   }
@@ -77,8 +151,9 @@
     box-shadow: 0 0 10px rgb(255, 255, 255);
   }
 
-  .about-us-content1 {
+  .about-us-content-1 {
     margin: auto;
+    width: 56vw;
   }
 
   .about-img3 {
@@ -92,7 +167,7 @@
   }
 
   .about-margin {
-    margin: 120px 0;
+    margin: 40px 0;
     background-color: whitesmoke;
   }
 }

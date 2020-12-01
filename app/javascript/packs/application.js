@@ -28,6 +28,8 @@ import { backToTop } from '../components/backToTop';
 import { moveSearchImage } from '../components/moveSearchImage';
 import { removeObject } from '../components/removeObject';
 import { navbarColor } from '../components/navbarColor';
+import { scrollTo } from '../components/scrollTo';
+import { activeStep } from '../components/activeStep';
 // import { disappearAnimation } from '../components/disappearAnimation';
 
 // Internal imports
@@ -44,6 +46,8 @@ document.addEventListener('turbolinks:load', () => {
   moveSearchImage();
   removeObject();
   navbarColor();
+  scrollTo();
+  activeStep();
 });
 
 

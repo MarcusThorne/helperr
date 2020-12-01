@@ -1,5 +1,5 @@
 .all-featured {
-  width: 100vw;
+  width: 260px;
   height: 706px;
   background-color: #f8f9fa;
   position: relative;
@@ -15,19 +15,20 @@
 
 .featured-cover-photo {
   width: 100%;
-  height: 45%;
+  height: 142px;
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 8px 8px 0 0;
   image-rendering: auto;
+  border: solid 1px rgba(128, 128, 128, 0.315);
 }
 
 .featured-top {
   display: flex;
-  margin: 18px 12px 0 12px;
+  margin: 16px 0 0 0;
   justify-content: space-between;
-  width: 90%;
+  width: 81%;
 }
 
 .featured {
@@ -35,7 +36,6 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  height: 360px;
   position: relative;
 }
 
@@ -47,7 +47,6 @@
   border-radius: 4px;
   position: relative;
   margin: 16px 14px;
-  height: 352px;
 
   .feature-content {
     display: flex;
@@ -55,8 +54,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 12px;
-    width: 240px;
+    width: 244px;
     justify-content: space-around;
     border-radius: 8px;
 
@@ -80,7 +78,7 @@
 
       &:hover {
         color: #ff0000;
-        font-size: 26px;
+        transform: scale(1.2);
       }
     }
 
@@ -93,9 +91,9 @@
     }
 
     .feature-img {
-      margin-top: 92px;
-      height: 75px;
-      width: 75px;
+      margin-top: 74px;
+      height: 64px;
+      width: 64px;
       object-fit: fill;
       border-radius: 50%;
       z-index: 50;
@@ -111,36 +109,39 @@
       display: flex;
       width: 220px;
       text-align: left;
-      padding: 0 12px;
+      padding: 0 18px;
     }
 
     .number-rating {
       color: grey;
       margin-left: 4px;
-      margin-top: -2px;
+      font-size: 13px;
     }
 
     .username {
-      font-size: 15px;
-      padding: 4px 12px;
-      background-color: whitesmoke;
+      font-size: 12px;
+      padding: 6px 18px;
+      background-color: #e9ecef;
       border-radius: 16px;
     }
 
     .email {
       font-size: 13px;
-      margin-top: -16px;
+      margin-top: -23px;
       width: 220px;
-      padding: 4px 12px;
-      color: rgb(126, 126, 126);
+      height: 18px;
+      padding: 0 18px;
+      color: rgb(184, 184, 184);
       text-align: left;
+      overflow: hidden;
     }
 
     .location {
-      padding: 4px 12px;
+      padding: 0 18px;
       width: 220px;
       color: #167ffb;
       text-align: left;
+      font-size: 15px;
     }
 
     .jobs {
@@ -198,12 +199,12 @@
 
   .feature-content {
     width: 80px;
-    height: 352px;
+    height: 320px;
   }
 }
 
 @media (min-width: 1300px) {
   .featured {
-    width: 1072px;
+    width: 1088px;
   }
 }

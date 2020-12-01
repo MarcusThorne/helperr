@@ -15,7 +15,6 @@
   margin: 8px;
 
   &:hover {
-    background-color: rgb(210, 210, 210);
     transition: 0.1s;
   }
 }
@@ -57,7 +56,6 @@
     visibility: visible;
 
     &:hover {
-      background-color: rgb(210, 210, 210);
       transition: 0.1s;
     }
   }
@@ -84,16 +82,16 @@
     height: auto;
     visibility: visible;
     position: absolute;
-    top: 109%;
+    top: 90%;
   }
 
   #seeAllBtn4 {
-    left: 480px;
+    left: 904px;
     transform: rotate(90deg);
   }
 
   #seeAllBtn5 {
-    right: 480px;
+    right: 904px;
     transform: rotate(270deg);
   }
 
