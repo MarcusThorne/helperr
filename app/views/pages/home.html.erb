@@ -161,12 +161,12 @@
 
     <div class="about-us-content-1">
       <div class="about-us-title">
-        <h4 class="about-title">How it works...</h4>
+        <h4 class="about-title">How it Works</h4>
         <div class="about-box"></div>
       </div>
       
       <div class="hw-description">
-        <div class="steps step1" >
+        <div class="steps step1 active-step" >
           <%= image_tag "search.png", class:"about-image about-image1" %>
           <div class="about-info-odd">
             <h5>1. Find a Healerr</h5>
@@ -176,7 +176,7 @@
         
         <div class="steps step4">
           <div class="about-info-even">
-            <h5>4. Price</h5>
+            <h5>4. Agree on a Price</h5>
             <p>Agree on a price you're happy with, pay no more than the agreed price once the jobs complete!</p>
           </div>
           <%= image_tag "money.png", class:"about-image about-image2" %>
@@ -184,7 +184,7 @@
 
         <div class="steps step2" > 
           <div class="about-info-even">
-            <h5>2. Contact</h5>
+            <h5>2. Contact them</h5>
             <p>Contact the helper via our chat box, or you can email them or call. It's up to you.</p>
           </div>
           <%= image_tag "contact.png", class:"about-image about-image3" %>
@@ -193,7 +193,7 @@
         <div class="steps step5" >
           <%= image_tag "waiting.png", class:"about-image about-image4" %>
           <div class="about-info-odd">
-            <h5>5. Wait</h5>
+            <h5>5. Wait for the task to be complete</h5>
             <p>Sit and relax while our helper completes the task you've assigned.</p>
           </div>
         </div>
@@ -201,14 +201,14 @@
         <div class="steps step3" >
           <%= image_tag "time.png", class:"about-image about-image5" %>
           <div class="about-info-odd">
-            <h5>3. Time & Date</h5>
+            <h5>3. Agree on a Time & Date</h5>
             <p>Find a helper thats willing to help you on the days that are best for you.</p>
           </div>
         </div>
 
         <div class="steps step6" >
           <div class="about-info-even">
-            <h5>6. Pay</h5>
+            <h5>6. Pay the helperr</h5>
             <p>Job done! Now all that's left to do is complete the payment and perhaps give the helper your feedback.</p>
           </div>
           <%= image_tag "purchase.png", class:"about-image about-image6" %>
@@ -221,6 +221,46 @@
 
 <div class="d-flex justify-content-center extend-all-featured">
   <p id="seeAllBtn2" class="d-flex justify-content-around"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>
+</div>
+
+
+<div class="reviews-content">
+  <div class="review-box">
+    <h4 class="review-title">Reviews</h4>
+    <div class="review-line"></div>
+  </div>
+
+  <div class="review-container">
+    <div class="reviews d-flex">
+      <div class="review">
+        <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "review-img", 'aria-haspopup': true, 'aria-expanded': false %>
+        <p class="review-name">John Smith</p>
+        <p class="review-text"><i>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.”</i></p>
+      </div>
+
+      <div class="review">
+        <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "review-img", 'aria-haspopup': true, 'aria-expanded': false %>
+        <p class="review-name">Dave Blain</p>
+        <p class="review-text"><i>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.”</i></p>
+      </div>
+
+      <div class="review">
+        <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "review-img", 'aria-haspopup': true, 'aria-expanded': false %>
+        <p class="review-name">Tommy Nobody</p>
+        <p class="review-text"><i>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.”</i></p>
+      </div>
+
+      <div class="review">
+        <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "review-img", 'aria-haspopup': true, 'aria-expanded': false %>
+        <p class="review-name">Ricky Shiznick</p>
+        <p class="review-text"><i>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.”</i></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="d-flex review-dots"><i class="fas fa-circle dot1 mr-1 active-review"></i><i class="fas fa-circle dot2 mr-1"></i><i class="fas fa-circle dot3 mr-1"></i><i class="fas fa-circle dot4"></i></div>
+  <i class="fas fa-chevron-left review-next review-left"></i>
+  <i class="fas fa-chevron-right review-next review-right"></i>
 </div>
 
 
