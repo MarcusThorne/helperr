@@ -30,6 +30,7 @@ import { removeObject } from '../components/removeObject';
 import { navbarColor } from '../components/navbarColor';
 import { scrollTo } from '../components/scrollTo';
 import { activeStep } from '../components/activeStep';
+import { nextReview, previousReview, reviewDots } from '../components/nextReview';
 // import { disappearAnimation } from '../components/disappearAnimation';
 
 // Internal imports
@@ -48,6 +49,9 @@ document.addEventListener('turbolinks:load', () => {
   navbarColor();
   scrollTo();
   activeStep();
+  nextReview();
+  previousReview();
+  reviewDots();
 });
 
 
