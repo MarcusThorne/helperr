@@ -16,7 +16,7 @@ const hamBurger = () => {
       console.log("Ham Burger Active");
       active.animate([
         // keyframes
-        { transform: 'translateX(-120vw)' }, 
+        { transform: 'translateX(-120vw)' },
         { transform: 'translateX(0px)' }
       ], {
         // timing options
