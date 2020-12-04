@@ -78,11 +78,17 @@
     position: relative;
   }
 
+  .buttons-left-right {
+    width: 104px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 89%;
+  }
+
   #seeAllBtn4, #seeAllBtn5 {
     height: auto;
     visibility: visible;
-    position: absolute;
-    top: 88%;
   }
 
   #seeAllBtn4 {

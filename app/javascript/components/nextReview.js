@@ -52,7 +52,7 @@ const nextReview = () => {
       { transform: 'translate3D(-25%, 0%, 0)' }
     ], {
       // timing options
-      duration: 1000,
+      duration: 500,
     });
 
     setTimeout(() => {
@@ -66,7 +66,7 @@ const nextReview = () => {
         reviews.style.marginLeft = parseInt(reviews.style.marginLeft) + -896 + "px"
         dotActive()
       }
-    }, 1000);
+    }, 500);
 
 
     function dotActive() {
@@ -106,7 +106,7 @@ const previousReview = () => {
   button.addEventListener("click", function() {
     reviews.animate([
       // keyframes
-      { transform: 'translate3D(10%, 0%, 0)' }
+      { transform: 'translate3D(25%, 0%, 0)' }
     ], {
       // timing options
       duration: 500,
@@ -123,7 +123,7 @@ const previousReview = () => {
         reviews.style.marginLeft = parseInt(reviews.style.marginLeft) + 896 + "px"
         dotActive();
       }
-    }, 1000);
+    }, 500);
 
     function dotActive() {
       if (reviews.style.marginLeft === "-2688px") {

@@ -20,7 +20,7 @@
 .review-title {
   font-size: 32px;
   color: #167FFB;
-  margin-top: 64px; 
+  margin-top: 64px;
 }
 
 .review-name {
@@ -72,11 +72,19 @@
 }
 
 .review-left {
-  left: 312px;
+  left: -80px;
+  position: absolute;
 }
 
 .review-right {
-  right: 312px;
+  right: -80px;
+  position: absolute;
+}
+
+.left-right-container {
+  width: max-content;
+  position: relative;
+  margin: auto;
 }
 
 .reviews {
