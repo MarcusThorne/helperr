@@ -21,6 +21,11 @@ a {
   font-size: 28px;
   display: none;
   visibility: hidden;
+  transition: 0.5s;
+}
+
+.back-to-top-remove {
+  color: rgba(0, 0, 0, 0);
 }
 
 .title {

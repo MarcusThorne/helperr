@@ -14,7 +14,7 @@ const scrollTo = () => {
     var step4 = document.querySelector(".step4")
     var step5 = document.querySelector(".step5")
     var step6 = document.querySelector(".step6")
-    
+
     step1.classList.toggle("active-step")
     step2.classList.remove("active-step")
     step3.classList.remove("active-step")
@@ -31,7 +31,7 @@ const scrollTo = () => {
     var step4 = document.querySelector(".step4")
     var step5 = document.querySelector(".step5")
     var step6 = document.querySelector(".step6")
-    
+
     step1.classList.remove("active-step")
     step2.classList.toggle("active-step")
     step3.classList.remove("active-step")
@@ -48,7 +48,7 @@ const scrollTo = () => {
     var step4 = document.querySelector(".step4")
     var step5 = document.querySelector(".step5")
     var step6 = document.querySelector(".step6")
-    
+
     step1.classList.remove("active-step")
     step2.classList.remove("active-step")
     step3.classList.toggle("active-step")
@@ -65,7 +65,7 @@ const scrollTo = () => {
     var step4 = document.querySelector(".step4")
     var step5 = document.querySelector(".step5")
     var step6 = document.querySelector(".step6")
-    
+
     step1.classList.remove("active-step")
     step2.classList.remove("active-step")
     step3.classList.remove("active-step")
@@ -82,7 +82,7 @@ const scrollTo = () => {
     var step4 = document.querySelector(".step4")
     var step5 = document.querySelector(".step5")
     var step6 = document.querySelector(".step6")
-    
+
     step1.classList.remove("active-step")
     step2.classList.remove("active-step")
     step3.classList.remove("active-step")
@@ -99,7 +99,7 @@ const scrollTo = () => {
     var step4 = document.querySelector(".step4")
     var step5 = document.querySelector(".step5")
     var step6 = document.querySelector(".step6")
-    
+
     step1.classList.remove("active-step")
     step2.classList.remove("active-step")
     step3.classList.remove("active-step")

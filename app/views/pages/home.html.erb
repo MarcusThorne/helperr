@@ -31,7 +31,7 @@
   <h4 class="featured-title">Take a look at our highest rated Helperrs</h4>
 
   <% if @rated_users != [] && @rated_users.count >= 12 %>
-    
+
     <div class="featured">
       <div class="left-right">
         <% @rated_users.sample(12).each do |user| %>
@@ -82,9 +82,9 @@
         <% end %>
       </div>
     </div>
-  
+
   <% else %>
-      
+
     <div class="featured">
       <div class="left-right">
         <% 12.times do %>
@@ -116,7 +116,7 @@
         <% end %>
       </div>
     </div>
-  
+
   <% end %>
 
   <p id="seeAllBtn4" class="d-flex justify-content-around see-all-sideways"><i class="chevron chevron-featured fas fa-chevron-down"></i></p>  
@@ -164,7 +164,7 @@
         <h4 class="about-title">How it Works</h4>
         <div class="about-box"></div>
       </div>
-      
+
       <div class="hw-description">
         <div class="steps step1 active-step" >
           <%= image_tag "search.png", class:"about-image about-image1" %>
@@ -173,7 +173,7 @@
             <p>From our selection of professions and users, find whats best suited to you!</p>
           </div>
         </div>
-        
+
         <div class="steps step4">
           <div class="about-info-even">
             <h5>4. Agree on a Price</h5>
@@ -182,7 +182,7 @@
           <%= image_tag "money.png", class:"about-image about-image2" %>
         </div>
 
-        <div class="steps step2" > 
+        <div class="steps step2" >
           <div class="about-info-even">
             <h5>2. Contact them</h5>
             <p>Contact the helper via our chat box, or you can email them or call. It's up to you.</p>
@@ -257,7 +257,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="d-flex review-dots"><i class="fas fa-circle dot1 mr-1 active-review"></i><i class="fas fa-circle dot2 mr-1"></i><i class="fas fa-circle dot3 mr-1"></i><i class="fas fa-circle dot4"></i></div>
   <i class="fas fa-chevron-left review-next review-left"></i>
   <i class="fas fa-chevron-right review-next review-right"></i>
@@ -265,22 +265,6 @@
 
 
 <div class="about-margin">
-  <div class="about-us">
-    <%= image_tag "workingmen.jpg", class:"about-us-image about-img2" %>
-
-    <div class="about-content">
-      <h4 class="au-title">Providing work when it's hard to find!</h4>
-      <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!</p>
-      <%= link_to about_us_path do %>
-        <button class="au-btn btn btn-primary">Learn More!</button>
-      <% end %>
-    </div>
-
-    <%= image_tag "workingmen.jpg", class:"about-us-image about-img3" %>
-  </div>
-
-  <div class="line"></div>
-
   <div class="information">
     <div class="info">
       <h4><i class="far fa-clock"></i>  Your <strong>Terms</strong></h4>
@@ -297,7 +281,37 @@
       <p>We provide a safe and secure way <br>for you to pay.</p>
     </div>
   </div>
+
+  <div class="about-us">
+    <%= image_tag "workingmen.jpg", class:"about-us-image about-img2" %>
+
+    <div class="about-content">
+      <h4 class="au-title">Providing work when it's hard to find!</h4>
+      <p class="au-description">Our aim is to help those that are having a hard time finding work, we provide the customers and you provide to skills! Our business is always growing and we aim to have people of all types of work showcasing there skills on our website. Safety is our vertue, we provide a safe  and secure place for everyone to find the work they need and have  an easy and secure way to be paid!</p>
+      <%= link_to about_us_path do %>
+        <button class="au-btn btn btn-primary">Learn More!</button>
+      <% end %>
+    </div>
+
+    <%= image_tag "workingmen.jpg", class:"about-us-image about-img3" %>
+  </div>
 </div>
+
+
+<div class="newsletter-box">
+  <div class="newsletter">
+    <div>
+      <h4>Newsletter</h4>
+      <p class="newsletter-text">Text about newsletter</p>
+    </div>
+
+    <div>
+      <input name="query" type="search" aria-label="Search" placeholder="Email" class="search-input newsletter-input">
+      <button class="btn btn-primary search-submit" type="submit">Subscribe</button>
+    </div>
+  </div>
+</div>
+
 
 <i class="fas fa-chevron-circle-up back-to-top"></i>
 

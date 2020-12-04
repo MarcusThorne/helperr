@@ -1,0 +1,28 @@
+.newsletter-box {
+  width: 100vw;
+  background-color: #167FFB;
+  height: 144px;
+  padding: 40px;
+}
+
+.newsletter {
+  display: flex;
+  width: max-content;
+  margin: auto;
+  background-color: #167FFB;
+  color: white;
+}
+
+.newsletter-input {
+  background-color: #167FFB;
+  color: white;
+  border-bottom: solid 1px white;
+  border-radius: 0;
+  width: 304px !important;
+  margin-left: 200px;
+  margin-top: 16px;
+}
+
+.newsletter-text {
+  color: rgba(255, 255, 255, 0.692);
+}

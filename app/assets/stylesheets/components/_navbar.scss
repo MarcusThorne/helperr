@@ -22,16 +22,16 @@
 }
 
 .scrolling-active {
-  background-color: rgba(255, 255, 255, 0.945);
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 
   .navbar-logo {
     background-image: asset-url('helperr-black.png');
   }
-}
 
-.scrolling-active .navbar-link {
-  color: black;
+  .navbar-link {
+    color: black;
+  }
 }
 
 .log-on-icon {

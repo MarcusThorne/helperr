@@ -59,7 +59,7 @@ const nextReview = () => {
       if (reviews.style.marginLeft === "") {
         reviews.style.marginLeft = '-896px'
         dotActive()
-      } else if (reviews.style.marginLeft === "-2688px") { 
+      } else if (reviews.style.marginLeft === "-2688px") {
         reviews.style.marginLeft = "0px"
         dotActive()
       } else {
@@ -67,7 +67,7 @@ const nextReview = () => {
         dotActive()
       }
     }, 1000);
-    
+
 
     function dotActive() {
       if (reviews.style.marginLeft === "0px") {
