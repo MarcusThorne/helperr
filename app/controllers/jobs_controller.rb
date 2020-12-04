@@ -5,14 +5,15 @@ class JobsController < ApplicationController
     profession = [ "Plumbing", "Moving", "Shopping", "Electrical", "Carpentry", "Cleaning", "Painting", "General Helper", "Cooking", "Landscaping", "Gardening and Removal", "Computer Technician", "Car Mechanic", "Sewing", "Furniture Making", "Groundworks" ]
     @query = params[query_type]
     @index = 0
+    @coverphoto = ["cooking.jpg", "painting.jpg", "peoplejumping.jpg", "moving.jpg", "sewing.jpg"]
 
     if params[:format].present? && params[:query].present?
       redirect_to jobs_path(params[:query])
 
     elsif params[:format].to_i != 0
       page = params[:format].to_i
-      start = 1 + ( 12 * ( page - 1 )) - 1
-      finish = 12 + ( 12 * ( page - 1 )) - 1
+      start = 1 + ( 12 * ( page - 1 ))
+      finish = 12 + ( 12 * ( page - 1 ))
       @users = User.all[start..finish]
 
     elsif params[:format] == "high_rated"
@@ -95,6 +96,4 @@ class JobsController < ApplicationController
       :format
     end
   end
-
-
 end

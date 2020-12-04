@@ -8,20 +8,20 @@ const seeSideways = () => {
 
     featured.animate([
       // keyframes
-      { transform: 'translate3D(8%, 0%, 0)' }
+      { transform: 'translate3D(292px, 0%, 0)' }
     ], {
       // timing options
-      duration: 400,
+      duration: 600,
     });
 
     setTimeout(() => {
-      var value = parseInt(window.getComputedStyle(featured).marginLeft) + 268 + 'px';
+      var value = parseInt(window.getComputedStyle(featured).marginLeft) + 292 + 'px';
       featured.style.marginLeft = value;
-    }, 600);
+    }, 601);
 
     if (828 === parseInt(window.getComputedStyle(document.querySelector(".featured")).width)) {
       if (-1 < parseInt(window.getComputedStyle(featured).marginLeft)) {
-        var value1 = -2144 + 'px';
+        var value1 = -2336 + 'px';
         featured.style.marginLeft = value1;
 
         featured.animate([
@@ -33,7 +33,7 @@ const seeSideways = () => {
         });
       }
     } else if (-1 < parseInt(window.getComputedStyle(featured).marginLeft)) {
-      var value = (-2144 - 268)  + 'px';
+      var value = (-2336 - 292)  + 'px';
       featured.style.marginLeft = value;
 
       featured.animate([
@@ -51,21 +51,21 @@ const seeSideways = () => {
 
     featured.animate([
       // keyframes
-      { transform: 'translate3D(-8%, 0%, 0)' }
+      { transform: 'translate3D(-292px, 0, 0)' }
     ], {
       // timing options
-      duration: 400,
+      duration: 601,
     });
 
     setTimeout(() => {
-      var value = parseInt(window.getComputedStyle(featured).marginLeft) - 268 + 'px'
+      var value = parseInt(window.getComputedStyle(featured).marginLeft) - 292 + 'px'
       featured.style.marginLeft = value;
-    }, 400);
+    }, 600);
 
 
     if (828 === parseInt(window.getComputedStyle(document.querySelector(".featured")).width)) {
       if (-2143 > parseInt(window.getComputedStyle(featured).marginLeft)) {
-        var value1 = 268 + 'px';
+        var value1 = 292 + 'px';
         featured.style.marginLeft = value1;
 
         featured.animate([
@@ -77,7 +77,7 @@ const seeSideways = () => {
         });
       }
     } else if (-2143 > parseInt(window.getComputedStyle(featured).marginLeft)) {
-      var value = 268 + 'px';
+      var value = 292 + 'px';
       featured.style.marginLeft = value;
 
       featured.animate([

@@ -1,106 +1,120 @@
-<div class="navbar navbar-content">
+<div class="navbar-container">
+  <div class="navbar navbar-content">
 
-  <!-- The content inside the hamburger, only shows when screen in below 720px -->
-  <div class="hamburger d-flex flex-column">
-
-    <% if user_signed_in? %>
-      <div class="top-section">
-        <div class="d-flex justify-content-between mb-3">
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false, crop: :thumb, gravity: :face %>
-          <% else %>
-            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <button class="btn btn-primary">Sign Out</button>
-          <% end %>
-        </div>
-      </div>
-
-    <% else %>
-      <div class="top-section">
-        <div class="d-flex justify-content-between">
-          <%= link_to new_user_registration_path do %>
-            <button class="btn btn-primary">Join Helperr</button>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-
-    <% unless user_signed_in? %>
-      <%= link_to "Sign In", new_user_session_path %>
-    <% end %>
-    <%= link_to "Professions", jobs_path, class:"hamburger-link" %>
-    <%= link_to "Profile", my_profile_path, class:"hamburger-link" %>
-    <%= link_to "Messages", messages_path, class:"hamburger-link" %>
-    <p class="general">General</p>
-    <p class="horizontal-line"></p>
-    <%= link_to "About Us", about_us_path, class:"hamburger-link" %>
-    <%= link_to "Contact Us", contact_us_path, class:"hamburger-link" %>
-  </div>
-
-
-  <!-- hamburger Icon -->
-  <div class="nav-link hamburger-on">
-    <div><i class="fas fa-bars"></i></div>
-  </div>
-
-  <!-- hamburger placeholder, to stop the navbar from moving when the hamburger menu is open -->
-  <div class="nav-link hamburger-placeholder">
-    <div><i class="fas fa-bars"></i></div>
-  </div>
-
-  <!-- the helperr logo with link to homepage -->
-  <%= link_to root_path do %>
-    <p class="navbar-logo"></p>
-  <% end %>
-
-  <!-- link to log in page -->
-  <%= link_to new_user_session_path, class: "nav-link" do %>
-    <div class="log-on-icon"><i class="fas fa-sign-in-alt"></i></div>
-  <% end %>
-
-  <!-- links for to services, messages and home depending on the current page and wheather the user is signed in or not -->
-  <div class="navbar-links">
-    <ul class="navbar-nav flex-row mr-auto">
-
+    <!-- The content inside the hamburger, only shows when screen in below 720px -->
+    <div class="hamburger d-flex flex-column">
       <% if user_signed_in? %>
-        <li class="nav-item active d-flex">
-          <p class="link <%= 'blue-link' if current_page?(root_path) %>"><%= link_to "Home", root_path, class: "navbar-link nav-link mr-4" %></p>
-          <% if @job.nil? %>
-            <p class="link <%= 'blue-link' if current_page?(jobs_path) %>"><%= link_to "Services", jobs_path, class: "navbar-link nav-link mr-4" %>
-          <% else %>
-            <p class="link <%= 'blue-link' if current_page?(job_path(@job)) %>"><%= link_to "Services", job_path(@job), class: "navbar-link nav-link mr-4" %>
-          <% end %>
-          <p class="link <%= "blue-link" if current_page?(about_us_path) %>"><%= link_to "About Us", about_us_path, class: "navbar-link nav-link mr-4" %></p>
-          <p class="navbar-seperation"></p>
-          <p class="link <%= 'blue-link' if current_page?(messages_path) %>"><%= link_to "Messages", messages_path, class: "navbar-link nav-link mx-4" %>
-        </li>
 
-        <li class="nav-item dropdown">
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, crop: :thumb, gravity: :face %>
-          <% else %>
-            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
-          <div class="dropdown-menu dropdown-menu-right" style="position: absolute;" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", my_profile_path, class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <div class="top-section">
+          <div class="d-flex justify-content-between mb-3">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar", 'aria-haspopup': true, 'aria-expanded': false, crop: :thumb, gravity: :face %>
+            <% else %>
+              <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar", 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <button class="btn btn-primary">Sign Out</button>
+            <% end %>
           </div>
-        </li>
+        </div>
 
       <% else %>
-        <li class="nav-item d-flex">
-          <% if @job.nil? %>
-            <%= link_to "Services", jobs_path, class: "navbar-link nav-link mr-4" %>
-          <% else %>
-            <%= link_to "Services", job_path(@job), class: "navbar-link nav-link mr-4" %>
-          <% end %>
-          <%= link_to "Log in", new_user_session_path, class: "navbar-link nav-link mr-4" %>
-          <%= link_to "Become a Helperr", new_user_registration_path, class: "btn btn-primary become-helperr-btn" %>
-        </li>
+
+        <div class="top-section">
+          <div class="d-flex justify-content-between">
+            <%= link_to new_user_registration_path do %>
+              <button class="btn btn-primary">Join Helperr</button>
+            <% end %>
+          </div>
+        </div>
+
       <% end %>
-    </ul>
+
+      <% unless user_signed_in? %>
+        <%= link_to "Sign In", new_user_session_path %>
+      <% end %>
+
+      <%= link_to "Professions", jobs_path, class:"hamburger-link" %>
+      <%= link_to "Profile", my_profile_path, class:"hamburger-link" %>
+      <%= link_to "Messages", messages_path, class:"hamburger-link" %>
+      <p class="general">General</p>
+      <p class="horizontal-line"></p>
+      <%= link_to "About Us", about_us_path, class:"hamburger-link" %>
+      <%= link_to "Contact Us", contact_us_path, class:"hamburger-link" %>
+    </div>
+
+
+    <!-- hamburger Icon -->
+    <div class="nav-link hamburger-on">
+      <div><i class="fas fa-bars"></i></div>
+    </div>
+
+    <!-- hamburger placeholder, to stop the navbar from moving when the hamburger menu is open -->
+    <div class="nav-link hamburger-placeholder">
+      <div><i class="fas fa-bars"></i></div>
+    </div>
+
+    <!-- the helperr logo with link to homepage -->
+    <%= link_to root_path do %>
+      <p class="navbar-logo"></p>
+    <% end %>
+
+    <!-- link to log in page -->
+    <%= link_to new_user_session_path, class: "nav-link" do %>
+      <div class="log-on-icon"><i class="fas fa-sign-in-alt"></i></div>
+    <% end %>
+
+    <!-- links for to services, messages and home depending on the current page and wheather the user is signed in or not -->
+    <div class="navbar-links">
+      <ul class="navbar-nav flex-row mr-auto">
+
+        <% if user_signed_in? %>
+          <li class="nav-item active d-flex">
+            <p class="link <%= 'blue-link' if current_page?(root_path) %>"><%= link_to "Home", root_path, class: "navbar-link nav-link mr-4" %></p>
+
+            <% if @job.nil? %>
+              <p class="link <%= 'blue-link' if current_page?(jobs_path) %>"><%= link_to "Services", jobs_path, class: "navbar-link nav-link mr-4" %>
+            <% else %>
+              <p class="link <%= 'blue-link' if current_page?(job_path(@job)) %>"><%= link_to "Services", job_path(@job), class: "navbar-link nav-link mr-4" %>
+            <% end %>
+
+            <p class="link <%= "blue-link" if current_page?(about_us_path) %>"><%= link_to "About Us", about_us_path, class: "navbar-link nav-link mr-4" %></p>
+            <p class="navbar-seperation"></p>
+            <p class="link <%= 'blue-link' if current_page?(messages_path) %>"><%= link_to "Messages", messages_path, class: "navbar-link nav-link mx-4" %>
+          </li>
+
+          <li class="nav-item dropdown">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, crop: :thumb, gravity: :face %>
+            <% else %>
+              <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+
+            <div class="dropdown-menu dropdown-menu-right" style="position: absolute;" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", my_profile_path, class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+
+        <% else %>
+
+          <li class="nav-item active d-flex">
+            <p class="link <%= 'blue-link' if current_page?(root_path) %>"><%= link_to "Home", root_path, class: "navbar-link nav-link mr-4" %></p>
+
+            <% if @job.nil? %>
+              <p class="link <%= 'blue-link' if current_page?(jobs_path) %>"><%= link_to "Services", jobs_path, class: "navbar-link nav-link mr-4" %>
+            <% else %>
+              <p class="link <%= 'blue-link' if current_page?(job_path(@job)) %>"><%= link_to "Services", job_path(@job), class: "navbar-link nav-link mr-4" %>
+            <% end %>
+
+            <p class="navbar-seperation"></p>
+            <p class="link <%= "blue-link" if current_page?(about_us_path) %>"><%= link_to "About Us", about_us_path, class: "navbar-link nav-link mr-4" %></p>
+            <%= link_to "Become a Helperr", new_user_registration_path, class: "btn btn-primary become-helperr-btn" %>
+          </li>
+
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

@@ -9,14 +9,15 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: rgba(255, 255, 255, 0.2);;
 }
 
 .footer-content a {
   margin: 4px 0;
+  color: rgba(196, 196, 196, 0.4);
 
   &:hover {
     text-decoration: underline;
+    color: whitesmoke;
   }
 }
 
@@ -43,8 +44,10 @@
 
 .sm-icon {
   margin: 0 8px;
+  color: rgba(196, 196, 196, 0.4);
 
   &:hover {
+    color: whitesmoke;
     text-decoration: underline;
   }
 }
@@ -52,7 +55,7 @@
 .follow-us {
   margin-top: 24px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(196, 196, 196, 0.4);
 }
 
 .footer-link {
@@ -67,7 +70,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(196, 196, 196, 0.4);
 }
 
 .footer-logo {

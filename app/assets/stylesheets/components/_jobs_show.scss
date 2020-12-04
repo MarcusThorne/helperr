@@ -1,6 +1,12 @@
+.job-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
 .job-card {
   border: 1px solid black;
-  height: 408px;
+  height: 382px;
 }
 
 .avatar-card {
