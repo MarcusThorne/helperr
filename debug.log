@@ -1,0 +1,47 @@
+[1202/184836.221:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1204/001854.224:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001854.232:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001854.233:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001858.399:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001858.405:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001858.405:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001859.611:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001859.617:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001859.618:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001859.712:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1204/001900.545:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001900.551:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001900.551:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001901.297:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001901.303:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001901.303:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001901.974:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001901.979:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001901.980:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001902.640:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001902.646:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001902.646:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001902.742:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1204/001903.176:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001903.182:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001903.182:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001903.539:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001903.545:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001903.545:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001904.201:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001904.207:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001904.207:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001904.630:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001904.636:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001904.636:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001905.200:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001905.207:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001905.207:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001905.308:ERROR:file_io.cc(90)] ReadExactly: expected 36, observed 0
+[1204/001905.563:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001905.568:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001905.569:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001946.881:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001946.888:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1204/001946.888:ERROR:crash_report_database_win.cc(496)] failed to stat report
+[1205/142746.129:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
