@@ -37,9 +37,9 @@
             <%= link_to jobs_path do %>
               <div class="feature-content">
                 <% if user.cover_photo.attached? %>
-                  <%= cl_image_tag user.cover_photo.key, class: "avatar avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= cl_image_tag user.cover_photo.key, class: "avatar-card featured-cover-photo", 'aria-haspopup': true, 'aria-expanded': false %>
                 <% else %>
-                  <%= image_tag @coverphoto.sample, class: "avatar-card", 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= image_tag @coverphoto.sample, class: "avatar-card featured-cover-photo", 'aria-haspopup': true, 'aria-expanded': false %>
                 <% end %>
 
                 <% if user.photo.attached? %>
